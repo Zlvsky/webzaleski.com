@@ -9,7 +9,8 @@ import { getMetadata } from '@/lib/metadata'
 import { getPostBySlug } from '@/lib/posts'
 import { IParamsSlug } from '@/types/generalTypes'
 
-export async function generateMetadata({ params }: IParamsSlug) {
+export async function generateMetadata(props: IParamsSlug) {
+  const params = await props.params
   const slug = params!.slug as string
   const { frontmatter } = await getPostBySlug(slug)
 
@@ -21,7 +22,11 @@ export async function generateMetadata({ params }: IParamsSlug) {
   })
 }
 
-async function PostPage({ params: { slug } }: IParamsSlug) {
+async function PostPage(props: IParamsSlug) {
+  const params = await props.params
+
+  const { slug } = params
+
   const { transformedMdx, frontmatter } = await getPostBySlug(slug)
   return (
     <PageWrap>

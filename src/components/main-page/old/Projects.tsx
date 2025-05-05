@@ -6,7 +6,7 @@ import { projects } from '@/data/projects'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Button } from '../ui/button/Button'
+import { Button } from '../../ui/button/Button'
 
 interface SingleProjectProps {
   name: string

@@ -1,5 +1,5 @@
 import { experience } from '@/data/experience'
-import SectionHeader from '../ui/SectionHeader'
+import SectionHeader from '../../ui/SectionHeader'
 
 interface SingleExperienceProps {
   role: string

@@ -1,6 +1,6 @@
 import { skills } from '@/data/skills'
-import SectionHeader from '../ui/SectionHeader'
-import SingleTech from '../ui/SingleTech'
+import SectionHeader from '../../ui/SectionHeader'
+import SingleTech from '../../ui/SingleTech'
 
 function Skills() {
   return (

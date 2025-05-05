@@ -26,7 +26,9 @@ export const useCopyString = (text: string) => {
   return { isCopied, setCopied, copy }
 }
 
-export const useCopyRef = <T extends HTMLElement = HTMLElement>(ref: RefObject<T>) => {
+export const useCopyRef = <T extends HTMLElement = HTMLElement>(
+  ref: RefObject<T | null>
+) => {
   const [isCopied, setCopied] = useState(false)
 
   useEffect(() => {
