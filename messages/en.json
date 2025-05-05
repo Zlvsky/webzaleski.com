@@ -1,0 +1,126 @@
+{
+  "site": {
+    "title": "Launchfolio",
+    "description": "Launch your portfolio with style"
+  },
+  "nav": {
+    "home": "Home",
+    "features": "Features",
+    "pricing": "Pricing",
+    "testimonials": "Testimonials",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "hero": {
+    "heading": "Launch your portfolio with style",
+    "subheading": "A modern, responsive portfolio template built with Next.js and Tailwind CSS",
+    "ctaPrimary": "Get Started",
+    "ctaSecondary": "Learn More"
+  },
+  "features": {
+    "heading": "Everything you need",
+    "subheading": "Launch your portfolio with these powerful features",
+    "feature1": {
+      "title": "Responsive Design",
+      "description": "Looks great on any device, from mobile to desktop"
+    },
+    "feature2": {
+      "title": "SEO Optimized",
+      "description": "Rank higher in search engines and get more visitors"
+    },
+    "feature3": {
+      "title": "Fast Loading",
+      "description": "Optimized for speed and performance"
+    },
+    "feature4": {
+      "title": "Easy Customization",
+      "description": "Customize to match your brand and style"
+    }
+  },
+  "pricing": {
+    "heading": "Simple, transparent pricing",
+    "subheading": "Start for free, upgrade when you need",
+    "basic": {
+      "title": "Basic",
+      "price": "$0",
+      "description": "Perfect for getting started",
+      "features": [
+        "Single page portfolio",
+        "Basic customization",
+        "Community support",
+        "1GB storage"
+      ],
+      "cta": "Start for free"
+    },
+    "pro": {
+      "title": "Pro",
+      "price": "$9",
+      "period": "/month",
+      "description": "Great for professionals",
+      "features": [
+        "Multi-page portfolio",
+        "Advanced customization",
+        "Priority support",
+        "10GB storage",
+        "Custom domain"
+      ],
+      "cta": "Get Pro"
+    },
+    "premium": {
+      "title": "Premium",
+      "price": "$29",
+      "period": "/month",
+      "description": "For serious creators",
+      "features": [
+        "Unlimited pages",
+        "Full customization",
+        "24/7 support",
+        "Unlimited storage",
+        "Multiple domains",
+        "Analytics dashboard"
+      ],
+      "cta": "Get Premium"
+    }
+  },
+  "testimonials": {
+    "heading": "What people are saying",
+    "subheading": "Don't just take our word for it",
+    "testimonial1": {
+      "quote": "Launchfolio helped me create a stunning portfolio in minutes. I've never received so many compliments!",
+      "author": "Sarah Johnson",
+      "role": "Graphic Designer"
+    },
+    "testimonial2": {
+      "quote": "As a developer, I appreciate how well-built and customizable this template is. Saved me weeks of work.",
+      "author": "Michael Chen",
+      "role": "Frontend Developer"
+    },
+    "testimonial3": {
+      "quote": "The simplicity and elegance of Launchfolio is unmatched. My clients love the results.",
+      "author": "Emily Rodriguez",
+      "role": "Photographer"
+    }
+  },
+  "contact": {
+    "heading": "Get in touch",
+    "subheading": "Have questions? We're here to help",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "messageLabel": "Message",
+    "submitButton": "Send Message",
+    "newsletter": {
+      "heading": "Subscribe to our newsletter",
+      "description": "Get updates, tips and special offers delivered directly to your inbox",
+      "placeholder": "Enter your email",
+      "button": "Subscribe"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Launchfolio. All rights reserved.",
+    "links": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "contact": "Contact"
+    }
+  }
+}

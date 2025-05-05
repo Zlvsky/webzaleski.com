@@ -1,0 +1,126 @@
+{
+  "site": {
+    "title": "Launchfolio",
+    "description": "Uruchom swoje portfolio ze stylem"
+  },
+  "nav": {
+    "home": "Strona główna",
+    "features": "Funkcje",
+    "pricing": "Cennik",
+    "testimonials": "Opinie",
+    "contact": "Kontakt",
+    "language": "Język"
+  },
+  "hero": {
+    "heading": "Uruchom swoje portfolio ze stylem",
+    "subheading": "Nowoczesny, responsywny szablon portfolio zbudowany z Next.js i Tailwind CSS",
+    "ctaPrimary": "Rozpocznij",
+    "ctaSecondary": "Dowiedz się więcej"
+  },
+  "features": {
+    "heading": "Wszystko, czego potrzebujesz",
+    "subheading": "Uruchom swoje portfolio z tymi potężnymi funkcjami",
+    "feature1": {
+      "title": "Responsywny Design",
+      "description": "Wygląda świetnie na każdym urządzeniu, od telefonu do komputera"
+    },
+    "feature2": {
+      "title": "Zoptymalizowany SEO",
+      "description": "Wyższa pozycja w wyszukiwarkach i więcej odwiedzających"
+    },
+    "feature3": {
+      "title": "Szybkie ładowanie",
+      "description": "Zoptymalizowany pod kątem szybkości i wydajności"
+    },
+    "feature4": {
+      "title": "Łatwa personalizacja",
+      "description": "Dostosuj do swojej marki i stylu"
+    }
+  },
+  "pricing": {
+    "heading": "Proste, przejrzyste ceny",
+    "subheading": "Zacznij za darmo, ulepszaj, gdy potrzebujesz",
+    "basic": {
+      "title": "Podstawowy",
+      "price": "0 zł",
+      "description": "Idealny na początek",
+      "features": [
+        "Jednostronicowe portfolio",
+        "Podstawowe dostosowanie",
+        "Wsparcie społeczności",
+        "1GB przestrzeni dyskowej"
+      ],
+      "cta": "Zacznij za darmo"
+    },
+    "pro": {
+      "title": "Pro",
+      "price": "39 zł",
+      "period": "/miesiąc",
+      "description": "Świetny dla profesjonalistów",
+      "features": [
+        "Wielostronicowe portfolio",
+        "Zaawansowana personalizacja",
+        "Priorytetowe wsparcie",
+        "10GB przestrzeni dyskowej",
+        "Własna domena"
+      ],
+      "cta": "Wybierz Pro"
+    },
+    "premium": {
+      "title": "Premium",
+      "price": "129 zł",
+      "period": "/miesiąc",
+      "description": "Dla poważnych twórców",
+      "features": [
+        "Nieograniczona liczba stron",
+        "Pełna personalizacja",
+        "Wsparcie 24/7",
+        "Nieograniczona przestrzeń dyskowa",
+        "Wiele domen",
+        "Panel analityczny"
+      ],
+      "cta": "Wybierz Premium"
+    }
+  },
+  "testimonials": {
+    "heading": "Co mówią ludzie",
+    "subheading": "Nie wierz nam na słowo",
+    "testimonial1": {
+      "quote": "Launchfolio pomogło mi stworzyć oszałamiające portfolio w kilka minut. Nigdy nie otrzymałam tylu komplementów!",
+      "author": "Sarah Johnson",
+      "role": "Grafik"
+    },
+    "testimonial2": {
+      "quote": "Jako programista doceniam, jak dobrze zbudowany i konfigurowalny jest ten szablon. Zaoszczędził mi tygodnie pracy.",
+      "author": "Michael Chen",
+      "role": "Frontend Developer"
+    },
+    "testimonial3": {
+      "quote": "Prostota i elegancja Launchfolio jest niezrównana. Moi klienci kochają rezultaty.",
+      "author": "Emily Rodriguez",
+      "role": "Fotograf"
+    }
+  },
+  "contact": {
+    "heading": "Skontaktuj się",
+    "subheading": "Masz pytania? Jesteśmy tutaj, aby pomóc",
+    "nameLabel": "Imię",
+    "emailLabel": "Email",
+    "messageLabel": "Wiadomość",
+    "submitButton": "Wyślij wiadomość",
+    "newsletter": {
+      "heading": "Zapisz się do naszego newslettera",
+      "description": "Otrzymuj aktualizacje, porady i specjalne oferty bezpośrednio na swoją skrzynkę",
+      "placeholder": "Wpisz swój email",
+      "button": "Subskrybuj"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Launchfolio. Wszelkie prawa zastrzeżone.",
+    "links": {
+      "privacy": "Polityka prywatności",
+      "terms": "Warunki korzystania",
+      "contact": "Kontakt"
+    }
+  }
+}
