@@ -12,8 +12,11 @@
     "language": "Language"
   },
   "hero": {
-    "heading": "Launch your portfolio with style",
-    "subheading": "A modern, responsive portfolio template built with Next.js and Tailwind CSS",
+    "heading": "Software Engineer Focused on Value-Driven Solutions",
+    "subheading": "I turn your goals into working software that helps your business grow. I build clear, reliable applications that save you time and money.",
+    "sublist1": "Aligned with your goals: Features designed to fit your needs",
+    "sublist2": "Easy to use: Software your team and customers will enjoy",
+    "sublist3": "Built to last: Clean code that is simple to update",
     "ctaPrimary": "Get Started",
     "ctaSecondary": "Learn More"
   },

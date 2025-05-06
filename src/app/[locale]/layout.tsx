@@ -3,12 +3,16 @@ import { routing } from '@/i18n/routing'
 import { Analytics } from '@vercel/analytics/react'
 import type { Metadata } from 'next'
 import { hasLocale, NextIntlClientProvider } from 'next-intl'
-import { Inter } from 'next/font/google'
+import localFont from 'next/font/local'
 
 import { notFound } from 'next/navigation'
 import '../globals.css'
 
-const inter = Inter({ subsets: ['latin'], display: 'swap' })
+const switzer = localFont({
+  src: '../../assets/fonts/Switzer.ttf',
+  variable: '--font-switzer',
+  display: 'swap'
+})
 
 export const metadata: Metadata = {
   title: 'Web & Frontend Developer | Krzysztof Zaleski',
@@ -33,7 +37,7 @@ export default async function RootLayout({
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
       <link rel="icon" type="image/png" href="/favicon-16x16.png" />
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-      <body className={inter.className}>
+      <body className={switzer.className}>
         <NextIntlClientProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             {children}

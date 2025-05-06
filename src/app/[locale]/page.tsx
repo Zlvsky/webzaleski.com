@@ -1,4 +1,5 @@
 import BigWrap from '@/components/layout/containers/BigWrap'
+import BorderOverlay from '@/components/layout/containers/BorderOverlay'
 import Container from '@/components/layout/containers/Container'
 import PageWrap from '@/components/layout/containers/PageWrap'
 import SmallWrap from '@/components/layout/containers/SmallWrap'
@@ -26,6 +27,7 @@ export default function Home() {
         </BigWrap>
       </Container>
       <Footer />
+      <BorderOverlay />
     </PageWrap>
   )
 }

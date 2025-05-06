@@ -3,11 +3,11 @@
 import CheckSvg from '@/assets/icons/common/check.svg'
 import CopySvg from '@/assets/icons/common/copy.svg'
 import MailSvg from '@/assets/icons/common/email.svg'
+import { Button } from '@/components/ui/button/Button'
 import { useCopyString } from '@/hooks/useCopy'
 import { EMAIL } from '@/utils/consts'
 import { useEffect, useRef, useState } from 'react'
 import { LocalTime } from './_components/LocalTime'
-import { PingDot } from './_components/PingDot'
 
 function Contact() {
   const [type, setType] = useState<null | 'email' | 'copy'>(null)
@@ -34,27 +34,31 @@ function Contact() {
 
   return (
     <div className="mt-8 flex flex-col gap-2">
-      <h3 className="flex flex-row items-center gap-1 text-sm text-grayText1 dark:text-grayText2">
-        <PingDot /> Available for new challanges.
-      </h3>
       <div className="flex flex-row items-center gap-3">
         <a
           href="mailto:zlvsky@icloud.com"
-          className="border-input cursor-pointer rounded-md border border-black p-2.5 transition-colors ease-linear hover:bg-accent active:scale-95 dark:border-dark48"
+          className=" cursor-pointer rounded-xl border-[1.5px]  border-white/5 bg-black p-[1.5px] shadow-darkbutton transition-transform ease-out hover:scale-105 active:scale-95"
           onMouseEnter={() => handleSetType('email')}
           onMouseLeave={handleClearType}
         >
-          <MailSvg className="h-4 w-4" />
+          <div className="rounded-xl bg-black p-2.5 shadow-glossyinside">
+            <MailSvg className="h-6 w-6 text-white" />
+          </div>
         </a>
-        <div
-          className="border-input cursor-pointer rounded-md border border-black p-2.5 transition-colors ease-linear hover:bg-accent active:scale-95 dark:border-dark48"
+        <Button
+          size={'icon'}
+          variant={'default'}
           onMouseEnter={() => handleSetType('copy')}
           onMouseLeave={handleClearType}
           onClick={copy}
         >
-          {isCopied ? <CheckSvg className="h-4 w-4" /> : <CopySvg className="h-4 w-4" />}
-        </div>
-        <div className="flex flex-col text-sm text-grayText1 dark:text-grayText2">
+          {isCopied ? (
+            <CheckSvg className="h-6 w-6 text-white" />
+          ) : (
+            <CopySvg className="h-6 w-6 text-white" />
+          )}
+        </Button>
+        <div className="flex flex-col text-sm text-gray54">
           <span>Feel free to reach me out</span>
           {type === null ? (
             <span>Send me an email</span>
