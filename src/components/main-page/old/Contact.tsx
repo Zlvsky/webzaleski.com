@@ -1,11 +1,9 @@
 'use client'
 
-import CheckSvg from '@/assets/icons/common/check.svg'
-import CopySvg from '@/assets/icons/common/copy.svg'
-import MailSvg from '@/assets/icons/common/email.svg'
 import { Button } from '@/components/ui/button/Button'
 import { useCopyString } from '@/hooks/useCopy'
 import { EMAIL } from '@/utils/consts'
+import { IconCopy, IconCopyCheckFilled, IconMailFilled } from '@tabler/icons-react'
 import { useEffect, useRef, useState } from 'react'
 import { LocalTime } from './_components/LocalTime'
 
@@ -33,7 +31,7 @@ function Contact() {
   }, [])
 
   return (
-    <div className="mt-8 flex flex-col gap-2">
+    <div className="mt-5 flex flex-col gap-2">
       <div className="flex flex-row items-center gap-3">
         <a
           href="mailto:zlvsky@icloud.com"
@@ -42,7 +40,7 @@ function Contact() {
           onMouseLeave={handleClearType}
         >
           <div className="rounded-xl bg-black p-2.5 shadow-glossyinside">
-            <MailSvg className="h-6 w-6 text-white" />
+            <IconMailFilled className="h-6 w-6 text-white" />
           </div>
         </a>
         <Button
@@ -53,9 +51,9 @@ function Contact() {
           onClick={copy}
         >
           {isCopied ? (
-            <CheckSvg className="h-6 w-6 text-white" />
+            <IconCopyCheckFilled className="h-6 w-6 text-white" />
           ) : (
-            <CopySvg className="h-6 w-6 text-white" />
+            <IconCopy className="h-6 w-6 text-white" />
           )}
         </Button>
         <div className="flex flex-col text-sm text-gray54">

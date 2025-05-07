@@ -7,12 +7,12 @@ interface IProps extends IChildren {
 
 const SmallWrap = memo<IProps>(({ children, id }) => {
   return (
-    <div
+    <section
       id={id}
       className="mx-auto flex h-full min-h-min w-full max-w-screen-lg flex-col flex-nowrap px-11"
     >
       {children}
-    </div>
+    </section>
   )
 })
 
