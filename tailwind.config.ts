@@ -44,7 +44,10 @@ const config: Config = {
           'inset 0px 2px 4px 0px rgba(255, 255, 255, 0.4), 0px 0.74097px 0.74097px -0.75px rgba(0, 0, 0, 0.33), 0px 2.01787px 2.01787px -1.5px rgba(0, 0, 0, 0.32), 0px 4.43051px 4.43051px -2.25px rgba(0, 0, 0, 0.3), 0px 9.83471px 9.83471px -3px rgba(0, 0, 0, 0.25), 0px 25px 25px -3.75px rgba(0, 0, 0, 0.11), 0px 0px 0px 1px var(--token-46244ad7-86a7-41b8-b44b-214d95b54c13, rgb(130, 130, 130))',
         glossybutton:
           'rgba(255, 255, 255, 0.15) 0px 1px 1px 0px inset, rgba(255, 255, 255, 0.15) 0px 1px 2px 0px inset, rgba(0, 0, 0, 0.25) 0px -1px 2px 0px inset, rgba(0, 0, 0, 0.1) 0px 10px 20px 0px',
-        glossyinside: 'rgba(255, 255, 255, 0.15) 0px 1px 2px 0px inset'
+        glossyinside: 'rgba(255, 255, 255, 0.15) 0px 1px 2px 0px inset',
+        hero: 'inset 0 2px 4px #fff6,0 .7409732186279143px .7409732186279143px -.75px #00000054,0 2.0178668455264415px 2.0178668455264415px -1.5px #00000052,0 4.430505261661892px 4.430505261661892px -2.25px #0000004d,0 9.834710084098335px 9.834710084098335px -3px #00000040,0 25px 25px -3.75px #0000001c,0 0 0 1px rgb(130, 130, 130)',
+        hero2:
+          'rgba(0, 0, 0, 0.03) 0px 0.602187px 1.32481px -0.833333px, rgba(0, 0, 0, 0.03) 0px 2.28853px 5.03477px -1.66667px, rgba(0, 0, 0, 0.03) 0px 10px 22px -2.5px'
       },
       screens: {
         lg: '67.5rem'
