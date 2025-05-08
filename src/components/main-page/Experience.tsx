@@ -1,3 +1,8 @@
+import freelance from '@/assets/images/companies/freelance.png'
+import goodsoft from '@/assets/images/companies/goodsoft.png'
+import jokuh from '@/assets/images/companies/jokuh.png'
+import seomi from '@/assets/images/companies/seomi.png'
+import { cn } from '@/utils'
 import Image from 'next/image'
 import SmallWrap from '../layout/containers/SmallWrap'
 
@@ -14,7 +19,7 @@ interface ExperienceEntry {
 const experiencesData: ExperienceEntry[] = [
   {
     id: 'goodsoft',
-    iconUrl: '/logos/goodsoft.jpg', // Replace with actual path or remove if using placeholder
+    iconUrl: goodsoft.src,
     iconPlaceholder: 'G',
     companyName: 'GoodSoft',
     companyUrl: 'https://goodsoft.pl',
@@ -22,28 +27,29 @@ const experiencesData: ExperienceEntry[] = [
     isActive: true
   },
   {
+    id: 'freelance',
+    iconUrl: freelance.src, // Replace with actual path
+    iconPlaceholder: 'F',
+    companyName: 'Part-time freelance',
+    companyUrl: '#',
+    dateRange: '2022 - NOW',
+    isActive: true
+  },
+  {
     id: 'jokuh',
-    iconUrl: '/logos/moneykit.png', // Replace with actual path
+    iconUrl: jokuh.src,
     iconPlaceholder: 'M',
     companyName: 'Jokuh',
-    companyUrl: 'https://moneykit.com',
+    companyUrl: 'https://jokuh.com',
     dateRange: '2024'
   },
   {
-    id: 'freelance',
-    iconUrl: '/logos/rainbow.png', // Replace with actual path
-    iconPlaceholder: 'R',
-    companyName: 'Freelance',
-    companyUrl: 'https://seomi.pl',
-    dateRange: '2021 - NOW'
-  },
-  {
     id: 'Seomi',
-    iconUrl: '/logos/rainbow.png', // Replace with actual path
+    iconUrl: seomi.src,
     iconPlaceholder: 'R',
     companyName: 'Seomi',
     companyUrl: 'https://seomi.pl',
-    dateRange: '2020 - 2021'
+    dateRange: '2021'
   }
 ]
 
@@ -69,69 +75,55 @@ function Experience() {
   const dotRingColor = 'gray-400' // Color for inactive dot ring
 
   return (
-    <div className="w-full border-b border-t border-gray-200 bg-white py-14">
+    <div className="w-full border-b border-t border-gray-200 py-10">
       <SmallWrap>
-        <div className="relative flex w-full flex-row gap-10">
-          {/* Header Section - Kept from original, can be adjusted */}
-          <div className="mb-10 flex items-center justify-between px-1">
+        <div className="relative flex w-full flex-row gap-20">
+          {/* Header Section*/}
+          <div className="flex items-center justify-between">
             {/* Adjusted mb and added px for alignment with timeline start */}
-            <h3 className="text-lg font-medium text-gray-700 md:text-xl">
-              My <span className="font-semibold text-gray-900">Experience</span>
+            <h3 className="text-lg font-normal text-gray-700 md:text-xl">
+              My Experience
             </h3>
           </div>
 
           {/* Timeline Container */}
-          {/* Adjusted mt to mt-14 from example, relative to this component's padding */}
-          <div className="relative mt-4 flex-1">
+          <div className="relative flex-1">
+            {/* Adjusted mt to mt-14 from example, relative to this component's padding */}
             {/* Base connecting line (gray) - Adjusted width to account for "ALL" link space */}
-            <div
-              className={`absolute left-0 ${LINE_TOP_OFFSET} h-px w-[calc(100%-45px)] bg-${lineColor} opacity-75`}
-            ></div>
-            {/* Active/Highlighted connecting line (accent) */}
-            {activeIndex >= 0 && (
-              <div
-                className={`absolute left-0 ${LINE_TOP_OFFSET} h-px bg-${accentColor}`}
-                style={{ width: activeLineWidth }}
-              ></div>
-            )}
+            {/* <div
+              className={`absolute left-0 ${LINE_TOP_OFFSET} h-px w-[calc(100%-45px)] bg-gray-300 rounded-full`}
+            ></div> */}
 
             {/* Experience Items Flex Container */}
-            <div className="flex flex-row gap-x-8 pt-2 sm:gap-x-10 md:gap-x-12">
+            <div className="grid grid-cols-4 gap-x-4">
               {experiencesData.map((exp) => (
                 <div
                   key={exp.id}
-                  className="relative flex flex-col items-center text-center"
+                  className="relative flex flex-col items-start text-center"
                 >
                   {/* Dot and Line Interaction Point */}
-                  <div className={`relative ${DOT_CONTAINER_HEIGHT} w-3`}>
-                    {' '}
-                    {/* w-3 to center the dot */}
-                    {/* This div creates the "line passing through" effect for light theme */}
+                  <div className={`flex w-full flex-row items-center gap-1 `}>
                     <div
-                      className={`absolute left-1/2 top-0 ${DOT_CONTAINER_HEIGHT} w-5 -translate-x-1/2 bg-white`}
-                    ></div>
-                    {/* Actual Dot */}
-                    <div
-                      className={`absolute left-1/2 top-1/2 z-[1] ${DOT_SIZE} -translate-x-1/2 -translate-y-1/2 transform rounded-full
-                        ${
-                          exp.isActive
-                            ? `bg-${accentColor}`
-                            : `bg-white ring-1 ring-${dotRingColor} ring-inset`
-                        }
-                      `}
+                      className={cn(
+                        'relative z-10 mr-3 h-3 w-3 transform rounded-full  ring-1 ring-inset',
+                        exp.isActive
+                          ? 'bg-black shadow-darkbutton ring-black'
+                          : 'ring-[#dedede]'
+                      )}
                     >
                       {/* Ping animation for active dot */}
-                      {exp.isActive && (
-                        <div
-                          className={`absolute inset-0 ${DOT_SIZE} animate-ping rounded-full bg-${accentColor} opacity-50`}
-                          style={{ animationDuration: '2.5s' }}
-                        ></div>
-                      )}
                     </div>
+                    <div
+                      className={` h-px flex-1 rounded-full bg-gradient-to-r from-white via-[#121212]/30 to-white `}
+                    />
+                    {/* <div
+                      className={`h-px flex-1 rounded-full bg-gradient-to-r from-white via-[#121212] to-white `}
+                    /> */}
+                    {/* Actual Dot */}
                   </div>
 
                   {/* Icon, Company Name, and Date Range */}
-                  <div className="mt-3 flex flex-col items-center gap-1.5">
+                  <div className="mt-3 flex flex-col items-start gap-1.5">
                     {' '}
                     {/* Reduced gap from 2 to 1.5 */}
                     <div className="flex items-center gap-x-2">
@@ -139,24 +131,15 @@ function Experience() {
                         href={exp.companyUrl || '#'}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`relative flex h-7 w-7 items-center justify-center overflow-hidden rounded-md outline-none transition-all focus-visible:ring-1 focus-visible:ring-${accentColor} active:scale-95 md:h-8 md:w-8`}
+                        className={`h-8 w-8 cursor-pointer rounded-md border-[1.5px]  border-white/5 bg-black p-[1.5px] shadow-darkbutton transition-transform ease-out hover:scale-105 active:scale-95`}
                       >
-                        {exp.iconUrl ? (
-                          <Image
-                            src={exp.iconUrl}
-                            alt={`${exp.companyName} logo`}
-                            className="h-full w-full object-cover"
-                          />
-                        ) : (
-                          <div
-                            className="flex h-full w-full items-center justify-center
-                                       border border-gray-200 bg-gray-100
-                                       text-sm font-semibold text-gray-500 md:text-base"
-                          >
-                            {exp.iconPlaceholder}
-                          </div>
-                        )}
-                        <span className="absolute inset-0 z-10 rounded-md ring-1 ring-inset ring-black/[.08]"></span>
+                        <Image
+                          src={exp.iconUrl || ''}
+                          width={64}
+                          height={64}
+                          alt={`${exp.companyName} logo`}
+                          className="h-full w-full object-cover"
+                        />
                       </a>
                       <a
                         href={exp.companyUrl || '#'}
@@ -167,7 +150,7 @@ function Experience() {
                         {exp.companyName}
                       </a>
                     </div>
-                    <p className="whitespace-nowrap text-[11px] text-gray-500 sm:text-xs">
+                    <p className="whitespace-nowrap text-left font-mono text-xs text-gray-400 sm:text-sm">
                       {exp.dateRange}
                     </p>
                   </div>

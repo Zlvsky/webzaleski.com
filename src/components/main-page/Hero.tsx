@@ -1,5 +1,6 @@
 'use client'
 
+import { format } from 'date-fns'
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 
@@ -49,7 +50,7 @@ const HeroCard: React.FC<HeroCardProps> = ({
 
   return (
     <div className={cn(cardClasses, className, 'rounded-xl p-5')}>
-      <h3 className={`${titleClasses} ${titleColorClass}`}>{title}</h3>
+      <h3 className={`font-mono ${titleClasses} ${titleColorClass}`}>{title}</h3>
       <div className="flex flex-wrap gap-2">
         {items.map((item, index) => (
           <span
@@ -106,10 +107,10 @@ export default function Hero() {
   return (
     <SmallWrap id="main">
       <div className="relative pb-16 ">
-        <div className="grid grid-cols-1 items-center gap-12 pt-20 lg:grid-cols-2">
+        <div className="grid grid-cols-1 items-center gap-12 pt-10 lg:grid-cols-2">
           <div className="flex flex-col">
-            <motion.div className="mb-8 flex w-max items-center gap-2 rounded-full border border-[#f0f0f0] bg-white py-2 pl-3 pr-4 text-xs font-semibold leading-3 shadow-glossyinside">
-              <PingDot /> Available for April
+            <motion.div className="mb-2 flex w-max items-center gap-2 rounded-full border border-[#f0f0f0] bg-white py-2 pl-3 pr-4 text-xs font-semibold leading-3 shadow-glossyinside">
+              <PingDot /> {`Available for ${format(new Date(), "MMMM''yy")}`}
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -150,7 +151,7 @@ export default function Hero() {
                 <HeroCard theme="dark" title={tc('whatWeDo.title')} items={whatIDo} />
               </div>
               <div className="mt-6 flex w-full flex-col items-center  justify-center">
-                <span className="w-full text-center text-xs uppercase text-[#71717a]">
+                <span className="w-full text-center font-mono text-xs uppercase text-[#71717a]">
                   Tech Stack I Work With
                 </span>
                 <div className="mt-1 flex flex-row items-center justify-center gap-3">

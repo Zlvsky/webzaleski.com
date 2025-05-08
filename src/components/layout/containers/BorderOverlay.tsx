@@ -16,10 +16,10 @@ const BorderOverlay: React.FC<BorderOverlayProps> = ({ className = '', children 
     <div
       className={`
         pointer-events-none absolute left-1/2 z-[1] 
-        h-full w-full max-w-screen-lg
+         h-full w-full max-w-screen-lg flex-1
          -translate-x-1/2 overflow-hidden
         border-b-0 border-l border-r border-t-0
-        border-solid border-[#d9d9d9]
+        border-solid border-gray-200
         ${className}
       `}
     >

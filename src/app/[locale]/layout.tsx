@@ -13,6 +13,10 @@ const switzer = localFont({
   variable: '--font-switzer',
   display: 'swap'
 })
+const jetbrainsmono = localFont({
+  src: '../../assets/fonts/JetBrainsMono.ttf',
+  variable: '--font-jetbrainsmono'
+})
 
 export const metadata: Metadata = {
   title: 'Web & Frontend Developer | Krzysztof Zaleski',
@@ -37,7 +41,7 @@ export default async function RootLayout({
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
       <link rel="icon" type="image/png" href="/favicon-16x16.png" />
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-      <body className={switzer.className}>
+      <body className={`${switzer.className} ${jetbrainsmono.variable}`}>
         <NextIntlClientProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             {children}

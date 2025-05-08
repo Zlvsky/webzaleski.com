@@ -23,7 +23,7 @@ export const LocalTime = () => {
   }, [])
 
   return (
-    <span className="text-sm text-grayText1 dark:text-grayText2">
+    <span className="font-mono text-xs text-grayText1 dark:text-grayText2">
       Poland, local time: {localTime}
     </span>
   )

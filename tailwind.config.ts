@@ -10,7 +10,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-switzer)']
+        sans: ['var(--font-switzer)'],
+        mono: ['var(--font-jetbrainsmono)']
       },
       fontSize: {
         '20': ['1.25rem', '1.875rem'],
