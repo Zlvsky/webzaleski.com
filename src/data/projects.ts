@@ -1,13 +1,14 @@
 export const projects = [
   {
-    name: 'BetterDevs',
+    name: 'Realm of Dungeons',
     shortDescription:
-      'Platform for developers to boost their coding skills by solving real-world problems and daily practices.',
-    year: 'Ongoing',
-    image: '/img/works/work1.png',
-    slug: 'betterdevs',
-    live: 'https://betterdevs.net',
-    github: 'https://github.com/Zlvsky/betterDevs/'
+      'Web multiplayer game in retro style, based on idle mechanics inspired by Shakes & Fidget.',
+    year: '2023',
+    image: '/img/works/work4.png',
+    slug: 'realm-of-dungeons',
+    live: 'https://realmofdungeons.pages.dev',
+    state: 'Launching soon on App Store and Google Play',
+    github: 'https://github.com/Zlvsky/realm-of-dungeons'
   },
   {
     name: 'Visity',
@@ -15,6 +16,7 @@ export const projects = [
       'SaaS application for creating simple landing pages in minutes targeted to small businesses.',
     year: '2024',
     image: '/img/works/work2.png',
+    state: 'Failed',
     slug: 'visity',
     live: 'https://visity.pl'
   },
@@ -24,17 +26,8 @@ export const projects = [
       'Feedback widget that can be embedded on websites to collect feedback and send console logs with page screenshots.',
     year: '2024',
     slug: 'feedback-widget',
-    image: '/img/works/work3.png'
-  },
-  {
-    name: 'Realm of Dungeons',
-    shortDescription:
-      'Web multiplayer game in retro style, based on idle mechanics inspired by Shakes & Fidget.',
-    year: '2023',
-    image: '/img/works/work4.png',
-    slug: 'realm-of-dungeons',
-    live: 'https://realmofdungeons.pages.dev',
-    github: 'https://github.com/Zlvsky/realm-of-dungeons'
+    image: '/img/works/work3.png',
+    state: 'Used in 10+ projects'
   },
   {
     name: 'Konva Moodboard',
@@ -42,6 +35,7 @@ export const projects = [
     year: '2022',
     image: '/img/works/work5.png',
     slug: 'konva-moodboard',
+    state: '28+ stars on GitHub',
     github: 'https://github.com/Zlvsky/React-Konva-moodboard'
   },
   {
@@ -50,6 +44,7 @@ export const projects = [
     year: '2021',
     image: '/img/works/work6.png',
     slug: 'one-place',
+    state: '44+ stars on GitHub',
     github: 'https://github.com/Zlvsky/one-place'
   },
   {
@@ -58,6 +53,7 @@ export const projects = [
       'Custom-made bot that automates the insertion of offers on a IT freelancing portal',
     year: '2021',
     slug: 'automation-bot',
+    state: 'Was active 24/7 between 2021-2023',
     image: '/img/works/work7.png'
   }
   // {

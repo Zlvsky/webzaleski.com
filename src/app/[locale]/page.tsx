@@ -5,6 +5,7 @@ import Footer from '@/components/layout/footer/Footer'
 import Header from '@/components/layout/header/Header'
 import Experience from '@/components/main-page/Experience'
 import Hero from '@/components/main-page/Hero'
+import Work from '@/components/main-page/Work'
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
       <Container>
         <Hero />
         <Experience />
-
+        <Work />
         {/* <BigWrap id="work">
           <Projects />
         </BigWrap> */}
