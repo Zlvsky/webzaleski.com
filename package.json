@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-tooltip": "^1.2.6",
     "@tabler/icons-react": "^3.31.0",
     "@vercel/analytics": "^1.2.2",
     "copy-to-clipboard": "^3.3.3",
@@ -38,7 +39,9 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-intersection-observer": "^9.8.1",
-    "reading-time": "^1.5.0"
+    "reading-time": "^1.5.0",
+    "tailwindcss-animate": "^1.0.7",
+    "tailwindcss-animated": "^2.0.0"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",

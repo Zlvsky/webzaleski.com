@@ -38,7 +38,7 @@ body {
 /* code mdx */
 
 .dark-gradient {
-  background: linear-gradient(69deg,#171717 31%,#000 81%)
+  background: linear-gradient(69deg, #171717 31%, #000 81%);
 }
 
 .post-code {
