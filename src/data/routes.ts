@@ -1,20 +1,18 @@
-import { GUMROAD_URL } from '@/utils/consts'
-
 export const routes = [
   {
-    href: '/',
+    href: '#work',
+    text: 'Work'
+  },
+  {
+    href: '#services',
+    text: 'Services'
+  },
+  {
+    href: '#about',
     text: 'About'
   },
   {
-    href: 'https://hireme.czaleski.com/',
-    text: 'Hire'
-  },
-  {
-    href: '/blog',
-    text: 'Blog'
-  },
-  {
-    href: GUMROAD_URL,
-    text: 'Products'
+    href: '#faq',
+    text: 'Faq'
   }
 ] as const

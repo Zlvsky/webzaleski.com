@@ -1,9 +1,8 @@
 'use client'
-import { SocialLinks } from '@/components/ui/SocialLinks'
 import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
 import { useState } from 'react'
+import CTA from './_components/CTA'
 import Logo from './_components/Logo'
-import ModeToggle from './_components/ModeToggle'
 import NavLinks from './_components/NavLinks'
 
 function Header() {
@@ -32,8 +31,7 @@ function Header() {
       </div>
 
       <div className="flex flex-row items-center gap-1 sm:gap-3">
-        <SocialLinks />
-        <ModeToggle />
+        <CTA />
       </div>
     </motion.nav>
   )

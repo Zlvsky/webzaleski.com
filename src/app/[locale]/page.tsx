@@ -5,6 +5,7 @@ import Footer from '@/components/layout/footer/Footer'
 import Header from '@/components/layout/header/Header'
 import About from '@/components/main-page/About'
 import Experience from '@/components/main-page/Experience'
+import Faq from '@/components/main-page/Faq'
 import Hero from '@/components/main-page/Hero'
 import Services from '@/components/main-page/Services'
 import Testimonials from '@/components/main-page/Testimonials'
@@ -21,6 +22,7 @@ export default function Home() {
         <Services />
         <About />
         <Testimonials />
+        <Faq />
         {/* <BigWrap id="work">
           <Projects />
         </BigWrap> */}

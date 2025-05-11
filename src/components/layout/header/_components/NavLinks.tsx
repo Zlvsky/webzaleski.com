@@ -59,10 +59,7 @@ const NavLinks = () => {
       {routes.map((link, index) => (
         <SingleLink
           key={index}
-          active={
-            pathname === link.href ||
-            (pathname.startsWith(link.href) && link.href !== '/')
-          }
+          active={pathname === link.href || pathname.startsWith(link.href)}
           {...link}
         />
       ))}
