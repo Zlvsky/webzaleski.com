@@ -3,6 +3,7 @@ import Container from '@/components/layout/containers/Container'
 import PageWrap from '@/components/layout/containers/PageWrap'
 import Footer from '@/components/layout/footer/Footer'
 import Header from '@/components/layout/header/Header'
+import About from '@/components/main-page/About'
 import Experience from '@/components/main-page/Experience'
 import Hero from '@/components/main-page/Hero'
 import Services from '@/components/main-page/Services'
@@ -17,6 +18,7 @@ export default function Home() {
         <Experience />
         <Work />
         <Services />
+        <About />
         {/* <BigWrap id="work">
           <Projects />
         </BigWrap> */}

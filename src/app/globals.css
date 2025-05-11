@@ -41,6 +41,11 @@ body {
   background: linear-gradient(69deg, #171717 31%, #000 81%);
 }
 
+.avatarMask {
+  mask: 'url(../assets/mask.svg) alpha no-repeat center / cover add';
+  -webkit-mask: 'url(../assets/mask.svg) alpha no-repeat center / cover add';
+}
+
 .post-code {
   @apply rounded-md border dark:border-dark48;
 }

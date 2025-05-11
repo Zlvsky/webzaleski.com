@@ -20,6 +20,7 @@ import {
   IconBrandMongodb,
   IconBrandNextjs,
   IconBrandNodejs,
+  IconBrandPrisma,
   IconBrandRadixUi,
   IconBrandReact,
   IconBrandReactNative,
@@ -52,6 +53,7 @@ export const frontendStack = [
 
 export const backendStack = [
   { Icon: IconBrandNodejs, label: 'Node.js' },
+  { Icon: IconBrandPrisma, label: 'Prisma' },
   { Icon: PostgresIcon, label: 'PostgreSQL' },
   { Icon: IconBrandMongodb, label: 'MongoDB' }
 ]

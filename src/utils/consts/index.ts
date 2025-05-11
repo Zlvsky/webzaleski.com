@@ -14,7 +14,7 @@ export const AUTHOR_DESC =
   'Web & Frontend developer based in Poland. Passionate about creative solutions and building apps from scratch.'
 
 export const GITHUB_URL = 'https://github.com/Zlvsky'
-export const TWITTER_URL = 'https://twitter.com/Zlvskyy'
+export const TWITTER_URL = 'https://x.com/czaleskii'
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/krzysztof-zaleski02'
 export const RESUME_URL =
   'https://drive.google.com/file/d/16vH538erKi6kTfgIucXa-Kfw4FnMENVe/view?usp=sharing'

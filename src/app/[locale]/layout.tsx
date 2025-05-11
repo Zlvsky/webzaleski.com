@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/react'
 import type { Metadata } from 'next'
 import { hasLocale, NextIntlClientProvider } from 'next-intl'
 import localFont from 'next/font/local'
+import { Toaster } from 'sonner'
 
 import { notFound } from 'next/navigation'
 import '../globals.css'
@@ -16,6 +17,10 @@ const switzer = localFont({
 const jetbrainsmono = localFont({
   src: '../../assets/fonts/JetBrainsMono.ttf',
   variable: '--font-jetbrainsmono'
+})
+const geistmono = localFont({
+  src: '../../assets/fonts/GeistMono.ttf',
+  variable: '--font-geistmono'
 })
 
 export const metadata: Metadata = {
@@ -48,6 +53,7 @@ export default async function RootLayout({
           </ThemeProvider>
         </NextIntlClientProvider>
         <Analytics />
+        <Toaster position="bottom-center" offset={{ bottom: '40px' }} />
       </body>
     </html>
   )
