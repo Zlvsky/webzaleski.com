@@ -7,6 +7,7 @@ import About from '@/components/main-page/About'
 import Experience from '@/components/main-page/Experience'
 import Hero from '@/components/main-page/Hero'
 import Services from '@/components/main-page/Services'
+import Testimonials from '@/components/main-page/Testimonials'
 import Work from '@/components/main-page/Work'
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
         <Work />
         <Services />
         <About />
+        <Testimonials />
         {/* <BigWrap id="work">
           <Projects />
         </BigWrap> */}

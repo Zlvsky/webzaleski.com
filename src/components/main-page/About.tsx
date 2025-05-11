@@ -71,15 +71,15 @@ const About: React.FC = () => {
   ]
 
   return (
-    <div className="bg-white py-16 md:py-24">
+    <div className="w-full border-b border-gray-200 py-24">
       <SmallWrap>
         {/* Header Section */}
         <div className="mb-12 text-left md:mb-16">
-          <h1 className="text-4xl font-medium leading-tight text-[#050505] sm:text-5xl">
+          <h2 className="text-4xl font-medium leading-tight text-[#050505] sm:text-5xl">
             <span className="text-[#828282]">Designing experiences</span>
             <br />
             that solve real problems.
-          </h1>
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-3 md:gap-16">
