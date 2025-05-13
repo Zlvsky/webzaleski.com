@@ -5,50 +5,50 @@ import SkrzynkaImage from '@/assets/images/clients/skrzynk.png'
 import TomaszImage from '@/assets/images/clients/tomaszmichno.png'
 import WbhaleImage from '@/assets/images/clients/wbhale.png'
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl' // Import useTranslations
+import Image from 'next/image'
 import React from 'react'
 import SmallWrap from '../layout/containers/SmallWrap'
 
-const testimonials = [
+// Update testimonials data to include an 'id' for translation lookup
+const testimonialsData = [
   {
-    name: 'Aleksanda Łukaszenia',
-    company: 'Skrzynka Synka',
-    text: `I recommend Christopher services. Full professionalism and commitment! Quick implementation!`,
+    id: 'testimonial1',
     image: SkrzynkaImage
   },
   {
-    name: 'Iwona Troc',
-    company: 'Mental Coach',
-    text: `I recommend working with Christopher. I commissioned a website and I am very satisfied. Full professionalism, reliability, quick execution. Big plus for flexibility and communicativeness.`,
+    id: 'testimonial2',
     image: IwonaImage
   },
   {
-    name: 'Michał W.',
-    company: 'EuroOil',
-    text: `I recommend working with Chris. Very good contact. Quick implementation. The best offer I got when looking for a contractor, recommend!`
+    id: 'testimonial3'
+    // No image for Michał W.
   },
   {
-    name: 'Paweł Oliwa',
-    company: 'PMI Geodezja',
-    text: `I recommend Christopher's services. Very good contact. Quick implementation. Affordable prices. The best offer I found.`,
+    id: 'testimonial4',
     image: PawelImage
   },
   {
-    name: 'Wojciech B.',
-    company: 'WB Hale',
-    text: `I highly recommend working with Chris. Everything went through smoothly, even after the work was done there was no problem with further contact and performing further services.`,
+    id: 'testimonial5',
     image: WbhaleImage
   },
   {
-    name: 'Tomasz M.',
-    company: 'Nagrobki Michno',
-    text: `Christopher's execution of the commissioned work went smoothly. I highly recommend his services.`,
+    id: 'testimonial6',
     image: TomaszImage
   }
 ]
 
+// Define the type for a single testimonial item after fetching translations
+interface TranslatedTestimonial {
+  name: string
+  company: string
+  text: string
+  image?: typeof SkrzynkaImage // Or a more generic image type if needed
+}
+
 export const TestimonialsColumn = (props: {
   className?: string
-  testimonials: typeof testimonials
+  testimonials: TranslatedTestimonial[] // Expecting translated testimonials
   duration?: number
 }) => {
   return (
@@ -71,16 +71,16 @@ export const TestimonialsColumn = (props: {
               {props.testimonials.map(({ text, image, name, company }, i) => (
                 <div
                   className="w-full max-w-xs rounded-xl border border-[#dedede] p-14 shadow-badge"
-                  key={i}
+                  key={`${name}-${i}`} // Use a more unique key if names can repeat
                 >
                   <div>{text}</div>
                   <div className="mt-5 flex items-center gap-2">
                     {image ? (
-                      <img
+                      <Image
                         width={40}
                         height={40}
                         src={image?.src}
-                        alt={name}
+                        alt={name} // Alt text can remain the name
                         className="h-10 w-10 rounded-full"
                       />
                     ) : (
@@ -104,11 +104,21 @@ export const TestimonialsColumn = (props: {
   )
 }
 
-const firstColumn = testimonials.slice(0, 2)
-const secondColumn = testimonials.slice(2, 4)
-const thirdColumn = testimonials.slice(4, 6)
-
 const Testimonials = () => {
+  const t = useTranslations('testimonials') // Initialize translations
+
+  // Map over testimonialsData to get translated content
+  const translatedTestimonials = testimonialsData.map((item) => ({
+    name: t(`${item.id}.name`),
+    company: t(`${item.id}.company`),
+    text: t(`${item.id}.text`),
+    image: item.image
+  }))
+
+  const firstColumn = translatedTestimonials.slice(0, 2)
+  const secondColumn = translatedTestimonials.slice(2, 4)
+  const thirdColumn = translatedTestimonials.slice(4, 6)
+
   return (
     <div className="w-full border-b border-gray-200 pt-20">
       <SmallWrap>
@@ -120,9 +130,9 @@ const Testimonials = () => {
           className="flex flex-col"
         >
           <h2 className="text-4xl font-medium leading-tight text-[#050505] sm:text-5xl">
-            <span className="text-[#828282]">What clients say</span>
+            <span className="text-[#828282]">{t('headingPart1')}</span>
             <br />
-            about my work.
+            {t('headingPart2')}
           </h2>
         </motion.div>
 

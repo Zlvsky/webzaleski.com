@@ -1,8 +1,10 @@
 import kickstarter from '@/assets/images/kickstarter.png'
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 
 function CTA() {
+  const t = useTranslations('nav')
   const textContainerVariants = {
     rest: {
       width: 0,
@@ -32,7 +34,7 @@ function CTA() {
         variants={textContainerVariants}
         transition={{ duration: 0.2, ease: 'easeInOut' }} // Defines animation properties
       >
-        <span className="whitespace-nowrap text-sm text-black">Launching soon</span>
+        <span className="whitespace-nowrap text-sm text-black">{t('launching')}</span>
       </motion.div>
     </motion.a>
   )

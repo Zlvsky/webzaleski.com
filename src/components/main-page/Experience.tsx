@@ -3,6 +3,7 @@ import goodsoft from '@/assets/images/companies/goodsoft.png'
 import jokuh from '@/assets/images/companies/jokuh.png'
 import seomi from '@/assets/images/companies/seomi.png'
 import { cn } from '@/utils'
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import SmallWrap from '../layout/containers/SmallWrap'
 
@@ -11,9 +12,10 @@ interface ExperienceEntry {
   iconUrl?: string
   iconPlaceholder: string
   companyName: string
-  companyUrl?: string // Optional: URL for the company
+  companyUrl?: string
   dateRange: string
   isActive?: boolean
+  isPresent?: boolean
 }
 
 const experiencesData: ExperienceEntry[] = [
@@ -23,16 +25,18 @@ const experiencesData: ExperienceEntry[] = [
     iconPlaceholder: 'G',
     companyName: 'GoodSoft',
     companyUrl: 'https://goodsoft.pl',
-    dateRange: '2022 - NOW',
+    dateRange: '2022',
+    isPresent: true,
     isActive: true
   },
   {
     id: 'freelance',
-    iconUrl: freelance.src, // Replace with actual path
+    iconUrl: freelance.src,
     iconPlaceholder: 'F',
     companyName: 'Part-time freelance',
     companyUrl: '#',
-    dateRange: '2022 - NOW',
+    dateRange: '2022',
+    isPresent: true,
     isActive: true
   },
   {
@@ -53,26 +57,10 @@ const experiencesData: ExperienceEntry[] = [
   }
 ]
 
-// Adjusted constants based on new styling
-const LINE_TOP_OFFSET = 'top-[6px]' // Corresponds to top-1.5 in Tailwind (6px)
-const DOT_CONTAINER_HEIGHT = 'h-3' // 12px
-const DOT_SIZE = 'h-[8px] w-[8px]' // 8px
-
 function Experience() {
-  const activeIndex = experiencesData.findIndex((exp) => exp.isActive)
-  const itemCount = experiencesData.length
+  const t = useTranslations('experience') // For alt text
 
-  // Calculate width for the active part of the line.
-  // This logic assumes items are roughly equally spaced or this is a visual approximation.
-  const activeLineWidth =
-    activeIndex >= 0 && itemCount > 0
-      ? `${((activeIndex + 0.5) / itemCount) * 100}%`
-      : '0%'
-
-  // Define colors for easy customization
   const accentColor = 'teal-500' // Color for active elements
-  const lineColor = 'gray-300' // Color for the inactive line
-  const dotRingColor = 'gray-400' // Color for inactive dot ring
 
   return (
     <div className="w-full border-b border-t border-gray-200 py-10">
@@ -82,18 +70,11 @@ function Experience() {
           <div className="flex items-center justify-between">
             {/* Adjusted mb and added px for alignment with timeline start */}
             <h3 className="text-lg font-normal text-gray-700 md:text-xl">
-              My Experience
+              {t('myexperience')}
             </h3>
           </div>
 
-          {/* Timeline Container */}
           <div className="relative flex-1">
-            {/* Adjusted mt to mt-14 from example, relative to this component's padding */}
-            {/* Base connecting line (gray) - Adjusted width to account for "ALL" link space */}
-            {/* <div
-              className={`absolute left-0 ${LINE_TOP_OFFSET} h-px w-[calc(100%-45px)] bg-gray-300 rounded-full`}
-            ></div> */}
-
             {/* Experience Items Flex Container */}
             <div className="grid grid-cols-4 gap-x-4">
               {experiencesData.map((exp) => (
@@ -110,22 +91,13 @@ function Experience() {
                           ? 'bg-black shadow-darkbutton ring-black'
                           : 'ring-[#dedede]'
                       )}
-                    >
-                      {/* Ping animation for active dot */}
-                    </div>
+                    ></div>
                     <div
                       className={` h-px flex-1 rounded-full bg-gradient-to-r from-white via-[#121212]/30 to-white `}
                     />
-                    {/* <div
-                      className={`h-px flex-1 rounded-full bg-gradient-to-r from-white via-[#121212] to-white `}
-                    /> */}
-                    {/* Actual Dot */}
                   </div>
 
-                  {/* Icon, Company Name, and Date Range */}
                   <div className="mt-3 flex flex-col items-start gap-1.5">
-                    {' '}
-                    {/* Reduced gap from 2 to 1.5 */}
                     <div className="flex items-center gap-x-2">
                       <a
                         href={exp.companyUrl || '#'}
@@ -151,7 +123,7 @@ function Experience() {
                       </a>
                     </div>
                     <p className="whitespace-nowrap text-left font-mono text-xs text-gray-400 sm:text-sm">
-                      {exp.dateRange}
+                      {exp.dateRange} {exp.isPresent ? '- ' + t('now') : ''}
                     </p>
                   </div>
                 </div>

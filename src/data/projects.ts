@@ -2,7 +2,7 @@ export const projects = [
   {
     name: 'Realm of Dungeons',
     shortDescription:
-      'Web multiplayer game in retro style, based on idle mechanics inspired by Shakes & Fidget.',
+      'Dark fantasy pixel art mobile idle RPG. UI-based retro progression inspired by classics like Gladiatus & S&F. Made in React Native with Expo.',
     year: '2023',
     image: '/img/works/work4.png',
     slug: 'realm-of-dungeons',

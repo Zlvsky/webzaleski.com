@@ -3,23 +3,26 @@
 import { routes } from '@/data/routes'
 import { cn } from '@/utils'
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl' // Import useTranslations
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 interface ISingleLink {
   href: string
-  text: string
+  textKey: string // Changed from text to textKey
   active: boolean
 }
 
-const SingleLink: React.FC<ISingleLink> = ({ href, active, text }) => {
+const SingleLink: React.FC<ISingleLink> = ({ href, active, textKey }) => {
+  const t = useTranslations('nav.links') // Initialize translations for nav.links
+  const translatedText = t(textKey) // Get translated text
   const isExternal = href.startsWith('http')
 
   return (
     <li
       className={cn(
-        'relative cursor-pointer rounded-md bg-transparent text-sm transition-colors ease-in dark:text-white/90 ',
-        !active && ' hover:text-dark26 dark:hover:text-white'
+        'relative cursor-pointer rounded-md bg-transparent text-sm transition-colors ease-in',
+        !active && ' hover:text-dark26 '
       )}
     >
       <Link
@@ -33,7 +36,7 @@ const SingleLink: React.FC<ISingleLink> = ({ href, active, text }) => {
           animate={{ color: active ? 'white' : 'gray2' }}
           transition={{ type: 'spring', stiffness: 290, damping: 35, duration: 3 }}
         >
-          {text}
+          {translatedText} {/* Use translated text */}
         </motion.span>
       </Link>
       {active ? (
@@ -56,13 +59,18 @@ const NavLinks = () => {
 
   return (
     <ul className="flex flex-row items-center gap-1 sm:gap-2">
-      {routes.map((link, index) => (
-        <SingleLink
-          key={index}
-          active={pathname === link.href || pathname.startsWith(link.href)}
-          {...link}
-        />
-      ))}
+      {routes.map(
+        (
+          link // Removed index as key, using link.href or link.textKey is better if unique
+        ) => (
+          <SingleLink
+            key={link.href} // Using href as key, ensure it's unique
+            active={pathname === link.href || pathname.startsWith(link.href)}
+            href={link.href}
+            textKey={link.textKey}
+          />
+        )
+      )}
     </ul>
   )
 }

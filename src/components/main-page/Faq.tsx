@@ -5,50 +5,40 @@ import { Button } from '@/components/ui/button/Button'
 import { cn } from '@/utils'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
+import { useTranslations } from 'next-intl' // Import useTranslations
 import Image from 'next/image'
 import * as React from 'react'
 import SmallWrap from '../layout/containers/SmallWrap' // Assuming you have this
 import Contact from './old/Contact'
 
-const faqData = [
-  {
-    id: 'faq1',
-    question: 'How long does a typical project take to complete?',
-    answer:
-      'Project timelines vary based on complexity. A simple project might take 2-3 weeks, while more comprehensive designs can take 1-2 months. I will provide a specific estimate after our initial consultation.'
-  },
-  {
-    id: 'faq2',
-    question: 'Can you work with my existing brand and designs?',
-    answer:
-      "Absolutely! I can adapt to your existing brand guidelines and design systems. If you don't have one, I can also help you create or refine it."
-  },
-  {
-    id: 'faq3',
-    question: 'What makes your design process unique?',
-    answer:
-      'My process is highly collaborative and user-centric. I focus on understanding your business goals and user needs deeply to create solutions that are not only beautiful but also effective and intuitive.'
-  },
-  {
-    id: 'faq4',
-    question: 'Do you offer ongoing support after the project is completed?',
-    answer:
-      'Yes, I offer various ongoing support and maintenance packages to ensure your project remains up-to-date and continues to perform optimally. We can discuss these options based on your needs.'
-  },
-  {
-    id: 'faq5',
-    question: 'How do you handle confidentiality and intellectual property rights?',
-    answer:
-      "I take confidentiality and IP rights very seriously. I'm happy to sign Non-Disclosure Agreements (NDAs) and ensure that all intellectual property created for your project is rightfully yours upon completion and full payment."
-  }
-]
+const faqItemIds = ['faq1', 'faq2', 'faq3', 'faq4']
 
 const FaqSection = () => {
+  const t = useTranslations('faq.items')
+
+  const faqData = faqItemIds.map((id) => ({
+    id,
+    question: t(`${id}.question`),
+    answer: t.rich(`${id}.answer`, {
+      figmaAdobe: (chunks) => <span className="text-black">{chunks}</span>,
+      codeAccuratelyReflects: (chunks) => <span className="text-black">{chunks}</span>,
+      communicationCollaborationQuality: (chunks) => (
+        <span className="text-black">{chunks}</span>
+      ),
+      cleanMaintainableCode: (chunks) => <span className="text-black">{chunks}</span>,
+      robustScalableProduct: (chunks) => <span className="text-black">{chunks}</span>,
+      supportMaintenancePackages: (chunks) => (
+        <span className="text-black">{chunks}</span>
+      ),
+      tailoredPlan: (chunks) => <span className="text-black">{chunks}</span>
+    }) as React.ReactNode
+  }))
+
   return (
     <div className="mx-auto max-w-2xl space-y-2">
       {faqData.map((item, index) => (
         <FaqItem
-          key={item.id + item.question}
+          key={item.id}
           question={item.question}
           answer={item.answer}
           index={index}
@@ -59,12 +49,11 @@ const FaqSection = () => {
 }
 FaqSection.displayName = 'FaqSection'
 
-// Internal FaqItem component
 const FaqItem = React.forwardRef<
   HTMLDivElement,
   {
     question: string
-    answer: string
+    answer: string | React.ReactNode
     index: number
   }
 >((props, ref) => {
@@ -149,23 +138,23 @@ const FaqItem = React.forwardRef<
 FaqItem.displayName = 'FaqItem'
 
 const Faq: React.FC = () => {
+  const t = useTranslations('faq')
+
   return (
     <div className="w-full border-b border-gray-200 py-16 md:py-24">
       <SmallWrap>
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-5 lg:gap-16">
-          {/* Left Column: Title and FAQs */}
           <div className="lg:col-span-3">
             <div className="mb-10 text-left">
               <h2 className="text-4xl font-medium leading-tight text-[#050505] sm:text-5xl">
-                <span className="text-[#828282]">Your questions</span>
+                <span className="text-[#828282]">{t('headingPart1')}</span>
                 <br />
-                answered.
+                {t('headingPart2')}
               </h2>
             </div>
             <FaqSection />
           </div>
 
-          {/* Right Column: CTA Card */}
           <div className="lg:col-span-2">
             <div className="top-24 rounded-xl border border-[#dedede] bg-white p-8 shadow-work2">
               <div className="relative inline-block">
@@ -178,19 +167,16 @@ const Faq: React.FC = () => {
                   height={150}
                   className="avatarMask h-20 w-20 rounded-xl border  bg-gradient-to-b from-[#D7D7D7] to-[#FEFEFE]  "
                   src={profilePicture.src}
-                  alt=""
+                  alt={t('cta.profileAlt')}
                 />
                 <div className="absolute -right-1.5 bottom-0 aspect-square h-4 w-4 rounded-full bg-[#16bf5e]"></div>
               </div>
-              <h3 className="mb-1 text-3xl font-normal leading-7 text-[#828282]">
-                Still not sure? <br />{' '}
-                <span className="text-black">Send me an email.</span>
+              <h3 className="mb-1 text-2xl font-normal leading-7 text-[#828282]">
+                {t('cta.stillNotSure')} <br />
+                <span className="text-black">{t('cta.sendEmail')}</span>
               </h3>
               <p className="mb-3 text-2xl font-semibold text-black"></p>
-              <p className="mb-6 text-sm text-gray-600">
-                Learn more about how I work and how I can help you and your business take
-                the next step.
-              </p>
+              <p className="mb-6 text-sm text-gray-600">{t('cta.description')}</p>
               <Contact />
             </div>
           </div>

@@ -48,7 +48,7 @@ export default async function RootLayout({
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       <body className={`${switzer.className} ${jetbrainsmono.variable}`}>
         <NextIntlClientProvider>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
             {children}
           </ThemeProvider>
         </NextIntlClientProvider>

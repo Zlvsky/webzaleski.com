@@ -6,7 +6,6 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}'
   ],
-  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -55,7 +54,7 @@ const config: Config = {
         service:
           'rgba(0, 0, 0, 0.075) 0px 0.597144px 0.597144px -0.9375px, rgba(0, 0, 0, 0.07) 0px 1.81088px 1.81088px -1.875px, rgba(0, 0, 0, 0.06) 0px 4.78699px 4.78699px -2.8125px, rgba(0, 0, 0, 0.024) 0px 15px 15px -3.75px',
         active:
-          '0 0 0 3px var(--token-235a099f-b7b4-43b9-9be7-1ac4fb0ae5e5, #ffffff),inset 0 1px 2px #ffffff80',
+          '0 0 0 3px var(--token-235a099f-b7b4-43b9-9be7-1ac4fb0ae5e5, #ffffff),inset 0 1px 2px #ffffff80'
       },
       screens: {
         lg: '67.5rem'

@@ -9,7 +9,7 @@ export const DEFAULT_IMAGE_URL = '/img/baner.png'
 
 export const EMAIL = 'zlvsky@icloud.com'
 export const NAME = 'Krzysztof Zaleski'
-export const POSITION = 'frontend developer'
+export const POSITION = 'fullstack developer'
 export const AUTHOR_DESC =
   'Web & Frontend developer based in Poland. Passionate about creative solutions and building apps from scratch.'
 

@@ -4,21 +4,64 @@
     "description": "Launch your portfolio with style"
   },
   "nav": {
-    "home": "Home",
-    "features": "Features",
-    "pricing": "Pricing",
-    "testimonials": "Testimonials",
-    "contact": "Contact",
-    "language": "Language"
+    "language": "Language",
+    "links": {
+      "work": "Work",
+      "services": "Services",
+      "about": "About",
+      "faq": "FAQ"
+    },
+    "launching": "Launching soon"
   },
   "hero": {
-    "heading": "Software Engineer Focused on Value-Driven Solutions",
-    "subheading": "I turn your goals into working software that helps your business grow. I build clear, reliable applications that save you time and money.",
-    "sublist1": "Aligned with your goals: Features designed to fit your needs",
-    "sublist2": "Easy to use: Software your team and customers will enjoy",
-    "sublist3": "Built to last: Clean code that is simple to update",
+    "availableFor": "Available for",
+    "mainHeading": "React & WordPress Expert. Modern websites and web applications.",
+    "subheading": "I build reliable <span>websites and applications</span> that support the <span>growth of your business</span>.",
+    "sublist1": "Custom solutions meticulously aligned with your unique business goals.",
+    "sublist2": "Creating intuitive interfaces that are a joy to use for your customers and team.",
+    "sublist3": "Future-proof applications built with clean, robust React and modern best practices.",
     "ctaPrimary": "Get Started",
     "ctaSecondary": "Learn More"
+  },
+  "heroCards": {
+    "whoIWorkWith": {
+      "title": "Who I Work With",
+      "items": [
+        "Startups & Innovators",
+        "Established Businesses",
+        "Creative Agencies",
+        "Solo Entrepreneurs"
+      ]
+    },
+    "whatIDo": {
+      "title": "What I Do",
+      "items": [
+        "Custom Web Applications",
+        "MVPs",
+        "React & Next.js Development",
+        "Full-Stack Solutions",
+        "React Native Apps",
+        "WordPress Development",
+        "Website Maintenance & Optimization",
+        "WooCommerce Solutions",
+        "Performance Optimization"
+      ]
+    },
+    "techStackTitle": "Tech Stack I Work With",
+    "viewAll": "View all"
+  },
+  "contactSection": {
+    "reachOut": "Feel free to reach out to me",
+    "poland": "Poland, local time:",
+    "prompt": {
+      "emailDefault": "Send me an email",
+      "emailHover": "Open in your mail app",
+      "copyHover": "Copy to clipboard"
+    }
+  },
+  "experience": {
+    "myexperience": "My Experience",
+    "now": "Now"
   },
   "features": {
     "heading": "Everything you need",
@@ -85,25 +128,6 @@
       "cta": "Get Premium"
     }
   },
-  "testimonials": {
-    "heading": "What people are saying",
-    "subheading": "Don't just take our word for it",
-    "testimonial1": {
-      "quote": "Launchfolio helped me create a stunning portfolio in minutes. I've never received so many compliments!",
-      "author": "Sarah Johnson",
-      "role": "Graphic Designer"
-    },
-    "testimonial2": {
-      "quote": "As a developer, I appreciate how well-built and customizable this template is. Saved me weeks of work.",
-      "author": "Michael Chen",
-      "role": "Frontend Developer"
-    },
-    "testimonial3": {
-      "quote": "The simplicity and elegance of Launchfolio is unmatched. My clients love the results.",
-      "author": "Emily Rodriguez",
-      "role": "Photographer"
-    }
-  },
   "contact": {
     "heading": "Get in touch",
     "subheading": "Have questions? We're here to help",
@@ -124,6 +148,163 @@
       "privacy": "Privacy Policy",
       "terms": "Terms of Service",
       "contact": "Contact"
+    }
+  },
+  "work": {
+    "featuredWork": "Featured Work",
+    "projectLogoAlt": "{projectName} logo",
+    "projects": {
+      "realm-of-dungeons": {
+        "name": "Realm of Dungeons",
+        "shortDescription": "Dark fantasy pixel art mobile idle RPG. UI-based retro progression inspired by classics like Gladiatus & S&F. Made in React Native with Expo.",
+        "state": "Launching soon on App Store and Google Play"
+      },
+      "visity": {
+        "name": "Visity",
+        "shortDescription": "SaaS application for creating simple landing pages in minutes targeted to small businesses.",
+        "state": "Failed"
+      },
+      "feedback-widget": {
+        "name": "Feedback Widget",
+        "shortDescription": "Feedback widget that can be embedded on websites to collect feedback and send console logs with page screenshots.",
+        "state": "Used in 10+ projects"
+      },
+      "konva-moodboard": {
+        "name": "Konva Moodboard",
+        "shortDescription": "Web app to create and export canvas moodboards with custom images.",
+        "state": "28+ stars on GitHub"
+      },
+      "one-place": {
+        "name": "One-place",
+        "shortDescription": "CRUD admin panel to manage business based on orders, that don't need online shop.",
+        "state": "44+ stars on GitHub"
+      },
+      "automation-bot": {
+        "name": "Oferia.pl Automation bot",
+        "shortDescription": "Custom-made bot that automates the insertion of offers on a IT freelancing portal",
+        "state": "Was active 24/7 between 2021-2023"
+      }
+    }
+  },
+  "services": {
+    "mainHeading": "Let's build success<br></br><span>My core services.</span>",
+    "techStackCategories": {
+      "frontend": "Front-End",
+      "backend": "Back-End",
+      "websites": "Websites",
+      "other": "Other"
+    },
+    "serviceItems": {
+      "mvpApplications": "MVP Applications",
+      "expertReactFrontend": "Expert React Front-end Development",
+      "fullstackDevelopment": "Full-stack Development",
+      "reactNativeDevelopment": "React Native Development",
+      "landingPages": "Landing Pages",
+      "wordpressWebsites": "WordPress Websites",
+      "woocommerceSolutions": "WooCommerce Solutions",
+      "modernJamstack": "Modern Jamstack Websites (Next.js/Gatsby)",
+      "ongoingSupport": "Ongoing Website Maintenance & Support"
+    },
+    "techLabels": {
+      "typescript": "TypeScript",
+      "react": "React",
+      "reactNative": "React Native",
+      "nextjs": "Next.js",
+      "tailwindCss": "Tailwind CSS",
+      "framerMotion": "Framer Motion",
+      "radixUi": "Radix UI",
+      "nodejs": "Node.js",
+      "prisma": "Prisma",
+      "postgresql": "PostgreSQL",
+      "mongodb": "MongoDB",
+      "gatsby": "Gatsby",
+      "wordpress": "WordPress",
+      "html5": "HTML5",
+      "git": "git",
+      "docker": "Docker",
+      "cypress": "Cypress",
+      "figma": "Figma",
+      "firebase": "Firebase"
+    }
+  },
+  "about": {
+    "headingPart1": "My development philosophy",
+    "headingPart2": "Code that works, solutions that last.",
+    "name": "Krzysztof Zaleski",
+    "copyEmailPrompt": "Press <kbd>C</kbd> to copy my email",
+    "emailCopiedToast": "Email copied to clipboard",
+    "socials": {
+      "email": "Email",
+      "x": "X.com",
+      "github": "GitHub",
+      "linkedin": "LinkedIn"
+    },
+    "paragraphs": [
+      "For me, successful development means creating digital tools that genuinely work for people and meet business needs. I combine <technicalExpertise>deep technical expertise</technicalExpertise> in modern frameworks like <technicalExpertise>React</technicalExpertise> with a practical commitment to understanding your specific goals and user requirements.",
+      "This dual focus results in applications that are not only <powerfulAndEfficient>powerful and efficient under the hood</powerfulAndEfficient> but also demonstrably effective in solving the challenges you face. I prioritize <scalableArchitecture>scalable architecture and clean code</scalableArchitecture> because these directly impact <scalableArchitecture>performance</scalableArchitecture> and <scalableArchitecture>long-term</scalableArchitecture> viability.",
+      "Ultimately, my aim is to build solutions that are <robustMaintainable>robust, maintainable</robustMaintainable>, and contribute meaningfully to achieving your objectives, ensuring your technology investment delivers <realWorldValue>real-world value</realWorldValue>."
+    ]
+  },
+  "testimonials": {
+    "headingPart1": "What clients say",
+    "headingPart2": "about my work.",
+    "testimonial1": {
+      "name": "Aleksandra Łukaszenia",
+      "company": "Skrzynka Synka",
+      "text": "I recommend Christopher's services. Full professionalism and commitment! Quick implementation!"
+    },
+    "testimonial2": {
+      "name": "Iwona Troc",
+      "company": "Mental Coach",
+      "text": "I recommend working with Christopher. I commissioned a website and I am very satisfied. Full professionalism, reliability, quick execution. Big plus for flexibility and communicativeness."
+    },
+    "testimonial3": {
+      "name": "Michał W.",
+      "company": "EuroOil",
+      "text": "I recommend working with Chris. Very good contact. Quick implementation. The best offer I got when looking for a contractor, recommend!"
+    },
+    "testimonial4": {
+      "name": "Paweł Oliwa",
+      "company": "PMI Geodezja",
+      "text": "I recommend Christopher's services. Very good contact. Quick implementation. Affordable prices. The best offer I found."
+    },
+    "testimonial5": {
+      "name": "Wojciech B.",
+      "company": "WB Hale",
+      "text": "I highly recommend working with Chris. Everything went through smoothly, even after the work was done there was no problem with further contact and performing further services."
+    },
+    "testimonial6": {
+      "name": "Tomasz M.",
+      "company": "Nagrobki Michno",
+      "text": "Christopher's execution of the commissioned work went smoothly. I highly recommend his services."
+    }
+  },
+  "faq": {
+    "headingPart1": "Your questions",
+    "headingPart2": "answered.",
+    "cta": {
+      "profileAlt": "Krzysztof Zaleski",
+      "stillNotSure": "Still not sure?",
+      "sendEmail": "Send me an email.",
+      "description": "Whether you have a question, need a quote, or want to discuss your ideas, feel free to reach out."
+    },
+    "items": {
+      "faq1": {
+        "question": "How long does a typical project take to complete?",
+        "answer": "Project timelines vary based on complexity, features, and your specific requirements. A simple website or feature might take a few weeks, while more comprehensive web or mobile applications can range from 1-3+ months. I'll provide a detailed estimate after our initial consultation and project scope definition."
+      },
+      "faq2": {
+        "question": "Can you work with existing designs or a design team?",
+        "answer": "Absolutely. I frequently collaborate with designers and work from existing mockups or design systems. I'm comfortable implementing designs provided in formats like <figmaAdobe>Figma or Adobe XD</figmaAdobe>. My goal is to translate the visual design into a pixel-perfect, functional, and responsive user interface, ensuring the <codeAccuratelyReflects>code accurately reflects the intended user experience</codeAccuratelyReflects>."
+      },
+      "faq3": {
+        "question": "What makes your development process unique?",
+        "answer": "My process emphasizes <communicationCollaborationQuality>clear communication, collaboration, and high-quality code</communicationCollaborationQuality>. I often use agile principles, breaking down projects into manageable sprints for transparency and flexibility. I focus on writing <cleanMaintainableCode>clean, maintainable, and well-documented code</cleanMaintainableCode> (especially with React and modern JavaScript), adhering to best practices. Regular updates and opportunities for feedback ensure the project stays aligned with your vision and business goals, leading to a <robustScalableProduct>robust and scalable final product</robustScalableProduct>."
+      },
+      "faq4": {
+        "question": "Do you offer support and maintenance after the project is completed?",
+        "answer": "Yes, building the application is often just the beginning. I offer various <supportMaintenancePackages>support and maintenance packages</supportMaintenancePackages> to keep your website or application secure, updated, and performing optimally. This can include technical updates, bug fixes, performance monitoring, backups, and adding minor enhancements. We can discuss a <tailoredPlan>plan tailored to your specific needs</tailoredPlan> post-launch."
+      }
     }
   }
 }

@@ -4,10 +4,12 @@ import { Button } from '@/components/ui/button/Button'
 import { useCopyString } from '@/hooks/useCopy'
 import { EMAIL } from '@/utils/consts'
 import { IconCopy, IconCopyCheckFilled, IconMailFilled } from '@tabler/icons-react'
+import { useTranslations } from 'next-intl' // Import useTranslations
 import { useEffect, useRef, useState } from 'react'
 import { LocalTime } from './_components/LocalTime'
 
 function Contact() {
+  const t = useTranslations('contactSection') // Initialize translations for 'contactSection'
   const [type, setType] = useState<null | 'email' | 'copy'>(null)
   const timeout = useRef<any>(null)
   const { isCopied, copy } = useCopyString(EMAIL)
@@ -24,17 +26,19 @@ function Contact() {
   }
 
   useEffect(() => {
+    // Initialize timeout to clear type after a delay if no interaction
     timeout.current = setTimeout(() => {
       setType(null)
-    }, 100)
+    }, 2000) // Increased delay for initial state or if mouse leaves quickly
+
     return () => clearTimeout(timeout.current)
-  }, [])
+  }, []) // Empty dependency array means this effect runs once on mount and cleanup on unmount
 
   return (
     <div className="mt-5 flex flex-col gap-2">
       <div className="flex flex-row items-center gap-3">
         <a
-          href="mailto:zlvsky@icloud.com"
+          href={`mailto:${EMAIL}`} // Use EMAIL const
           className=" cursor-pointer rounded-xl border-[1.5px]  border-white/5 bg-black p-[1.5px] shadow-darkbutton transition-transform ease-out hover:scale-105 active:scale-95"
           onMouseEnter={() => handleSetType('email')}
           onMouseLeave={handleClearType}
@@ -57,13 +61,13 @@ function Contact() {
           )}
         </Button>
         <div className="flex flex-col text-sm text-gray54">
-          <span>Feel free to reach me out</span>
+          <span>{t('reachOut')}</span>
           {type === null ? (
-            <span>Send me an email</span>
+            <span>{t('prompt.emailDefault')}</span>
           ) : type === 'email' ? (
-            <span className="font-semibold">Open in your mail app</span>
+            <span className="font-semibold">{t('prompt.emailHover')}</span>
           ) : (
-            <span className="font-semibold">Copy to clipboard</span>
+            <span className="font-semibold">{t('prompt.copyHover')}</span>
           )}
         </div>
       </div>

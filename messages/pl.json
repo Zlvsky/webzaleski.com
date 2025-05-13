@@ -4,18 +4,64 @@
     "description": "Uruchom swoje portfolio ze stylem"
   },
   "nav": {
-    "home": "Strona główna",
-    "features": "Funkcje",
-    "pricing": "Cennik",
-    "testimonials": "Opinie",
-    "contact": "Kontakt",
-    "language": "Język"
+    "language": "Język",
+    "links": {
+      "work": "Projekty",
+      "services": "Usługi",
+      "about": "O mnie",
+      "faq": "FAQ"
+    },
+    "launching": "Wkrótce dostępne"
   },
   "hero": {
-    "heading": "Uruchom swoje portfolio ze stylem",
-    "subheading": "Nowoczesny, responsywny szablon portfolio zbudowany z Next.js i Tailwind CSS",
+    "availableFor": "Jestem dostępny na",
+    "mainHeading": "Ekspert React & WordPress. Nowoczesne aplikacje webowe i strony internetowe.",
+    "subheading": "Buduję <span>niezawodne strony i aplikacje</span>, które wspierają <span>rozwój Twojego biznesu</span>.",
+    "sublist1": "Rozwiązania szyte na miarę, precyzyjnie dopasowane do Twoich celów biznesowych.",
+    "sublist2": "Projektowanie intuicyjnych interfejsów, przyjaznych dla Twoich klientów i zespołu.",
+    "sublist3": "Nowoczesne aplikacje oparte na czystym kodzie React, tworzone zgodnie z najlepszymi praktykami.",
     "ctaPrimary": "Rozpocznij",
     "ctaSecondary": "Dowiedz się więcej"
+  },
+  "heroCards": {
+    "whoIWorkWith": {
+      "title": "Z Kim Pracuję",
+      "items": [
+        "Startupy i Innowatorzy",
+        "Ugruntowane Firmy",
+        "Agencje Kreatywne",
+        "Przedsiębiorcy Indywidualni"
+      ]
+    },
+    "whatIDo": {
+      "title": "Czym Się Zajmuję",
+      "items": [
+        "Niestandardowe Aplikacje Webowe",
+        "MVP (Minimum Viable Products)",
+        "Rozwój React i Next.js",
+        "Rozwiązania Full-Stack",
+        "Aplikacje React Native",
+        "Rozwój WordPress",
+        "Utrzymanie i Optymalizacja Stron WWW",
+        "Rozwiązania WooCommerce",
+        "Optymalizacja Wydajności"
+      ]
+    },
+    "techStackTitle": "Stos Technologiczny, z Którym Pracuję",
+    "viewAll": "Zobacz wszystko"
+  },
+  "contactSection": {
+    "reachOut": "Zapraszam do kontaktu",
+    "poland": "Polska, czas lokalny:",
+    "prompt": {
+      "emailDefault": "Wyślij mi e-mail",
+      "emailHover": "Otwórz pocztę",
+      "copyHover": "Kopiuj do schowka"
+    }
+  },
+  "experience": {
+    "myexperience": "Moje Doświadczenie",
+    "now": "Teraz"
   },
   "features": {
     "heading": "Wszystko, czego potrzebujesz",
@@ -82,25 +128,6 @@
       "cta": "Wybierz Premium"
     }
   },
-  "testimonials": {
-    "heading": "Co mówią ludzie",
-    "subheading": "Nie wierz nam na słowo",
-    "testimonial1": {
-      "quote": "Launchfolio pomogło mi stworzyć oszałamiające portfolio w kilka minut. Nigdy nie otrzymałam tylu komplementów!",
-      "author": "Sarah Johnson",
-      "role": "Grafik"
-    },
-    "testimonial2": {
-      "quote": "Jako programista doceniam, jak dobrze zbudowany i konfigurowalny jest ten szablon. Zaoszczędził mi tygodnie pracy.",
-      "author": "Michael Chen",
-      "role": "Frontend Developer"
-    },
-    "testimonial3": {
-      "quote": "Prostota i elegancja Launchfolio jest niezrównana. Moi klienci kochają rezultaty.",
-      "author": "Emily Rodriguez",
-      "role": "Fotograf"
-    }
-  },
   "contact": {
     "heading": "Skontaktuj się",
     "subheading": "Masz pytania? Jesteśmy tutaj, aby pomóc",
@@ -121,6 +148,163 @@
       "privacy": "Polityka prywatności",
       "terms": "Warunki korzystania",
       "contact": "Kontakt"
+    }
+  },
+  "work": {
+    "featuredWork": "Wyróżnione Projekty",
+    "projectLogoAlt": "Logo {projectName}",
+    "projects": {
+      "realm-of-dungeons": {
+        "name": "Realm of Dungeons",
+        "shortDescription": "Mobilna gra RPG w stylu idle w klimacie mrocznego fantasy pixel art. Progresja oparta na interfejsie użytkownika w stylu retro, inspirowana klasykami takimi jak Gladiatus i S&F. Stworzona w React Native z Expo.",
+        "state": "Wkrótce premiera w App Store i Google Play"
+      },
+      "visity": {
+        "name": "Visity",
+        "shortDescription": "Aplikacja SaaS do tworzenia prostych stron landing page w kilka minut, skierowana do małych firm.",
+        "state": "Niepowodzenie"
+      },
+      "feedback-widget": {
+        "name": "Feedback Widget",
+        "shortDescription": "Widget do zbierania opinii, który można osadzić na stronach internetowych, aby zbierać opinie i wysyłać logi konsoli wraz ze zrzutami ekranu strony.",
+        "state": "Używany w ponad 10 projektach"
+      },
+      "konva-moodboard": {
+        "name": "Konva Moodboard",
+        "shortDescription": "Aplikacja internetowa do tworzenia i eksportowania moodboardów na płótnie z niestandardowymi obrazami.",
+        "state": "Ponad 28 gwiazdek na GitHub"
+      },
+      "one-place": {
+        "name": "One-place",
+        "shortDescription": "Panel administracyjny CRUD do zarządzania firmą opartą na zamówieniach, która nie potrzebuje sklepu internetowego.",
+        "state": "Ponad 44 gwiazdki na GitHub"
+      },
+      "automation-bot": {
+        "name": "Bot Automatyzujący Oferia.pl",
+        "shortDescription": "Niestandardowy bot automatyzujący wstawianie ofert na portalu dla freelancerów IT.",
+        "state": "Działał 24/7 w latach 2021-2023"
+      }
+    }
+  },
+  "services": {
+    "mainHeading": "Przejdźmy do działania<br></br><span>Moje kluczowe usługi.</span>",
+    "techStackCategories": {
+      "frontend": "Front-End",
+      "backend": "Back-End",
+      "websites": "Strony Internetowe",
+      "other": "Inne"
+    },
+    "serviceItems": {
+      "mvpApplications": "Aplikacje MVP",
+      "expertReactFrontend": "Ekspercki Rozwój Front-end React",
+      "fullstackDevelopment": "Rozwój Full-stack",
+      "reactNativeDevelopment": "Rozwój React Native",
+      "landingPages": "Strony Docelowe (Landing Pages)",
+      "wordpressWebsites": "Strony WordPress",
+      "woocommerceSolutions": "Rozwiązania WooCommerce",
+      "modernJamstack": "Nowoczesne Strony Jamstack (Next.js/Gatsby)",
+      "ongoingSupport": "Bieżące Utrzymanie i Wsparcie Stron WWW"
+    },
+    "techLabels": {
+      "typescript": "TypeScript",
+      "react": "React",
+      "reactNative": "React Native",
+      "nextjs": "Next.js",
+      "tailwindCss": "Tailwind CSS",
+      "framerMotion": "Framer Motion",
+      "radixUi": "Radix UI",
+      "nodejs": "Node.js",
+      "prisma": "Prisma",
+      "postgresql": "PostgreSQL",
+      "mongodb": "MongoDB",
+      "gatsby": "Gatsby",
+      "wordpress": "WordPress",
+      "html5": "HTML5",
+      "git": "git",
+      "docker": "Docker",
+      "cypress": "Cypress",
+      "figma": "Figma",
+      "firebase": "Firebase"
+    }
+  },
+  "about": {
+    "headingPart1": "Moje podejście do pracy",
+    "headingPart2": "Niezawodny kod, trwałe rozwiązania.",
+    "name": "Krzysztof Zaleski",
+    "copyEmailPrompt": "Naciśnij <kbd>C</kbd>, aby skopiować mój adres e-mail",
+    "emailCopiedToast": "E-mail skopiowany do schowka",
+    "socials": {
+      "email": "E-mail",
+      "x": "X.com",
+      "github": "GitHub",
+      "linkedin": "LinkedIn"
+    },
+    "paragraphs": [
+      "Dla mnie kluczem jest tworzenie narzędzi cyfrowych, które <technicalExpertise>realnie służą ludziom</technicalExpertise> i odpowiadają na potrzeby biznesu. Łączę <technicalExpertise>dogłębną wiedzę techniczną</technicalExpertise> (m.in. <technicalExpertise>React</technicalExpertise>) z praktycznym <technicalExpertise>zrozumieniem Twoich celów</technicalExpertise> i wymagań użytkowników.",
+      "Takie podejście owocuje aplikacjami, które są nie tylko <powerfulAndEfficient>wydajne technicznie</powerfulAndEfficient>, ale przede wszystkim <powerfulAndEfficient>skutecznie rozwiązują Twoje problemy</powerfulAndEfficient>. Kładę nacisk na <scalableArchitecture>skalowalną architekturę i czysty kod</scalableArchitecture>, bo to fundament <scalableArchitecture>wydajności</scalableArchitecture> i <scalableArchitecture>długofalowej stabilności</scalableArchitecture> projektu.",
+      "Moim celem jest dostarczanie rozwiązań <robustMaintainable>solidnych i łatwych w utrzymaniu</robustMaintainable>, które realnie wspierają realizację Twoich celów. Chodzi o to, by Twoja inwestycja w technologię przynosiła <realWorldValue>wymierną, rzeczywistą wartość</realWorldValue>."
+    ]
+  },
+  "testimonials": {
+    "headingPart1": "Co mówią klienci",
+    "headingPart2": "o mojej pracy.",
+    "testimonial1": {
+      "name": "Aleksandra Łukaszenia",
+      "company": "Skrzynka Synka",
+      "text": "Polecam usługi Krzysztofa. Pełen profesjonalizm i zaangażowanie! Szybka realizacja!"
+    },
+    "testimonial2": {
+      "name": "Iwona Troc",
+      "company": "Mental Coach",
+      "text": "Polecam współpracę z Krzysztofem. Zleciłam stronę internetową i jestem bardzo zadowolona. Pełen profesjonalizm, rzetelność, szybkie wykonanie. Duży plus za elastyczność i komunikatywność."
+    },
+    "testimonial3": {
+      "name": "Michał W.",
+      "company": "EuroOil",
+      "text": "Polecam współpracę z Krzyśkiem. Bardzo dobry kontakt. Szybka realizacja. Najlepsza oferta jaką dostałem szukając wykonawcy, polecam!"
+    },
+    "testimonial4": {
+      "name": "Paweł Oliwa",
+      "company": "PMI Geodezja",
+      "text": "Polecam usługi Krzysztofa. Bardzo dobry kontakt. Szybka realizacja. Przystępne ceny. Najlepsza oferta jaką znalazłem."
+    },
+    "testimonial5": {
+      "name": "Wojciech B.",
+      "company": "WB Hale",
+      "text": "Bardzo polecam współpracę z Krzyśkiem. Wszystko przebiegło sprawnie, nawet po wykonaniu zlecenia nie było problemu z dalszym kontaktem i wykonywaniem dalszych usług."
+    },
+    "testimonial6": {
+      "name": "Tomasz M.",
+      "company": "Nagrobki Michno",
+      "text": "Wykonanie zleconej pracy przez Krzysztofa przebiegło sprawnie. Gorąco polecam jego usługi."
+    }
+  },
+  "faq": {
+    "headingPart1": "Twoje pytania,",
+    "headingPart2": "nasze odpowiedzi.",
+    "cta": {
+      "profileAlt": "Krzysztof Zaleski",
+      "stillNotSure": "Nadal nie jesteś pewien?",
+      "sendEmail": "Wyślij mi e-mail.",
+      "description": "Niezależnie od tego, czy masz pytanie, potrzebujesz wyceny, czy chcesz omówić swoje pomysły, śmiało się odezwij."
+    },
+    "items": {
+      "faq1": {
+        "question": "Ile czasu zajmuje typowy projekt?",
+        "answer": "Czas realizacji projektu różni się w zależności od złożoności, funkcji i konkretnych wymagań. Prosta strona internetowa lub funkcja może zająć kilka tygodni, podczas gdy bardziej kompleksowe aplikacje internetowe lub mobilne mogą trwać od 1 do 3+ miesięcy. Szczegółową wycenę przedstawię po wstępnej konsultacji i zdefiniowaniu zakresu projektu."
+      },
+      "faq2": {
+        "question": "Czy możesz pracować z istniejącymi projektami graficznymi?",
+        "answer": "Oczywiście. Często współpracuję z projektantami i pracuję na podstawie istniejących makiet lub systemów projektowych. Swobodnie wdrażam projekty dostarczone w formatach takich jak <figmaAdobe>Figma czy Adobe XD</figmaAdobe>. Moim celem jest przełożenie projektu wizualnego na idealnie odwzorowany, funkcjonalny i responsywny interfejs użytkownika, zapewniając, że <codeAccuratelyReflects>kod dokładnie odzwierciedla zamierzone doświadczenie użytkownika</codeAccuratelyReflects>."
+      },
+      "faq3": {
+        "question": "Co wyróżnia Twój proces deweloperski?",
+        "answer": "Mój proces kładzie nacisk na <communicationCollaborationQuality>jasną komunikację, współpracę i wysokiej jakości kod</communicationCollaborationQuality>. Często stosuję zasady agile, dzieląc projekty na zarządzalne sprinty dla przejrzystości i elastyczności. Skupiam się na pisaniu <cleanMaintainableCode>czystego, łatwego w utrzymaniu i dobrze udokumentowanego kodu</cleanMaintainableCode> (szczególnie w React i nowoczesnym JavaScript), przestrzegając najlepszych praktyk. Regularne aktualizacje i możliwość przekazywania opinii zapewniają, że projekt pozostaje zgodny z Twoją wizją i celami biznesowymi, prowadząc do <robustScalableProduct>solidnego i skalowalnego produktu końcowego</robustScalableProduct>."
+      },
+      "faq4": {
+        "question": "Czy oferujesz wsparcie i utrzymanie po zakończeniu projektu?",
+        "answer": "Tak, stworzenie aplikacji to często dopiero początek. Oferuję różne <supportMaintenancePackages>pakiety wsparcia i utrzymania</supportMaintenancePackages>, aby Twoja strona internetowa lub aplikacja pozostała bezpieczna, aktualna i działała optymalnie. Może to obejmować aktualizacje techniczne, poprawki błędów, monitorowanie wydajności, kopie zapasowe i dodawanie drobnych ulepszeń. Możemy omówić <tailoredPlan>plan dostosowany do Twoich konkretnych potrzeb</tailoredPlan> po uruchomieniu."
+      }
     }
   }
 }

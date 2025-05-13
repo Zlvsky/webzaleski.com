@@ -27,47 +27,47 @@ import {
   IconBrandTailwind,
   IconBrandTypescript,
   IconBrandWordpress
-} from '@tabler/icons-react' // Or your preferred Icon library
+} from '@tabler/icons-react'
 
-export const servicesList: { name: string; Icon: any }[] = [
-  { name: 'MVP Applications', Icon: MvpIcon },
-  { name: 'Front-end Development', Icon: FrontendIcon },
-  { name: 'Full-stack Development', Icon: FullstackIcon },
-  { name: 'React Native Development', Icon: MobileIcon },
-  { name: 'Landing Pages', Icon: LandingIcon },
-  { name: 'WordPress Websites', Icon: WordpressIcon },
-  { name: 'WooCommerce Solutions', Icon: WoocommerceIcon },
-  { name: 'Next.js / Gatsby Websites', Icon: NextIcon },
-  { name: 'Maintenance & Support', Icon: FixesIcon }
+export const servicesList: { nameKey: string; Icon: any }[] = [
+  { nameKey: 'mvpApplications', Icon: MvpIcon },
+  { nameKey: 'expertReactFrontend', Icon: FrontendIcon },
+  { nameKey: 'fullstackDevelopment', Icon: FullstackIcon },
+  { nameKey: 'reactNativeDevelopment', Icon: MobileIcon },
+  { nameKey: 'landingPages', Icon: LandingIcon },
+  { nameKey: 'wordpressWebsites', Icon: WordpressIcon },
+  { nameKey: 'woocommerceSolutions', Icon: WoocommerceIcon },
+  { nameKey: 'modernJamstack', Icon: NextIcon },
+  { nameKey: 'ongoingSupport', Icon: FixesIcon }
 ]
 
 export const frontendStack = [
-  { Icon: IconBrandTypescript, label: 'TypeScript' },
-  { Icon: IconBrandReact, label: 'React' },
-  { Icon: IconBrandReactNative, label: 'React Native' },
-  { Icon: IconBrandNextjs, label: 'Next.js' },
-  { Icon: IconBrandTailwind, label: 'Tailwind CSS' },
-  { Icon: IconBrandFramerMotion, label: 'Framer Motion' },
-  { Icon: IconBrandRadixUi, label: 'Radix UI' }
+  { Icon: IconBrandTypescript, labelKey: 'typescript' },
+  { Icon: IconBrandReact, labelKey: 'react' },
+  { Icon: IconBrandReactNative, labelKey: 'reactNative' },
+  { Icon: IconBrandNextjs, labelKey: 'nextjs' },
+  { Icon: IconBrandTailwind, labelKey: 'tailwindCss' },
+  { Icon: IconBrandFramerMotion, labelKey: 'framerMotion' },
+  { Icon: IconBrandRadixUi, labelKey: 'radixUi' }
 ]
 
 export const backendStack = [
-  { Icon: IconBrandNodejs, label: 'Node.js' },
-  { Icon: IconBrandPrisma, label: 'Prisma' },
-  { Icon: PostgresIcon, label: 'PostgreSQL' },
-  { Icon: IconBrandMongodb, label: 'MongoDB' }
+  { Icon: IconBrandNodejs, labelKey: 'nodejs' },
+  { Icon: IconBrandPrisma, labelKey: 'prisma' },
+  { Icon: PostgresIcon, labelKey: 'postgresql' },
+  { Icon: IconBrandMongodb, labelKey: 'mongodb' }
 ]
 
 export const websitesStack = [
-  { Icon: IconBrandGatsby, label: 'Gatsby' },
-  { Icon: IconBrandWordpress, label: 'WordPress' },
-  { Icon: IconBrandHtml5, label: 'HTML5' }
+  { Icon: IconBrandGatsby, labelKey: 'gatsby' },
+  { Icon: IconBrandWordpress, labelKey: 'wordpress' },
+  { Icon: IconBrandHtml5, labelKey: 'html5' }
 ]
 
 export const otherStack = [
-  { Icon: IconBrandGit, label: 'git' },
-  { Icon: IconBrandDocker, label: 'Docker' },
-  { Icon: IconBrandCypress, label: 'Cypress' },
-  { Icon: IconBrandFigma, label: 'Figma' },
-  { Icon: IconBrandFirebase, label: 'Firebase' }
+  { Icon: IconBrandGit, labelKey: 'git' },
+  { Icon: IconBrandDocker, labelKey: 'docker' },
+  { Icon: IconBrandCypress, labelKey: 'cypress' },
+  { Icon: IconBrandFigma, labelKey: 'figma' },
+  { Icon: IconBrandFirebase, labelKey: 'firebase' }
 ]

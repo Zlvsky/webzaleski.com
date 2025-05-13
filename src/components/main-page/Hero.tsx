@@ -1,8 +1,9 @@
 'use client'
 
 import { format } from 'date-fns'
+import { enUS, pl } from 'date-fns/locale' // Import locales for date-fns
 import { motion } from 'framer-motion'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
 import { cn } from '@/utils'
 import {
@@ -15,15 +16,16 @@ import {
   IconBrandWordpress
 } from '@tabler/icons-react'
 import SmallWrap from '../layout/containers/SmallWrap'
-import Contact from './old/Contact'
+import Contact from './old/Contact' // Assuming Contact is also updated or will be
 import { PingDot } from './old/_components/PingDot'
 
 interface HeroCardProps {
   theme: 'light' | 'dark'
   title: string
-  items: string[]
+  items: readonly string[] // Use readonly string[] if items come from t() which returns this type
   showViewAll?: boolean
   className?: string
+  viewAllText?: string
 }
 
 const HeroCard: React.FC<HeroCardProps> = ({
@@ -31,13 +33,12 @@ const HeroCard: React.FC<HeroCardProps> = ({
   title,
   items,
   showViewAll = false,
-  className = ''
+  className = '',
+  viewAllText
 }) => {
   const isLight = theme === 'light'
 
-  const cardClasses = isLight
-    ? 'bg-[#f5f5f5]' // Adjusted light theme background
-    : 'bg-[#121212] text-white' // Adjusted dark theme
+  const cardClasses = isLight ? 'bg-[#f5f5f5]' : 'bg-[#121212] text-white'
 
   const titleClasses = 'text-xs font-semibold uppercase tracking-wider mb-4'
   const titleColorClass = isLight ? 'text-gray-500' : 'text-gray-400'
@@ -56,18 +57,18 @@ const HeroCard: React.FC<HeroCardProps> = ({
           <span
             key={index}
             className={cn(
-              'cursor-default rounded-[4px] border  border-dashed px-3 py-1 text-sm transition-colors',
+              'flex-grow cursor-default rounded-[4px] border border-dashed  px-3 py-1 text-center text-sm transition-colors',
               tagClasses
             )}
           >
             {item}
           </span>
         ))}
-        {showViewAll && isLight && (
+        {showViewAll && isLight && viewAllText && (
           <button
             className={`rounded-md px-3 py-1.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 ${viewAllButtonClasses}`}
           >
-            View all
+            {viewAllText}
           </button>
         )}
       </div>
@@ -77,40 +78,26 @@ const HeroCard: React.FC<HeroCardProps> = ({
 
 export default function Hero() {
   const t = useTranslations('hero')
-  const tc = useTranslations('heroCards') // Assuming you have translations for cards
+  const tc = useTranslations('heroCards')
+  const currentLocale = useLocale()
 
-  const techIWorkWith = [
-    'React Apps',
-    'React Native Mobile Apps',
-    'Full Stack Applications',
-    'WordPress & WooCommerce',
-    'Gatsby Websites',
-    'Next.js Websites',
-    'Node.js APIs',
-    'UI/UX Design Systems',
-    'Figma Prototyping'
-  ]
+  const dateLocale = currentLocale === 'pl' ? pl : enUS
 
-  const whatIDo = [
-    'Web Applications',
-    'Mobile Applications',
-    'Websites',
-    'MVPs',
-    'Frontend Development',
-    'UI/UX Design',
-    'Performance Optimization',
-    'SEO Optimization',
-    'Maintenance & Support',
-    'WooCommerce Shops'
-  ]
+  // Get arrays of strings from translations
+  const whoIWorkWithItems = tc.raw('whoIWorkWith.items') as readonly string[]
+  const whatIDoItems = tc.raw('whatIDo.items') as readonly string[]
 
   return (
     <SmallWrap id="main">
       <div className="relative pb-16 ">
         <div className="grid grid-cols-1 items-center gap-12 pt-10 lg:grid-cols-2">
           <div className="flex flex-col">
-            <motion.div className="mb-2 flex w-max items-center gap-2 rounded-full border border-[#f0f0f0] bg-white py-2 pl-3 pr-4 text-xs font-semibold leading-3 shadow-glossyinside">
-              <PingDot /> {`Available for ${format(new Date(), "MMMM''yy")}`}
+            <motion.div className="mb-2 flex w-max items-center gap-1  rounded-full border border-[#f0f0f0] bg-white py-2 pl-3 pr-4 text-xs font-semibold leading-3 shadow-glossyinside">
+              <PingDot />
+              {t('availableFor')}
+              <span className="capitalize">
+                {format(new Date(), "LLLL ''yy", { locale: dateLocale })}
+              </span>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -118,11 +105,14 @@ export default function Hero() {
               transition={{ duration: 0.5 }}
               className="text-center lg:text-left"
             >
-              <h1 className="text-3xl font-medium leading-tight tracking-tight md:text-5xl">
-                {t('heading')}
+              <h1 className="text-3xl font-medium leading-tight tracking-tight md:text-4xl">
+                {t('mainHeading')}
               </h1>
-              <p className="mx-auto mt-8 max-w-2xl text-base text-gray54 lg:mx-0">
-                {t('subheading')}
+              <p className="mx-auto mt-8 max-w-2xl text-sm text-[#828282] lg:mx-0">
+                {t.rich('subheading', {
+                  span: (chunks) => <span className="text-black">{chunks}</span>,
+                  br: () => <br />
+                })}
               </p>
               <ul className="mt-3 flex list-inside list-disc flex-col gap-2 text-sm text-gray54">
                 <li>{t('sublist1')}</li>
@@ -143,16 +133,18 @@ export default function Hero() {
               <div className="flex flex-col gap-8">
                 <HeroCard
                   theme="light"
-                  title={tc('whoWeWorkWith.title')}
-                  items={techIWorkWith}
+                  title={tc('whoIWorkWith.title')}
+                  items={whoIWorkWithItems}
+                  // showViewAll // Decide if you still need this logic or if it's part of a specific card
+                  // viewAllText={tc('viewAll')} // Pass translated "View all" text
                 />
               </div>
               <div className="mt-4 flex flex-col gap-8">
-                <HeroCard theme="dark" title={tc('whatWeDo.title')} items={whatIDo} />
+                <HeroCard theme="dark" title={tc('whatIDo.title')} items={whatIDoItems} />
               </div>
               <div className="mt-6 flex w-full flex-col items-center  justify-center">
                 <span className="w-full text-center font-mono text-xs uppercase text-[#71717a]">
-                  Tech Stack I Work With
+                  {tc('techStackTitle')}
                 </span>
                 <div className="mt-1 flex flex-row items-center justify-center gap-3">
                   <IconBrandTypescript className="h-7 w-7 text-[#71717a]" stroke={1} />
