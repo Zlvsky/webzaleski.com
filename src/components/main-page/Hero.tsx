@@ -40,7 +40,7 @@ const HeroCard: React.FC<HeroCardProps> = ({
 
   const cardClasses = isLight ? 'bg-[#f5f5f5]' : 'bg-[#121212] text-white'
 
-  const titleClasses = 'text-xs font-semibold uppercase tracking-wider mb-4'
+  const titleClasses = 'text-xs  uppercase tracking-wider mb-4'
   const titleColorClass = isLight ? 'text-gray-500' : 'text-gray-400'
 
   const tagClasses = isLight
@@ -92,7 +92,7 @@ export default function Hero() {
       <div className="relative pb-16 ">
         <div className="grid grid-cols-1 items-center gap-12 pt-10 lg:grid-cols-2">
           <div className="flex flex-col">
-            <motion.div className="mb-2 flex w-max items-center gap-1  rounded-full border border-[#f0f0f0] bg-white py-2 pl-3 pr-4 text-xs font-semibold leading-3 shadow-glossyinside">
+            <motion.div className="mx-auto mb-2 flex w-max items-center gap-1 rounded-full  border border-[#f0f0f0] bg-white py-2 pl-3 pr-4 text-xs leading-3 shadow-glossyinside sm:mx-0">
               <PingDot />
               {t('availableFor')}
               <span className="capitalize">
@@ -103,12 +103,12 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-center lg:text-left"
+              className="text-left"
             >
               <h1 className="text-3xl font-medium leading-tight tracking-tight md:text-4xl">
                 {t('mainHeading')}
               </h1>
-              <p className="mx-auto mt-8 max-w-2xl text-sm text-[#828282] lg:mx-0">
+              <p className="mx-auto mt-8 max-w-2xl text-base text-[#828282] sm:mx-0">
                 {t.rich('subheading', {
                   span: (chunks) => <span className="text-black">{chunks}</span>,
                   br: () => <br />

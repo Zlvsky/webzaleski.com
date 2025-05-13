@@ -62,13 +62,13 @@ function Footer() {
           </svg>
         </div>
 
-        <div className="flex w-full flex-row items-center justify-between text-xs text-[#828282]">
-          <div className="flex items-center gap-1.5">
+        <div className="flex w-full flex-row flex-wrap items-center justify-between text-xs text-[#828282]">
+          <div className="order-1 flex items-center gap-1.5">
             <IconMapPin size={14} stroke={1.5} />
             <span className="font-mono">BIALYSTOK, POLAND</span>{' '}
             {/* Replace with your actual location */}
           </div>
-          <div className="flex flex-row items-center justify-center gap-5">
+          <div className="order-3 mt-4 flex w-full flex-row items-center justify-center gap-5 sm:order-2 sm:mt-0 sm:w-auto">
             {socialLinks.map((link) => (
               <Link
                 key={link.label}
@@ -82,7 +82,7 @@ function Footer() {
               </Link>
             ))}
           </div>
-          <div className="flex items-center gap-1.5">
+          <div className="order-2 flex items-center gap-1.5 sm:order-3">
             <IconCopyright size={14} stroke={1.5} />{' '}
             <span className="font-mono">
               {year} {NAME}

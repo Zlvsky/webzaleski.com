@@ -120,7 +120,7 @@ const Testimonials = () => {
   const thirdColumn = translatedTestimonials.slice(4, 6)
 
   return (
-    <div className="w-full border-b border-gray-200 pt-20">
+    <div className="w-full border-b border-gray-200 pt-10 sm:pt-20">
       <SmallWrap>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -129,14 +129,14 @@ const Testimonials = () => {
           viewport={{ once: true }}
           className="flex flex-col"
         >
-          <h2 className="text-4xl font-medium leading-tight text-[#050505] sm:text-5xl">
+          <h2 className="text-3xl font-medium leading-tight text-[#050505] sm:text-5xl">
             <span className="text-[#828282]">{t('headingPart1')}</span>
             <br />
             {t('headingPart2')}
           </h2>
         </motion.div>
 
-        <div className="mt-10 flex max-h-[740px] justify-center gap-6 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)]">
+        <div className="mt-4 flex max-h-[740px] justify-center gap-6 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] sm:mt-10">
           <TestimonialsColumn testimonials={firstColumn} duration={15} />
           <TestimonialsColumn
             testimonials={secondColumn}

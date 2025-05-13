@@ -65,11 +65,11 @@ function Experience() {
   return (
     <div className="w-full border-b border-t border-gray-200 py-10">
       <SmallWrap>
-        <div className="relative flex w-full flex-row gap-20">
+        <div className="relative flex w-full flex-col gap-6 md:flex-row md:gap-20">
           {/* Header Section*/}
           <div className="flex items-center justify-between">
             {/* Adjusted mb and added px for alignment with timeline start */}
-            <h3 className="text-lg font-normal text-gray-700 md:text-xl">
+            <h3 className="text-3xl font-medium text-[#050505] md:text-xl">
               {t('myexperience')}
             </h3>
           </div>
@@ -103,7 +103,7 @@ function Experience() {
                         href={exp.companyUrl || '#'}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`h-8 w-8 cursor-pointer rounded-md border-[1.5px]  border-white/5 bg-black p-[1.5px] shadow-darkbutton transition-transform ease-out hover:scale-105 active:scale-95`}
+                        className={`aspect-square h-8 w-8 cursor-pointer rounded-md border-[1.5px]  border-white/5 bg-black p-[1.5px] shadow-darkbutton transition-transform ease-out hover:scale-105 active:scale-95`}
                       >
                         <Image
                           src={exp.iconUrl || ''}

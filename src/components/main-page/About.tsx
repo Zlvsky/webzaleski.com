@@ -85,11 +85,11 @@ const About: React.FC = () => {
   ]
 
   return (
-    <div className="w-full border-b border-gray-200 py-24">
+    <div className="w-full border-b border-gray-200 py-12 sm:py-24">
       <SmallWrap>
         {/* Header Section */}
         <div className="mb-12 text-left md:mb-16">
-          <h2 className="text-4xl font-medium  text-[#050505] sm:text-5xl">
+          <h2 className="text-3xl font-medium  text-[#050505] sm:text-5xl">
             <span className="text-[#828282]">{t('headingPart1')}</span>
             <br />
             {t('headingPart2')}
@@ -119,12 +119,14 @@ const About: React.FC = () => {
                 🇵🇱
               </span>
             </h2>
-            <p className="text-md mb-6 font-mono text-gray-600">fullstack developer</p>
+            <p className="text-md mb-2 font-mono text-gray-600 sm:mb-6">
+              fullstack developer
+            </p>
 
-            <div className="mb-4">
+            <div className="sm:mb-4">
               <button
                 onClick={copyEmailToClipboard}
-                className="text-sm text-gray-500 transition-colors hover:text-black"
+                className="hidden text-sm text-gray-500 transition-colors hover:text-black sm:flex"
               >
                 {t.rich('copyEmailPrompt', {
                   kbd: (chunks) => (

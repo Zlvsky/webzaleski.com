@@ -27,7 +27,7 @@ const ServiceListItem: React.FC<ServiceItemProps> = ({ nameKey, Icon }) => {
   return (
     <div className="relative flex items-center gap-4">
       <Icon width={40} height={40} />
-      <span className="text-xl font-medium text-black">{t(nameKey)}</span>
+      <span className="text-base font-medium text-black sm:text-xl">{t(nameKey)}</span>
     </div>
   )
 }
@@ -41,7 +41,7 @@ const TechStackIcon: React.FC<TechIconProps> = ({ Icon, labelKey }) => {
         <TooltipTrigger>
           <div
             aria-label={translatedLabel}
-            className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#dedede] bg-white p-3 shadow-service transition-shadow hover:shadow-md"
+            className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#dedede] bg-white p-3 shadow-service transition-shadow hover:shadow-md sm:h-12 sm:w-12"
           >
             <Icon stroke={1} height={24} width={24} />
           </div>
@@ -59,16 +59,18 @@ const Services: React.FC = () => {
   const tc = useTranslations('services.techStackCategories') // For category titles
 
   return (
-    <div className="w-full border-b border-gray-200 py-24">
+    <div className="w-full border-b border-gray-200 py-12 sm:py-24">
       <SmallWrap>
         <div className="grid grid-cols-1 items-start gap-16 md:grid-cols-2 md:gap-24">
           {/* Left Column */}
           <div className="flex flex-col">
-            <h1 className="text-lg font-medium leading-tight text-[#828282] md:text-5xl">
+            <h1 className="text-3xl font-medium leading-tight text-[#828282] md:text-5xl">
               {t.rich('mainHeading', {
                 br: () => <br />,
                 span: (chunks) => (
-                  <span className="font-semibold text-[#050505]">{chunks}</span>
+                  <span className="font-medium text-[#050505] md:font-semibold">
+                    {chunks}
+                  </span>
                 )
               })}
             </h1>
@@ -125,7 +127,7 @@ const Services: React.FC = () => {
           </div>
 
           {/* Right Column */}
-          <div className="flex flex-col space-y-10 pt-2">
+          <div className="flex flex-col space-y-6 pt-2 sm:space-y-10">
             {servicesList.map((service) => (
               <ServiceListItem
                 key={service.nameKey}

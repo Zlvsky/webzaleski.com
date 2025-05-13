@@ -48,7 +48,7 @@ const SingleProject = ({
         </Link>
       )}
       <div className="flex flex-col justify-between pr-4 sm:flex-row">
-        <p className="text-grayText1 dark:text-grayText2 sm:w-3/5">{shortDescription}</p>
+        <p className="text-grayText1 sm:w-3/5 dark:text-grayText2">{shortDescription}</p>
         <div className="items-end text-right sm:w-2/5">
           <div className="flex flex-col justify-end">
             <span className="text-sm text-[#777] dark:text-grayText2">{year}</span>

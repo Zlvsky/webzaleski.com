@@ -82,7 +82,7 @@ const FaqItem = React.forwardRef<
       >
         <h3
           className={cn(
-            'text-left text-base font-normal transition-colors duration-200',
+            'truncate text-left text-base font-normal transition-colors duration-200',
             'text-foreground/70',
             isOpen && 'text-foreground'
           )}
@@ -141,12 +141,12 @@ const Faq: React.FC = () => {
   const t = useTranslations('faq')
 
   return (
-    <div className="w-full border-b border-gray-200 py-16 md:py-24">
+    <div className="w-full border-b border-gray-200 py-12 md:py-24">
       <SmallWrap>
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-5 lg:gap-16">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-5 lg:gap-16">
           <div className="lg:col-span-3">
             <div className="mb-10 text-left">
-              <h2 className="text-4xl font-medium leading-tight text-[#050505] sm:text-5xl">
+              <h2 className="text-3xl font-medium leading-tight text-[#050505] sm:text-5xl">
                 <span className="text-[#828282]">{t('headingPart1')}</span>
                 <br />
                 {t('headingPart2')}
@@ -156,7 +156,7 @@ const Faq: React.FC = () => {
           </div>
 
           <div className="lg:col-span-2">
-            <div className="top-24 rounded-xl border border-[#dedede] bg-white p-8 shadow-work2">
+            <div className="top-24 rounded-xl border border-[#dedede] bg-white p-4 shadow-work2 sm:p-8">
               <div className="relative inline-block">
                 <Image
                   style={{
