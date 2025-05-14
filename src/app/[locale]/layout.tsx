@@ -1,4 +1,3 @@
-import { ThemeProvider } from '@/components/providers/ThemeProvider'
 import { routing } from '@/i18n/routing'
 import { Analytics } from '@vercel/analytics/react'
 import type { Metadata } from 'next'
@@ -47,11 +46,7 @@ export default async function RootLayout({
       <link rel="icon" type="image/png" href="/favicon-16x16.png" />
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       <body className={`${switzer.className} ${jetbrainsmono.variable}`}>
-        <NextIntlClientProvider>
-          <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-            {children}
-          </ThemeProvider>
-        </NextIntlClientProvider>
+        <NextIntlClientProvider>{children}</NextIntlClientProvider>
         <Analytics />
         <Toaster position="bottom-center" offset={{ bottom: '40px' }} />
       </body>
