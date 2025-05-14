@@ -51,14 +51,14 @@ const WorkButton = ({
           <div className="flex w-full flex-row items-center justify-between">
             <div className="flex flex-row items-center gap-2">
               <div
-                className={`h-8 w-8 cursor-pointer rounded-md border-[1.5px]  border-white/5 bg-black p-[1.5px] shadow-darkbutton transition-transform ease-out hover:scale-105 active:scale-95`}
+                className={`h-8 w-8 cursor-pointer rounded-md border-[1.5px]  border-white/5 bg-black  shadow-darkbutton transition-transform ease-out hover:scale-105 active:scale-95`}
               >
                 <Image
-                  src={project.image || ''}
+                  src={project.logo || ''}
                   width={64}
                   height={64}
                   alt={t('projectLogoAlt', { projectName: translatedName })}
-                  className="h-8 w-8 object-cover" // Removed rounded-md as parent has it
+                  className="h-8 w-8 object-contain" // Removed rounded-md as parent has it
                 />
               </div>
               <h4 className="hidden text-base font-medium tracking-tighter sm:block">
