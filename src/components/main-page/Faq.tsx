@@ -9,6 +9,7 @@ import { useTranslations } from 'next-intl' // Import useTranslations
 import Image from 'next/image'
 import * as React from 'react'
 import SmallWrap from '../layout/containers/SmallWrap' // Assuming you have this
+import { BlurFade } from '../ui/BlurFade'
 import Contact from './old/Contact'
 
 const faqItemIds = ['faq1', 'faq2', 'faq3', 'faq4']
@@ -146,10 +147,25 @@ const Faq: React.FC = () => {
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-5 lg:gap-16">
           <div className="lg:col-span-3">
             <div className="mb-10 text-left">
-              <h2 className="text-3xl font-medium leading-tight text-[#050505] sm:text-5xl">
-                <span className="text-[#828282]">{t('headingPart1')}</span>
-                <br />
-                {t('headingPart2')}
+              <h2 className="text-3xl font-medium  text-[#050505] sm:text-5xl">
+                <span className="flex flex-row gap-2 text-[#828282]">
+                  {t('headingPart1')
+                    .split(' ')
+                    .map((word, index) => (
+                      <BlurFade delay={index * 0.05} key={'abouth1' + index}>
+                        {word}
+                      </BlurFade>
+                    ))}
+                </span>
+                <span className="flex flex-row gap-2">
+                  {t('headingPart2')
+                    .split(' ')
+                    .map((word, index) => (
+                      <BlurFade delay={0.15 + index * 0.05} key={'abouth2' + index}>
+                        {word}
+                      </BlurFade>
+                    ))}
+                </span>
               </h2>
             </div>
             <FaqSection />

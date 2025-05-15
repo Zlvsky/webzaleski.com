@@ -187,7 +187,8 @@
     }
   },
   "services": {
-    "mainHeading": "Przejdźmy do działania<br></br><span>Moje kluczowe usługi.</span>",
+    "mainHeading1": "Przejdźmy do działania",
+    "mainHeading2": "Moje kluczowe usługi.",
     "techStackCategories": {
       "frontend": "Front-End",
       "backend": "Back-End",

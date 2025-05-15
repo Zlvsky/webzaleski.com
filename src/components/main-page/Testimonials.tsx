@@ -9,6 +9,7 @@ import { useTranslations } from 'next-intl' // Import useTranslations
 import Image from 'next/image'
 import React from 'react'
 import SmallWrap from '../layout/containers/SmallWrap'
+import { BlurFade } from '../ui/BlurFade'
 
 // Update testimonials data to include an 'id' for translation lookup
 const testimonialsData = [
@@ -129,10 +130,25 @@ const Testimonials = () => {
           viewport={{ once: true }}
           className="flex flex-col"
         >
-          <h2 className="text-3xl font-medium leading-tight text-[#050505] sm:text-5xl">
-            <span className="text-[#828282]">{t('headingPart1')}</span>
-            <br />
-            {t('headingPart2')}
+          <h2 className="text-3xl font-medium  text-[#050505] sm:text-5xl">
+            <span className="flex flex-row gap-2 text-[#828282]">
+              {t('headingPart1')
+                .split(' ')
+                .map((word, index) => (
+                  <BlurFade delay={index * 0.05} key={'abouth1' + index}>
+                    {word}
+                  </BlurFade>
+                ))}
+            </span>
+            <span className="flex flex-row gap-2">
+              {t('headingPart2')
+                .split(' ')
+                .map((word, index) => (
+                  <BlurFade delay={0.15 + index * 0.05} key={'abouth2' + index}>
+                    {word}
+                  </BlurFade>
+                ))}
+            </span>
           </h2>
         </motion.div>
 

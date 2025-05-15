@@ -14,6 +14,7 @@ import Image from 'next/image'
 import React, { useEffect } from 'react'
 import { toast } from 'sonner'
 import SmallWrap from '../layout/containers/SmallWrap'
+import { BlurFade } from '../ui/BlurFade'
 
 // Social links data now uses keys for labels
 const socialLinksData = [
@@ -90,9 +91,24 @@ const About: React.FC = () => {
         {/* Header Section */}
         <div className="mb-12 text-left md:mb-16">
           <h2 className="text-3xl font-medium  text-[#050505] sm:text-5xl">
-            <span className="text-[#828282]">{t('headingPart1')}</span>
-            <br />
-            {t('headingPart2')}
+            <span className="flex flex-row gap-2 text-[#828282]">
+              {t('headingPart1')
+                .split(' ')
+                .map((word, index) => (
+                  <BlurFade delay={index * 0.05} key={'abouth1' + index}>
+                    {word}
+                  </BlurFade>
+                ))}
+            </span>
+            <span className="flex flex-row gap-2">
+              {t('headingPart2')
+                .split(' ')
+                .map((word, index) => (
+                  <BlurFade delay={0.15 + index * 0.05} key={'abouth2' + index}>
+                    {word}
+                  </BlurFade>
+                ))}
+            </span>
           </h2>
         </div>
 
@@ -173,9 +189,9 @@ const About: React.FC = () => {
           {/* Right Column: About Text */}
           <div className="space-y-4 md:col-span-2">
             {translatedParagraphs.map((paragraph, index) => (
-              <p key={index} className="text-lg leading-relaxed text-[#828282]">
-                {paragraph}
-              </p>
+              <BlurFade key={'aboutParagraph' + index} delay={0.3 + index * 0.2}>
+                <p className="text-lg leading-relaxed text-[#828282]">{paragraph}</p>
+              </BlurFade>
             ))}
           </div>
         </div>

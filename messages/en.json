@@ -187,7 +187,8 @@
     }
   },
   "services": {
-    "mainHeading": "Let's build success<br></br><span>My core services.</span>",
+    "mainHeading1": "Let's build success",
+    "mainHeading2": "My core services.",
     "techStackCategories": {
       "frontend": "Front-End",
       "backend": "Back-End",
