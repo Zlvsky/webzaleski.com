@@ -2,11 +2,12 @@
 
 import { projects as projectsData } from '@/data/projects' // Renamed to avoid conflict
 import { cn } from '@/utils'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion, useInView } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import SmallWrap from '../layout/containers/SmallWrap'
+import { BlurFade } from '../ui/BlurFade'
 import { BorderTrail } from '../ui/BorderTrail'
 
 const WorkButton = ({
@@ -93,6 +94,8 @@ function Work() {
   const t = useTranslations('work')
   // Use the slug for the active state, as it's a stable identifier
   const [activeSlug, setActiveSlug] = useState<string>(projectsData[0].slug)
+  const ref = useRef(null)
+  const inViewResult = useInView(ref, { once: true, margin: '-150px' })
 
   const activeProject = projectsData.find((project) => project.slug === activeSlug)
 
@@ -106,35 +109,66 @@ function Work() {
   return (
     <div className="w-full border-b border-gray-200 py-12 sm:py-24">
       <SmallWrap>
-        <h3 className="text-3xl font-medium text-[#050505] md:text-5xl">
-          {t('featuredWork')}
-        </h3>
-        <div className="mt-10 flex flex-col items-start justify-between gap-10 md:flex-row">
+        <BlurFade delay={0.2}>
+          <h3 className="text-3xl font-medium text-[#050505] md:text-5xl">
+            {t('featuredWork')}
+          </h3>
+        </BlurFade>
+        <div
+          className="mt-10 flex flex-col items-start justify-between gap-10 md:flex-row"
+          ref={ref}
+        >
           <div className="flex w-full flex-1 gap-2 overflow-hidden sm:max-w-xs sm:flex-col">
-            {projectsData.map((project) => (
-              <WorkButton
-                project={project}
-                isActive={activeSlug === project.slug}
-                onClick={() => setActiveSlug(project.slug)}
-                key={project.slug + '_button'}
-                translatedName={getTranslatedProjectField(project.slug, 'name')}
-                translatedState={getTranslatedProjectField(project.slug, 'state')}
-              />
+            {projectsData.map((project, index) => (
+              <motion.div
+                key={project.slug + '_border'}
+                ref={ref}
+                className="flex w-full flex-1"
+                initial="inactive"
+                variants={{
+                  inactive: { opacity: 0, y: 5, scale: 1.02 },
+                  active: { opacity: 1, y: 0, scale: 1 }
+                }}
+                animate={inViewResult ? 'active' : 'inactive'}
+                transition={{ duration: 0.2, delay: 0.3 + index * 0.05 }}
+              >
+                <WorkButton
+                  project={project}
+                  isActive={activeSlug === project.slug}
+                  onClick={() => setActiveSlug(project.slug)}
+                  key={project.slug + '_button'}
+                  translatedName={getTranslatedProjectField(project.slug, 'name')}
+                  translatedState={getTranslatedProjectField(project.slug, 'state')}
+                />
+              </motion.div>
             ))}
           </div>
           <div className="flex flex-1 flex-col items-start justify-center">
             {activeProject && (
               <div className="space-y-2 rounded-2xl bg-[#f0f0f0] p-1.5">
                 <div className="rounded-xl bg-white p-1 shadow-work2">
-                  <Image
-                    src={activeProject.image || ''} // Assuming 4 images for active project, or use a map if dynamic
-                    width={1200}
-                    height={672}
-                    alt={t('projectLogoAlt', {
-                      projectName: getTranslatedProjectField(activeProject.slug, 'name')
-                    })}
-                    className=" rounded-t-xl object-cover"
-                  />
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={activeProject.slug} // Key based on slug to detect changes
+                      initial={{ opacity: 0, y: 5, scale: 1.02 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: -5, scale: 0.98 }}
+                      transition={{ duration: 0.15 }}
+                    >
+                      <Image
+                        src={activeProject.image || ''}
+                        width={1200}
+                        height={672}
+                        alt={t('projectLogoAlt', {
+                          projectName: getTranslatedProjectField(
+                            activeProject.slug,
+                            'name'
+                          )
+                        })}
+                        className="rounded-t-xl object-cover"
+                      />
+                    </motion.div>
+                  </AnimatePresence>
                 </div>
                 <div className="dark-gradient col-span-2 rounded-xl p-6 shadow-work2">
                   <h3 className="text-xl font-medium text-white">

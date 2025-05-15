@@ -1,12 +1,17 @@
+'use client'
+
 import freelance from '@/assets/images/companies/freelance.png'
 import goodsoft from '@/assets/images/companies/goodsoft.png'
 import jokuh from '@/assets/images/companies/jokuh.png'
 import seomi from '@/assets/images/companies/seomi.png'
+import useIsMobile from '@/hooks/useIsMobile'
 import { cn } from '@/utils'
+import { motion, useInView } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
+import { useRef } from 'react'
 import SmallWrap from '../layout/containers/SmallWrap'
-
+import { BlurFade } from '../ui/BlurFade'
 interface ExperienceEntry {
   id: string
   iconUrl?: string
@@ -58,29 +63,54 @@ const experiencesData: ExperienceEntry[] = [
 ]
 
 function Experience() {
-  const t = useTranslations('experience') // For alt text
+  const t = useTranslations('experience')
+  const ref = useRef(null)
+  const inViewResult = useInView(ref, { once: true, margin: '-150px' })
+  const isMobileView = useIsMobile()
 
   const accentColor = 'teal-500' // Color for active elements
 
   return (
-    <div className="w-full border-b border-t border-gray-200 py-10">
+    <div className="w-full border-b border-t border-gray-200 py-10" ref={ref}>
       <SmallWrap>
         <div className="relative flex w-full flex-col gap-6 md:flex-row md:gap-20">
           {/* Header Section*/}
           <div className="flex items-center justify-between">
             {/* Adjusted mb and added px for alignment with timeline start */}
-            <h3 className="text-3xl font-medium text-[#050505] md:text-xl">
+            <BlurFade
+              delay={isMobileView ? 0 : 1}
+              inView={!isMobileView}
+              className="text-3xl font-medium text-[#050505] md:text-xl"
+            >
               {t('myexperience')}
-            </h3>
+            </BlurFade>
           </div>
 
           <div className="relative flex-1">
             {/* Experience Items Flex Container */}
             <div className="grid grid-cols-4 gap-x-4">
-              {experiencesData.map((exp) => (
-                <div
-                  key={exp.id}
+              {experiencesData.map((exp, index) => (
+                <motion.div
+                  initial="hidden"
+                  variants={{
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      scale: 1
+                    },
+                    hidden: {
+                      opacity: 0,
+                      y: 5,
+                      scale: 1.05
+                    }
+                  }}
+                  animate={inViewResult ? 'visible' : 'hidden'}
+                  transition={{
+                    duration: 0.2,
+                    delay: isMobileView ? 0.25 + index * 0.1 : 1.1 + index * 0.1
+                  }}
                   className="relative flex flex-col items-start text-center"
+                  key={exp.id + '_experience'}
                 >
                   {/* Dot and Line Interaction Point */}
                   <div className={`flex w-full flex-row items-center gap-1 `}>
@@ -126,7 +156,7 @@ function Experience() {
                       {exp.dateRange} {exp.isPresent ? '- ' + t('now') : ''}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>

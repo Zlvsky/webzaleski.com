@@ -130,7 +130,7 @@ const About: React.FC = () => {
               >
                 {t.rich('copyEmailPrompt', {
                   kbd: (chunks) => (
-                    <kbd className="rounded-md border border-gray-300 bg-gray-100 p-1.5 py-0.5 font-sans text-xs shadow-glossybutton">
+                    <kbd className="aspect-square h-[22px] w-[22px] rounded-md border border-gray-300 bg-gray-100 p-1.5 py-0.5 font-sans text-xs shadow-glossybutton sm:mx-0.5">
                       {chunks}
                     </kbd>
                   )
