@@ -3,7 +3,7 @@
 import profilePicture from '@/assets/images/profile.png' // Replace with your actual profile picture path
 import { Button } from '@/components/ui/button/Button'
 import { cn } from '@/utils'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, useInView } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 import { useTranslations } from 'next-intl' // Import useTranslations
 import Image from 'next/image'
@@ -140,19 +140,25 @@ FaqItem.displayName = 'FaqItem'
 
 const Faq: React.FC = () => {
   const t = useTranslations('faq')
+  const ref = React.useRef(null)
+  const inViewResult = useInView(ref, { once: true, margin: '-150px' })
 
   return (
     <div className="w-full border-b border-gray-200 py-12 md:py-24">
-      <SmallWrap>
+      <SmallWrap id="faq">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-5 lg:gap-16">
           <div className="lg:col-span-3">
             <div className="mb-10 text-left">
-              <h2 className="text-3xl font-medium  text-[#050505] sm:text-5xl">
+              <h2 className="text-2xl font-medium  text-[#050505] sm:text-5xl" ref={ref}>
                 <span className="flex flex-row gap-2 text-[#828282]">
                   {t('headingPart1')
                     .split(' ')
                     .map((word, index) => (
-                      <BlurFade delay={index * 0.05} key={'abouth1' + index}>
+                      <BlurFade
+                        delay={index * 0.05}
+                        inView={inViewResult}
+                        key={'abouth1' + index}
+                      >
                         {word}
                       </BlurFade>
                     ))}
@@ -161,7 +167,11 @@ const Faq: React.FC = () => {
                   {t('headingPart2')
                     .split(' ')
                     .map((word, index) => (
-                      <BlurFade delay={0.15 + index * 0.05} key={'abouth2' + index}>
+                      <BlurFade
+                        delay={0.15 + index * 0.05}
+                        inView={inViewResult}
+                        key={'abouth2' + index}
+                      >
                         {word}
                       </BlurFade>
                     ))}

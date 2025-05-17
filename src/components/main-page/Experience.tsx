@@ -72,7 +72,7 @@ function Experience() {
 
   return (
     <div className="w-full border-b border-t border-gray-200 py-10" ref={ref}>
-      <SmallWrap>
+      <SmallWrap id="experience">
         <div className="relative flex w-full flex-col gap-6 md:flex-row md:gap-20">
           {/* Header Section*/}
           <div className="flex items-center justify-between">
@@ -80,7 +80,7 @@ function Experience() {
             <BlurFade
               delay={isMobileView ? 0 : 1}
               inView={!isMobileView}
-              className="text-3xl font-medium text-[#050505] md:text-xl"
+              className="text-2xl font-medium text-[#050505] md:text-xl"
             >
               {t('myexperience')}
             </BlurFade>

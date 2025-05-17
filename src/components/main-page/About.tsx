@@ -9,9 +9,10 @@ import {
   IconBrandX,
   IconMail
 } from '@tabler/icons-react'
+import { useInView } from 'framer-motion'
 import { useTranslations } from 'next-intl' // Import useTranslations
 import Image from 'next/image'
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { toast } from 'sonner'
 import SmallWrap from '../layout/containers/SmallWrap'
 import { BlurFade } from '../ui/BlurFade'
@@ -45,7 +46,9 @@ const socialLinksData = [
 ]
 
 const About: React.FC = () => {
-  const t = useTranslations('about') // Initialize translations for 'about' namespace
+  const t = useTranslations('about')
+  const ref = useRef(null)
+  const inViewResult = useInView(ref, { once: true, margin: '-150px' })
 
   const copyEmailToClipboard = () => {
     navigator.clipboard.writeText(EMAIL).then(() => {
@@ -87,24 +90,34 @@ const About: React.FC = () => {
 
   return (
     <div className="w-full border-b border-gray-200 py-12 sm:py-24">
-      <SmallWrap>
+      <SmallWrap id="about">
         {/* Header Section */}
         <div className="mb-12 text-left md:mb-16">
-          <h2 className="text-3xl font-medium  text-[#050505] sm:text-5xl">
+          <h2 className="text-2xl font-medium  text-[#050505] sm:text-5xl" ref={ref}>
             <span className="flex flex-row gap-2 text-[#828282]">
               {t('headingPart1')
                 .split(' ')
-                .map((word, index) => (
-                  <BlurFade delay={index * 0.05} key={'abouth1' + index}>
-                    {word}
-                  </BlurFade>
-                ))}
+                .map((word, index) => {
+                  return (
+                    <BlurFade
+                      delay={index * 0.05}
+                      inView={inViewResult}
+                      key={'abouth1' + index + word}
+                    >
+                      {word}
+                    </BlurFade>
+                  )
+                })}
             </span>
-            <span className="flex flex-row gap-2">
+            <span className="flex flex-row gap-2 text-xl sm:text-4xl">
               {t('headingPart2')
                 .split(' ')
                 .map((word, index) => (
-                  <BlurFade delay={0.15 + index * 0.05} key={'abouth2' + index}>
+                  <BlurFade
+                    delay={0.15 + index * 0.05}
+                    inView={inViewResult}
+                    key={'abouth2' + index + word}
+                  >
                     {word}
                   </BlurFade>
                 ))}

@@ -108,9 +108,9 @@ function Work() {
 
   return (
     <div className="w-full border-b border-gray-200 py-12 sm:py-24">
-      <SmallWrap>
+      <SmallWrap id="work">
         <BlurFade delay={0.2}>
-          <h3 className="text-3xl font-medium text-[#050505] md:text-5xl">
+          <h3 className="text-2xl font-medium text-[#050505] md:text-5xl">
             {t('featuredWork')}
           </h3>
         </BlurFade>

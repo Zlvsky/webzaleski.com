@@ -4,10 +4,10 @@ import PawelImage from '@/assets/images/clients/pawel.png'
 import SkrzynkaImage from '@/assets/images/clients/skrzynk.png'
 import TomaszImage from '@/assets/images/clients/tomaszmichno.png'
 import WbhaleImage from '@/assets/images/clients/wbhale.png'
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import { useTranslations } from 'next-intl' // Import useTranslations
 import Image from 'next/image'
-import React from 'react'
+import React, { useRef } from 'react'
 import SmallWrap from '../layout/containers/SmallWrap'
 import { BlurFade } from '../ui/BlurFade'
 
@@ -71,7 +71,7 @@ export const TestimonialsColumn = (props: {
             <React.Fragment key={index}>
               {props.testimonials.map(({ text, image, name, company }, i) => (
                 <div
-                  className="w-full max-w-xs rounded-xl border border-[#dedede] p-14 shadow-badge"
+                  className="w-full rounded-xl border border-[#dedede] p-6 shadow-badge sm:max-w-xs sm:p-14"
                   key={`${name}-${i}`} // Use a more unique key if names can repeat
                 >
                   <div>{text}</div>
@@ -106,7 +106,9 @@ export const TestimonialsColumn = (props: {
 }
 
 const Testimonials = () => {
-  const t = useTranslations('testimonials') // Initialize translations
+  const t = useTranslations('testimonials')
+  const ref = useRef(null)
+  const inViewResult = useInView(ref, { once: true, margin: '-150px' })
 
   // Map over testimonialsData to get translated content
   const translatedTestimonials = testimonialsData.map((item) => ({
@@ -122,7 +124,7 @@ const Testimonials = () => {
 
   return (
     <div className="w-full border-b border-gray-200 pt-10 sm:pt-20">
-      <SmallWrap>
+      <SmallWrap id="testimonials">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -130,12 +132,16 @@ const Testimonials = () => {
           viewport={{ once: true }}
           className="flex flex-col"
         >
-          <h2 className="text-3xl font-medium  text-[#050505] sm:text-5xl">
+          <h2 className="text-2xl font-medium  text-[#050505] sm:text-5xl" ref={ref}>
             <span className="flex flex-row gap-2 text-[#828282]">
               {t('headingPart1')
                 .split(' ')
                 .map((word, index) => (
-                  <BlurFade delay={index * 0.05} key={'abouth1' + index}>
+                  <BlurFade
+                    delay={index * 0.05}
+                    inView={inViewResult}
+                    key={'abouth1' + index}
+                  >
                     {word}
                   </BlurFade>
                 ))}
@@ -144,7 +150,11 @@ const Testimonials = () => {
               {t('headingPart2')
                 .split(' ')
                 .map((word, index) => (
-                  <BlurFade delay={0.15 + index * 0.05} key={'abouth2' + index}>
+                  <BlurFade
+                    delay={0.15 + index * 0.05}
+                    inView={inViewResult}
+                    key={'abouth2' + index}
+                  >
                     {word}
                   </BlurFade>
                 ))}
@@ -153,7 +163,16 @@ const Testimonials = () => {
         </motion.div>
 
         <div className="mt-4 flex max-h-[740px] justify-center gap-6 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] sm:mt-10">
-          <TestimonialsColumn testimonials={firstColumn} duration={15} />
+          <TestimonialsColumn
+            testimonials={translatedTestimonials}
+            duration={45}
+            className="block md:hidden"
+          />
+          <TestimonialsColumn
+            testimonials={firstColumn}
+            duration={15}
+            className="hidden md:block"
+          />
           <TestimonialsColumn
             testimonials={secondColumn}
             className="hidden md:block"

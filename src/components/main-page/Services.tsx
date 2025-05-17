@@ -103,21 +103,21 @@ const Services: React.FC = () => {
 
   return (
     <div className="w-full border-b border-gray-200 py-12 sm:py-24">
-      <SmallWrap>
+      <SmallWrap id="services">
         <div
           className="grid grid-cols-1 items-start gap-16 md:grid-cols-2 md:gap-24"
           ref={ref}
         >
           {/* Left Column */}
           <div className="flex flex-col">
-            <h2 className="text-3xl font-medium leading-tight text-[#828282] md:text-5xl">
+            <h2 className="text-2xl font-medium leading-tight text-[#828282] md:text-5xl">
               <span className="flex flex-row gap-2">
                 {t('mainHeading1')
                   .split(' ')
                   .map((word, index) => (
                     <BlurFade
                       delay={index * 0.05}
-                      inView={false}
+                      inView={inViewResult}
                       key={index + 'servicesH1'}
                     >
                       {word}
@@ -131,7 +131,7 @@ const Services: React.FC = () => {
                     <BlurFade
                       className="text-[#050505]"
                       delay={0.15 + index * 0.05}
-                      inView={false}
+                      inView={inViewResult}
                       key={index + 'servicesH2'}
                     >
                       {word}

@@ -51,12 +51,6 @@ export function BlurFade({
     filter: `blur(0px)`
   }
 
-  // Add clip-path for reveal effect if enabled
-  if (enableReveal) {
-    hiddenState.clipPath = 'inset(0 100% 0 0)' // Reveals from left to right
-    visibleState.clipPath = 'inset(0 0% 0 0)'
-  }
-
   const defaultVariants: Variants = {
     hidden: hiddenState,
     visible: visibleState
