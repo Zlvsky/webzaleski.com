@@ -1,5 +1,8 @@
 import { NextConfig } from 'next'
+import { initOpenNextCloudflareForDev } from '@opennextjs/cloudflare'
 import createNextIntlPlugin from 'next-intl/plugin'
+
+initOpenNextCloudflareForDev()
 
 const nextConfig = {
   webpack(config: NextConfig) {
