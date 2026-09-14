@@ -35,6 +35,29 @@ body {
   }
 }
 
+.rod-cta-label {
+  display: none;
+}
+
+@media (min-width: 768px) and (hover: hover) and (pointer: fine) {
+  .rod-cta-label {
+    display: inline-block;
+    max-width: 0;
+    opacity: 0;
+    transition:
+      max-width 180ms ease-out,
+      margin-left 180ms ease-out,
+      opacity 120ms ease-out;
+  }
+
+  .rod-cta:hover .rod-cta-label,
+  .rod-cta:focus-visible .rod-cta-label {
+    max-width: 5rem;
+    margin-left: 0.25rem;
+    opacity: 1;
+  }
+}
+
 /* code mdx */
 
 .dark-gradient {

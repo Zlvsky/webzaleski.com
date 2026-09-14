@@ -11,7 +11,7 @@
       "about": "About",
       "faq": "FAQ"
     },
-    "launching": "Launching soon"
+    "tryBeta": "Try Beta"
   },
   "hero": {
     "availableFor": "Available for",
@@ -61,7 +61,29 @@
   },
   "experience": {
     "myexperience": "My Experience",
-    "now": "Now"
+    "present": "Present",
+    "items": {
+      "realmOfDungeons": {
+        "role": "Creator & React Native Developer",
+        "description": "A React Native mobile game in beta, with an active community and beta playtests running for over a year."
+      },
+      "goodsoft": {
+        "role": "React Developer",
+        "description": "Leading frontend development for startup web apps, with a focus on implementation and UI design."
+      },
+      "jokuh": {
+        "role": "Full-stack Developer",
+        "description": "Worked with a worldwide team to develop a decentralized platform."
+      },
+      "freelance": {
+        "role": "Web Developer",
+        "description": "Ran a part-time web development business alongside my main role."
+      },
+      "seomi": {
+        "role": "Web Developer Intern",
+        "description": "Supported web development projects as a Web Developer Intern."
+      }
+    }
   },
   "features": {
     "heading": "Everything you need",
@@ -153,11 +175,17 @@
   "work": {
     "featuredWork": "Featured Work",
     "projectLogoAlt": "{projectName} logo",
+    "visitProject": "Visit {projectName}",
     "projects": {
       "realm-of-dungeons": {
         "name": "Realm of Dungeons",
         "shortDescription": "Dark fantasy pixel art mobile idle RPG. UI-based retro progression inspired by classics like Gladiatus & S&F. Made in React Native with Expo.",
-        "state": "Launching soon on App Store and Google Play"
+        "state": "Ongoing beta & active development"
+      },
+      "expbike": {
+        "name": "ExpBike",
+        "shortDescription": "A gamified mobile app for tracking bike rides.",
+        "state": "Launching soon"
       },
       "visity": {
         "name": "Visity",

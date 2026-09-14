@@ -11,7 +11,7 @@
       "about": "O mnie",
       "faq": "FAQ"
     },
-    "launching": "Wkrótce dostępne"
+    "tryBeta": "Wypróbuj betę"
   },
   "hero": {
     "availableFor": "Jestem dostępny na",
@@ -60,8 +60,30 @@
     }
   },
   "experience": {
-    "myexperience": "Moje Doświadczenie",
-    "now": "Teraz"
+    "myexperience": "Moje doświadczenie",
+    "present": "obecnie",
+    "items": {
+      "realmOfDungeons": {
+        "role": "Twórca i programista React Native",
+        "description": "Mobilna gra w React Native w fazie beta, z aktywną społecznością i testami trwającymi od ponad roku."
+      },
+      "goodsoft": {
+        "role": "Programista React",
+        "description": "Prowadzę rozwój frontendu aplikacji webowych dla startupów, łącząc implementację z projektowaniem UI."
+      },
+      "jokuh": {
+        "role": "Programista full-stack",
+        "description": "Pracowałem w międzynarodowym zespole nad rozwojem zdecentralizowanej platformy."
+      },
+      "freelance": {
+        "role": "Web Developer",
+        "description": "Prowadziłem dodatkową działalność w zakresie tworzenia stron i aplikacji webowych."
+      },
+      "seomi": {
+        "role": "Stażysta Web Developer",
+        "description": "Wspierałem realizację projektów webowych jako stażysta Web Developer."
+      }
+    }
   },
   "features": {
     "heading": "Wszystko, czego potrzebujesz",
@@ -153,11 +175,17 @@
   "work": {
     "featuredWork": "Wyróżnione Projekty",
     "projectLogoAlt": "Logo {projectName}",
+    "visitProject": "Odwiedź {projectName}",
     "projects": {
       "realm-of-dungeons": {
         "name": "Realm of Dungeons",
         "shortDescription": "Mobilna gra RPG w stylu idle w klimacie mrocznego fantasy pixel art. Progresja oparta na interfejsie użytkownika w stylu retro, inspirowana klasykami takimi jak Gladiatus i S&F. Stworzona w React Native z Expo.",
-        "state": "Wkrótce premiera w App Store i Google Play"
+        "state": "Trwają testy beta i aktywny rozwój"
+      },
+      "expbike": {
+        "name": "ExpBike",
+        "shortDescription": "Grywalizowana aplikacja mobilna do śledzenia przejazdów rowerowych.",
+        "state": "Premiera wkrótce"
       },
       "visity": {
         "name": "Visity",

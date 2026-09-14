@@ -15,8 +15,18 @@ export const projects = [
     image: rod.src,
     logo: rodlogo.src,
     slug: 'realm-of-dungeons',
-    state: 'Launching soon on App Store and Google Play',
+    state: 'Ongoing beta & active development',
+    live: 'https://realmofdungeons.app',
     github: 'https://github.com/Zlvsky/realm-of-dungeons'
+  },
+  {
+    name: 'ExpBike',
+    shortDescription: 'A gamified mobile app for tracking bike rides.',
+    year: '2026',
+    image: '/img/works/work3.png', // Temporary placeholder
+    logo: feedbacklogo.src, // Temporary placeholder
+    slug: 'expbike',
+    state: 'Launching soon'
   },
   {
     name: 'Visity',

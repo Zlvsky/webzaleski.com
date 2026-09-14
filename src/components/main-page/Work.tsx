@@ -2,6 +2,7 @@
 
 import { projects as projectsData } from '@/data/projects' // Renamed to avoid conflict
 import { cn } from '@/utils'
+import { IconArrowUpRight } from '@tabler/icons-react'
 import { AnimatePresence, motion, useInView } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
@@ -98,6 +99,8 @@ function Work() {
   const inViewResult = useInView(ref, { once: true, margin: '-150px' })
 
   const activeProject = projectsData.find((project) => project.slug === activeSlug)
+  const activeProjectLiveUrl =
+    activeProject && 'live' in activeProject ? activeProject.live : undefined
 
   const getTranslatedProjectField = (
     slug: string,
@@ -177,13 +180,34 @@ function Work() {
                   <p className="text-sm text-[#B8B8B8]">
                     {getTranslatedProjectField(activeProject.slug, 'shortDescription')}
                   </p>
-                  <div className="mt-4 flex w-full flex-row justify-between">
-                    <span className="font-mono text-xs text-[#B8B8B8]">
-                      {getTranslatedProjectField(activeProject.slug, 'state')}
-                    </span>
-                    <span className="font-mono text-xs text-[#B8B8B8]">
-                      {activeProject.year}
-                    </span>
+                  <div className="mt-4 flex w-full flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                    <div className="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-xs text-[#B8B8B8]">
+                      <span>
+                        {getTranslatedProjectField(activeProject.slug, 'state')}
+                      </span>
+                      <span aria-hidden="true">·</span>
+                      <span>{activeProject.year}</span>
+                    </div>
+                    {activeProjectLiveUrl && (
+                      <a
+                        href={activeProjectLiveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-lg bg-white px-3 text-sm font-medium text-black transition-colors hover:bg-[#ededed] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+                      >
+                        {t('visitProject', {
+                          projectName: getTranslatedProjectField(
+                            activeProject.slug,
+                            'name'
+                          )
+                        })}
+                        <IconArrowUpRight
+                          aria-hidden="true"
+                          className="h-4 w-4"
+                          stroke={1.75}
+                        />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
