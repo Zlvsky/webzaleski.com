@@ -65,7 +65,7 @@ function About() {
           </div>
 
           <div>
-            <h2 className="max-w-[18ch] text-3xl font-medium leading-tight tracking-[-0.03em] text-[#050505] sm:text-5xl">
+            <h2 className="max-w-[24ch] text-3xl font-medium leading-tight tracking-tight text-[#050505] md:text-4xl">
               {t('heading')}
             </h2>
             <div className="mt-7 max-w-[68ch] space-y-5">

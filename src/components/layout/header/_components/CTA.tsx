@@ -1,6 +1,7 @@
-import { GITHUB_URL, RESUME_URL } from '@/utils/consts'
-import { IconArrowDown, IconBrandGithub } from '@tabler/icons-react'
+import { GITHUB_URL } from '@/utils/consts'
+import { IconBrandGithub } from '@tabler/icons-react'
 import { useTranslations } from 'next-intl'
+import CVButton from './CVButton'
 
 function CTA() {
   const t = useTranslations('nav')
@@ -16,21 +17,12 @@ function CTA() {
       >
         <IconBrandGithub aria-hidden="true" size={20} stroke={1.6} />
       </a>
-      <a
-        href={RESUME_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-black px-3 text-sm font-medium text-white shadow-darkbutton transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 motion-reduce:transform-none sm:px-4"
-      >
-        <span className="hidden sm:inline">{t('downloadCv')}</span>
-        <span className="sm:hidden">{t('cv')}</span>
-        <IconArrowDown
-          aria-hidden="true"
-          size={16}
-          stroke={1.8}
-          className="hidden sm:block"
-        />
-      </a>
+      <CVButton
+        label={t('downloadCv')}
+        compactLabel={t('cv')}
+        hintText={t('cvHint')}
+        dismissLabel={t('dismissCvHint')}
+      />
     </div>
   )
 }

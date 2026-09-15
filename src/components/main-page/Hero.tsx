@@ -1,8 +1,9 @@
+import { projects } from '@/data/projects'
 import { cn } from '@/utils'
 import { GITHUB_URL, LINKEDIN_URL, RESUME_URL } from '@/utils/consts'
 import {
   IconArrowDown,
-  IconArrowRight,
+  IconArrowUpRight,
   IconBrandFigma,
   IconBrandGithub,
   IconBrandLinkedin,
@@ -66,10 +67,11 @@ export default function Hero() {
   const tc = useTranslations('heroCards')
   const stackItems = tc.raw('stackIWorkWith.items') as readonly string[]
   const whatIDoItems = tc.raw('whatIDo.items') as readonly string[]
+  const featuredProject = projects[0]
 
   return (
     <SmallWrap id="main">
-      <div className="grid min-w-0 grid-cols-1 items-start gap-10 pb-16 pt-8 sm:pb-20 sm:pt-12 lg:grid-cols-2 lg:items-center lg:gap-12">
+      <div className="grid min-w-0 grid-cols-1 items-start gap-10 pb-16 pt-8 sm:pb-20 sm:pt-12 lg:grid-cols-2 lg:gap-12">
         <div className="flex min-w-0 flex-col">
           <div className="mb-6 flex w-fit items-center gap-2 rounded-full border border-[#e5e5e5] bg-white px-3 py-2 text-xs text-gray54 shadow-work2">
             <PingDot />
@@ -98,11 +100,13 @@ export default function Hero() {
               <IconArrowDown aria-hidden="true" size={17} stroke={1.8} />
             </a>
             <a
-              href="#work"
+              href={featuredProject.live}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-[#dedede] bg-white px-4 text-sm font-medium text-[#161616] shadow-work2 transition-colors hover:bg-[#f6f6f6] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
             >
-              {t('viewWork')}
-              <IconArrowRight aria-hidden="true" size={17} stroke={1.8} />
+              {featuredProject.name}
+              <IconArrowUpRight aria-hidden="true" size={17} stroke={1.8} />
             </a>
             <a
               href={GITHUB_URL}

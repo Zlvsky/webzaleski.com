@@ -9,11 +9,12 @@
     "links": {
       "work": "Projekty",
       "experience": "Doświadczenie",
-      "stack": "Technologie",
       "about": "O mnie"
     },
     "downloadCv": "Pobierz CV",
-    "cv": "CV"
+    "cv": "CV",
+    "cvHint": "Pozostańmy w kontakcie",
+    "dismissCvHint": "Zamknij podpowiedź o CV"
   },
   "hero": {
     "availability": "Otwarty na role React Native i full-stack",
@@ -21,7 +22,6 @@
     "subheading": "Tworzę i wdrażam produkcyjne aplikacje webowe i mobilne—od dopracowanych interfejsów po API, infrastrukturę i deployment.",
     "proof": "Obecnie rozwijam Realm of Dungeons, produkcyjną grę React Native na iOS i Androida z backendem Node.js i aktywną społecznością beta.",
     "downloadCv": "Pobierz CV",
-    "viewWork": "Zobacz moje projekty",
     "location": "Białystok, Polska",
     "workMode": "Zdalnie / hybrydowo · Polska / UE",
     "freelanceLink": "Szukasz developera do projektu? Współpraca freelance →",
@@ -70,7 +70,14 @@
   },
   "experience": {
     "myexperience": "Doświadczenie",
-    "intro": "Praca produkcyjna, odpowiedzialność za produkt i samodzielne wdrożenia.",
+    "summary": {
+      "years": "5+ lat",
+      "commercialDevelopment": "Doświadczenia komercyjnego",
+      "currentFocus": "Obecna specjalizacja",
+      "focus": "React Native / Full-stack",
+      "basedIn": "Lokalizacja",
+      "location": "Polska"
+    },
     "technologies": "Technologie i zakres odpowiedzialności w {company}",
     "present": "obecnie",
     "items": {
@@ -184,8 +191,8 @@
     }
   },
   "work": {
-    "featuredWork": "Wyróżnione projekty inżynierskie",
-    "intro": "Wybrane produkty pokazujące mój sposób myślenia, tworzenia i brania odpowiedzialności za więcej niż jedną warstwę aplikacji.",
+    "featuredWork": "Wyróżnione projekty",
+    "intro": "Wybrane produkty i projekty obejmujące aplikacje mobilne, frontend i backend.",
     "projectLogoAlt": "Logo {projectName}",
     "visitProject": "Odwiedź {projectName}",
     "viewSource": "Zobacz kod źródłowy {projectName}",
@@ -203,11 +210,11 @@
       },
       {
         "value": "Full-stack",
-        "label": "Od aplikacji po infrastrukturę"
+        "label": "Aplikacja → API → baza danych"
       },
       {
-        "value": "2025—obecnie",
-        "label": "Ciągły rozwój"
+        "value": "2025–obecnie",
+        "label": "Aktywnie rozwijana"
       }
     ],
     "stackLabel": "Stack technologiczny",
@@ -259,61 +266,8 @@
       }
     }
   },
-  "services": {
-    "heading": "Inżynieria od A do Z.",
-    "intro": "Swobodnie pracuję na styku produktu, mobile, frontendu i backendu—dbając o dopracowany interfejs, utrzymywalny system i praktyczne wdrożenia.",
-    "capabilities": [
-      {
-        "area": "Mobile",
-        "technologies": ["React Native", "Expo", "EAS", "iOS", "Android"]
-      },
-      {
-        "area": "Frontend",
-        "technologies": ["React", "Next.js", "TypeScript", "Tailwind CSS"]
-      },
-      {
-        "area": "Backend",
-        "technologies": ["Node.js", "Express", "Prisma", "PostgreSQL"]
-      },
-      {
-        "area": "Infrastruktura",
-        "technologies": ["Docker", "Nginx", "Cloudflare", "CI/CD"]
-      },
-      {
-        "area": "Produkt i jakość",
-        "technologies": ["UI/UX", "Wydajność", "Analityka", "Sentry"]
-      },
-      {
-        "area": "Dodatkowo",
-        "technologies": ["WordPress", "WooCommerce", "Gatsby"]
-      }
-    ],
-    "teamHeading": "Co wnoszę do zespołu produktowego",
-    "strengths": [
-      {
-        "title": "Myślenie produktowe",
-        "description": "Interesuje mnie nie tylko jak wdrożyć funkcję, ale także dlaczego powinna powstać."
-      },
-      {
-        "title": "Odpowiedzialność za frontend i mobile",
-        "description": "Prowadzę funkcje od wymagań i designu przez architekturę, implementację i testy aż po wydanie."
-      },
-      {
-        "title": "Kompetencje full-stack",
-        "description": "Wychodzę poza interfejs, gdy funkcja wymaga zmian w API, bazie danych lub infrastrukturze."
-      },
-      {
-        "title": "Dbałość o jakość interfejsu",
-        "description": "Responsywność, dostępność, wydajność i detale interakcji traktuję jako część pracy inżynierskiej."
-      },
-      {
-        "title": "Samodzielność",
-        "description": "Potrafię rozwijać produkt, diagnozować problemy produkcyjne i podejmować decyzje bez ściśle opisanych zadań."
-      }
-    ]
-  },
   "about": {
-    "heading": "Buduję na styku produktu i inżynierii.",
+    "heading": "Pracuję na styku produktu i inżynierii.",
     "name": "Krzysztof Zaleski",
     "role": "React Native & Full-stack Developer",
     "location": "Mieszkam w Białymstoku. Jestem otwarty na pracę zdalną i wybrane role hybrydowe.",
@@ -328,7 +282,7 @@
   "resume": {
     "availability": "Otwarty na nowe możliwości",
     "heading": "Zbudujmy coś wartościowego.",
-    "description": "Jestem otwarty na role React Native i full-stack, szczególnie tam, gdzie mogę działać na styku produktu, mobile, frontendu i backendu.",
+    "description": "Jestem obecnie otwarty na role React Native i full-stack, w których mogę rozwijać produkt, aplikacje mobilne i backend.",
     "contact": "Skontaktuj się",
     "downloadCv": "Pobierz CV",
     "documentLabel": "Résumé / CV",
@@ -337,8 +291,6 @@
     "location": "Białystok, Polska",
     "focusLabel": "Specjalizacja",
     "focus": "Mobile · Web · Backend",
-    "formatLabel": "Format",
-    "format": "PDF · Angielski",
     "updated": "Aktualizacja: wrzesień 2026",
     "freelanceHeading": "Dostępny dla wybranych projektów freelance",
     "freelanceDescription": "Podejmuję również wybrane projekty React, React Native i full-stack.",

@@ -67,26 +67,29 @@ function Work() {
                   {t('featuredDescription')}
                 </p>
 
-                <div className="mt-7 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-[#e5e5e5] bg-[#e5e5e5]">
+                <dl className="mt-7 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-[#e5e5e5] bg-[#e5e5e5]">
                   {(
                     t.raw('featuredFacts') as Array<{ value: string; label: string }>
                   ).map((fact) => (
-                    <div key={fact.label} className="bg-[#f8f8f8] p-4">
-                      <strong className="block text-base font-medium text-[#171717]">
-                        {fact.value}
-                      </strong>
-                      <span className="mt-1 block text-xs leading-snug text-gray7B">
+                    <div
+                      key={fact.label}
+                      className="flex min-w-0 flex-col bg-[#f8f8f8] p-4"
+                    >
+                      <dt className="order-last mt-1.5 text-xs leading-relaxed text-gray54">
                         {fact.label}
-                      </span>
+                      </dt>
+                      <dd className="break-words text-xl font-semibold tabular-nums leading-tight tracking-tight text-[#171717] sm:text-2xl lg:text-xl">
+                        {fact.value}
+                      </dd>
                     </div>
                   ))}
-                </div>
+                </dl>
 
                 <ul className="mt-6 flex flex-wrap gap-2" aria-label={t('stackLabel')}>
                   {featuredProject.stack.map((technology) => (
                     <li
                       key={technology}
-                      className="rounded-md border border-[#dedede] bg-white px-2.5 py-1 font-mono text-[0.7rem] text-gray54"
+                      className="rounded-md bg-[#f3f3f3] px-2.5 py-1 text-xs text-gray54"
                     >
                       {technology}
                     </li>

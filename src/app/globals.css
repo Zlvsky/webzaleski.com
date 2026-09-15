@@ -251,6 +251,105 @@ code {
   position: relative;
 }
 
+/* Keep the avatar and the longer Polish labels visible on narrow phones. */
+@media (max-width: 359px) {
+  .header-shell {
+    padding-inline: 8px;
+  }
+
+  .liquid-glass-nav,
+  .header-identity,
+  .header-links {
+    gap: 0;
+  }
+
+  .header-links a {
+    padding-inline: 0;
+  }
+}
+
+.liquid-glass-nav > .nav-reflection {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.nav-reflection::after {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  width: 180px;
+  background: linear-gradient(
+    110deg,
+    transparent 10%,
+    rgba(255, 255, 255, 0.08) 35%,
+    rgba(255, 255, 255, 0.42) 50%,
+    rgba(255, 255, 255, 0.08) 65%,
+    transparent 90%
+  );
+  opacity: 0;
+  transform: translate3d(calc(var(--reflection-x, 300px) - 50%), 0, 0);
+  transition:
+    transform 400ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 400ms ease-out;
+}
+
+.cv-progress-fill {
+  stroke: #282828;
+  transition: stroke 220ms ease-out;
+}
+
+.cv-progress[data-complete='true'] .cv-progress-fill {
+  stroke: #16bf5e;
+}
+
+.cv-hint {
+  position: absolute;
+  top: calc(100% + 18px);
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  width: max-content;
+  max-width: calc(100vw - 48px);
+  padding: 0 0 0 14px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow:
+    0 4px 12px -4px rgba(17, 17, 17, 0.14),
+    0 16px 40px -12px rgba(17, 17, 17, 0.2);
+  transform-origin: calc(100% - var(--cta-width, 44px) / 2) top;
+  animation: cv-hint-in 180ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.cv-hint::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  right: calc(var(--cta-width, 44px) / 2 - 4px);
+  width: 8px;
+  height: 8px;
+  background: inherit;
+  transform: rotate(45deg);
+}
+
+@keyframes cv-hint-in {
+  from {
+    opacity: 0.4;
+    transform: translateY(-3px) scale(0.96, 0.86);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
 .liquid-glass-nav .text-gray54 {
   color: #222;
 }
@@ -268,11 +367,28 @@ code {
   .liquid-glass-nav:hover::before {
     opacity: 1;
   }
+
+  .liquid-glass-nav[data-reflecting='true'] .nav-reflection::after {
+    opacity: 0.7;
+    transition-duration: 150ms, 220ms;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .liquid-glass-nav::before {
     transition: none;
+  }
+
+  .nav-reflection {
+    display: none;
+  }
+
+  .cv-progress-fill {
+    transition: none;
+  }
+
+  .cv-hint {
+    animation: none;
   }
 }
 
@@ -292,8 +408,13 @@ code {
     backdrop-filter: none;
   }
 
-  .liquid-glass-nav::before {
+  .liquid-glass-nav::before,
+  .nav-reflection {
     display: none;
+  }
+
+  .cv-hint {
+    outline: 1px solid currentColor;
   }
 }
 
@@ -306,7 +427,17 @@ code {
     backdrop-filter: none;
   }
 
-  .liquid-glass-nav::before {
+  .liquid-glass-nav::before,
+  .nav-reflection {
     display: none;
+  }
+
+  .cv-progress-fill,
+  .cv-progress[data-complete='true'] .cv-progress-fill {
+    stroke: Highlight;
+  }
+
+  .cv-hint {
+    outline: 1px solid CanvasText;
   }
 }

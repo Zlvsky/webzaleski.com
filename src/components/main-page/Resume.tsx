@@ -37,15 +37,6 @@ function Resume() {
                   <IconMail aria-hidden="true" size={17} stroke={1.8} />
                   {t('contact')}
                 </a>
-                <a
-                  href={RESUME_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-white/20 px-4 text-sm font-medium text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
-                >
-                  {t('downloadCv')}
-                  <IconArrowDown aria-hidden="true" size={17} stroke={1.8} />
-                </a>
               </div>
             </div>
 
@@ -73,11 +64,16 @@ function Resume() {
                         <dt className="text-gray7B">{t('focusLabel')}</dt>
                         <dd className="text-right font-medium">{t('focus')}</dd>
                       </div>
-                      <div className="flex justify-between gap-5">
-                        <dt className="text-gray7B">{t('formatLabel')}</dt>
-                        <dd className="text-right font-medium">{t('format')}</dd>
-                      </div>
                     </dl>
+                    <a
+                      href={RESUME_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-6 inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-black px-4 text-sm font-medium text-white shadow-darkbutton transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f4f4] motion-reduce:transform-none"
+                    >
+                      {t('downloadCv')}
+                      <IconArrowDown aria-hidden="true" size={17} stroke={1.8} />
+                    </a>
                   </div>
                   <div className="mt-8 flex items-center justify-between gap-4">
                     <span className="font-mono text-[0.68rem] uppercase tracking-[0.08em] text-gray7B">

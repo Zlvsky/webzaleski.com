@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl'
 import CTA from './_components/CTA'
+import GlassNav from './_components/GlassNav'
 import Logo from './_components/Logo'
 import NavLinks from './_components/NavLinks'
 
@@ -14,17 +15,14 @@ function Header() {
       >
         {t('skipToContent')}
       </a>
-      <div className="mx-auto w-full max-w-screen-lg px-4">
-        <nav
-          aria-label="Primary navigation"
-          className="liquid-glass-nav pointer-events-auto relative flex w-full items-center justify-between gap-1 rounded-2xl px-2 py-2 sm:gap-2 sm:px-4"
-        >
-          <div className="flex min-w-0 items-center gap-1 sm:gap-3 lg:gap-6">
+      <div className="header-shell mx-auto w-full max-w-screen-lg px-4">
+        <GlassNav>
+          <div className="header-identity flex min-w-0 items-center gap-1 sm:gap-3 lg:gap-6">
             <Logo />
             <NavLinks />
           </div>
           <CTA />
-        </nav>
+        </GlassNav>
       </div>
     </header>
   )

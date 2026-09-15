@@ -7,7 +7,6 @@ import About from '@/components/main-page/About'
 import Experience from '@/components/main-page/Experience'
 import Hero from '@/components/main-page/Hero'
 import Resume from '@/components/main-page/Resume'
-import Services from '@/components/main-page/Services'
 import Work from '@/components/main-page/Work'
 import { EMAIL, GITHUB_URL, HOST, LINKEDIN_URL } from '@/utils/consts'
 
@@ -34,7 +33,6 @@ export default function Home() {
         <Hero />
         <Work />
         <Experience />
-        <Services />
         <About />
         <Resume />
       </Container>

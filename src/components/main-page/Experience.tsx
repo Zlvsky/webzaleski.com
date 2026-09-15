@@ -66,9 +66,32 @@ export default function Experience() {
             <h2 className="text-2xl font-medium tracking-[-0.025em] text-[#050505]">
               {t('myexperience')}
             </h2>
-            <p className="mt-3 max-w-[22ch] text-sm leading-relaxed text-gray7B">
-              {t('intro')}
-            </p>
+            <dl className="mt-7 grid gap-6 sm:grid-cols-3 md:grid-cols-1">
+              <div className="flex flex-col">
+                <dt className="order-last mt-1 text-xs leading-relaxed text-gray54">
+                  {t('summary.commercialDevelopment')}
+                </dt>
+                <dd className="text-2xl font-semibold tabular-nums leading-tight tracking-tight text-[#171717]">
+                  {t('summary.years')}
+                </dd>
+              </div>
+              <div>
+                <dt className="text-xs leading-relaxed text-gray54">
+                  {t('summary.currentFocus')}
+                </dt>
+                <dd className="mt-1 text-sm font-medium leading-relaxed text-[#171717]">
+                  {t('summary.focus')}
+                </dd>
+              </div>
+              <div>
+                <dt className="text-xs leading-relaxed text-gray54">
+                  {t('summary.basedIn')}
+                </dt>
+                <dd className="mt-1 text-sm font-medium leading-relaxed text-[#171717]">
+                  {t('summary.location')}
+                </dd>
+              </div>
+            </dl>
           </div>
 
           <ol className="relative border-l border-gray-200">

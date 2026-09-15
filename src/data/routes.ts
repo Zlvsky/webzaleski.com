@@ -8,10 +8,6 @@ export const routes = [
     textKey: 'experience'
   },
   {
-    href: '#stack',
-    textKey: 'stack'
-  },
-  {
     href: '#about',
     textKey: 'about'
   }

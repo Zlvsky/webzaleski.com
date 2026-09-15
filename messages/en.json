@@ -9,11 +9,12 @@
     "links": {
       "work": "Work",
       "experience": "Experience",
-      "stack": "Stack",
       "about": "About"
     },
     "downloadCv": "Download CV",
-    "cv": "CV"
+    "cv": "CV",
+    "cvHint": "Let’s keep in touch",
+    "dismissCvHint": "Dismiss CV hint"
   },
   "hero": {
     "availability": "Open to React Native & full-stack opportunities",
@@ -21,7 +22,6 @@
     "subheading": "I build and ship production web and mobile products—from polished interfaces to APIs, infrastructure and deployment.",
     "proof": "Currently building Realm of Dungeons, a production React Native game for iOS and Android with a Node.js backend and an active beta community.",
     "downloadCv": "Download CV",
-    "viewWork": "View my work",
     "location": "Białystok, Poland",
     "workMode": "Remote / hybrid · Poland / EU",
     "freelanceLink": "Looking for a developer for a project? Freelance enquiries →",
@@ -70,7 +70,14 @@
   },
   "experience": {
     "myexperience": "Experience",
-    "intro": "Production work, product ownership and independent delivery.",
+    "summary": {
+      "years": "5+ years",
+      "commercialDevelopment": "Commercial development",
+      "currentFocus": "Current focus",
+      "focus": "React Native / Full-stack",
+      "basedIn": "Based in",
+      "location": "Poland"
+    },
     "technologies": "Technologies and responsibilities at {company}",
     "present": "Present",
     "items": {
@@ -184,8 +191,8 @@
     }
   },
   "work": {
-    "featuredWork": "Featured engineering work",
-    "intro": "Selected products that show how I think, build and take responsibility beyond a single layer of the stack.",
+    "featuredWork": "Featured work",
+    "intro": "Selected products and engineering work across mobile, frontend and backend.",
     "projectLogoAlt": "{projectName} logo",
     "visitProject": "Visit {projectName}",
     "viewSource": "View {projectName} source code",
@@ -203,11 +210,11 @@
       },
       {
         "value": "Full-stack",
-        "label": "Mobile to infrastructure"
+        "label": "Mobile → API → database"
       },
       {
-        "value": "2025—Present",
-        "label": "Continuous development"
+        "value": "2025–Present",
+        "label": "Actively maintained"
       }
     ],
     "stackLabel": "Technology stack",
@@ -259,61 +266,8 @@
       }
     }
   },
-  "services": {
-    "heading": "Engineering, end to end.",
-    "intro": "I work comfortably across product, mobile, frontend and backend—while keeping interfaces polished, systems maintainable and releases practical.",
-    "capabilities": [
-      {
-        "area": "Mobile",
-        "technologies": ["React Native", "Expo", "EAS", "iOS", "Android"]
-      },
-      {
-        "area": "Frontend",
-        "technologies": ["React", "Next.js", "TypeScript", "Tailwind CSS"]
-      },
-      {
-        "area": "Backend",
-        "technologies": ["Node.js", "Express", "Prisma", "PostgreSQL"]
-      },
-      {
-        "area": "Infrastructure",
-        "technologies": ["Docker", "Nginx", "Cloudflare", "CI/CD"]
-      },
-      {
-        "area": "Product & quality",
-        "technologies": ["UI/UX", "Performance", "Analytics", "Sentry"]
-      },
-      {
-        "area": "Also experienced",
-        "technologies": ["WordPress", "WooCommerce", "Gatsby"]
-      }
-    ],
-    "teamHeading": "What I bring to a product team",
-    "strengths": [
-      {
-        "title": "Product-minded engineering",
-        "description": "I care about why a feature exists, not only how to implement it."
-      },
-      {
-        "title": "Frontend & mobile ownership",
-        "description": "I take features from requirements and design through architecture, implementation, testing and release."
-      },
-      {
-        "title": "Full-stack capability",
-        "description": "I can move beyond the interface when a feature requires API, database or infrastructure changes."
-      },
-      {
-        "title": "Attention to interface quality",
-        "description": "Responsive behavior, accessibility, performance and interaction details are part of the engineering work."
-      },
-      {
-        "title": "Independent execution",
-        "description": "I am used to owning products, investigating production issues and making decisions without tightly specified tasks."
-      }
-    ]
-  },
   "about": {
-    "heading": "I build across the boundary between product and engineering.",
+    "heading": "I work where product and engineering meet.",
     "name": "Krzysztof Zaleski",
     "role": "React Native & Full-stack Developer",
     "location": "Based in Białystok, Poland. Open to remote and selected hybrid roles.",
@@ -328,7 +282,7 @@
   "resume": {
     "availability": "Open to new opportunities",
     "heading": "Let's build something people value.",
-    "description": "I'm currently open to React Native and full-stack opportunities, particularly roles where I can contribute across product, mobile, frontend and backend engineering.",
+    "description": "I'm currently open to React Native and full-stack roles where I can contribute across product, mobile and backend engineering.",
     "contact": "Contact me",
     "downloadCv": "Download CV",
     "documentLabel": "Résumé / CV",
@@ -337,8 +291,6 @@
     "location": "Białystok, Poland",
     "focusLabel": "Focus",
     "focus": "Mobile · Web · Backend",
-    "formatLabel": "Format",
-    "format": "PDF · English",
     "updated": "Updated September 2026",
     "freelanceHeading": "Available for selected freelance work",
     "freelanceDescription": "I also take on selected React, React Native and full-stack projects.",
