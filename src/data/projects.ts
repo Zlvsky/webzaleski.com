@@ -16,6 +16,7 @@ export const projects = [
     logo: rodlogo.src,
     slug: 'realm-of-dungeons',
     state: 'Ongoing beta & active development',
+    stack: ['React Native', 'Expo', 'Node.js', 'Prisma', 'PostgreSQL'],
     live: 'https://realmofdungeons.app',
     github: 'https://github.com/Zlvsky/realm-of-dungeons'
   },
@@ -26,7 +27,8 @@ export const projects = [
     image: '/img/works/work3.png', // Temporary placeholder
     logo: feedbacklogo.src, // Temporary placeholder
     slug: 'expbike',
-    state: 'Launching soon'
+    state: 'Launching soon',
+    stack: ['Mobile', 'TypeScript', 'Product development']
   },
   {
     name: 'Visity',
@@ -37,6 +39,7 @@ export const projects = [
     logo: visitylogo.src,
     state: 'Failed',
     slug: 'visity',
+    stack: ['Next.js', 'TypeScript', 'SaaS'],
     live: 'https://visity.pl'
   },
   {
@@ -47,7 +50,8 @@ export const projects = [
     slug: 'feedback-widget',
     image: '/img/works/work3.png',
     logo: feedbacklogo.src,
-    state: 'Used in 10+ projects'
+    state: 'Used in 10+ projects',
+    stack: ['React', 'TypeScript', 'Browser APIs']
   },
   {
     name: 'Konva Moodboard',
@@ -57,6 +61,7 @@ export const projects = [
     logo: konvalogo.src,
     slug: 'konva-moodboard',
     state: '28+ stars on GitHub',
+    stack: ['React', 'Konva', 'Canvas API'],
     github: 'https://github.com/Zlvsky/React-Konva-moodboard'
   },
   {
@@ -67,6 +72,7 @@ export const projects = [
     logo: oneplacelogo.src,
     slug: 'one-place',
     state: '44+ stars on GitHub',
+    stack: ['React', 'Node.js', 'CRUD'],
     github: 'https://github.com/Zlvsky/one-place'
   },
   {
@@ -77,6 +83,7 @@ export const projects = [
     slug: 'automation-bot',
     logo: botlogo.src,
     state: 'Was active 24/7 between 2021-2023',
+    stack: ['Node.js', 'Automation', 'Scheduling'],
     image: '/img/works/work7.png'
   }
   // {

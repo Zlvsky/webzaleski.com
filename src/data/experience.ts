@@ -13,7 +13,8 @@ export const experiences = [
     startYear: 2025,
     endYear: null,
     isPresent: true,
-    isExternal: false
+    isExternal: false,
+    skills: ['React Native', 'Expo', 'Node.js', 'PostgreSQL', 'Product']
   },
   {
     id: 'goodsoft',
@@ -23,7 +24,8 @@ export const experiences = [
     startYear: 2022,
     endYear: null,
     isPresent: true,
-    isExternal: true
+    isExternal: true,
+    skills: ['React', 'TypeScript', 'Next.js', 'REST APIs', 'UI architecture']
   },
   {
     id: 'jokuh',
@@ -33,7 +35,8 @@ export const experiences = [
     startYear: 2024,
     endYear: null,
     isPresent: false,
-    isExternal: true
+    isExternal: true,
+    skills: ['Full-stack', 'React', 'Node.js', 'Distributed team']
   },
   {
     id: 'freelance',
@@ -43,7 +46,8 @@ export const experiences = [
     startYear: 2022,
     endYear: 2024,
     isPresent: false,
-    isExternal: false
+    isExternal: false,
+    skills: ['Web development', 'Client delivery', 'WordPress']
   },
   {
     id: 'seomi',
@@ -53,6 +57,7 @@ export const experiences = [
     startYear: 2021,
     endYear: null,
     isPresent: false,
-    isExternal: true
+    isExternal: true,
+    skills: ['Web development', 'Responsive UI', 'Team collaboration']
   }
 ] as const

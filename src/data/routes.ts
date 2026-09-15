@@ -4,15 +4,15 @@ export const routes = [
     textKey: 'work'
   },
   {
-    href: '#services',
-    textKey: 'services'
+    href: '#experience',
+    textKey: 'experience'
+  },
+  {
+    href: '#stack',
+    textKey: 'stack'
   },
   {
     href: '#about',
     textKey: 'about'
-  },
-  {
-    href: '#faq',
-    textKey: 'faq'
   }
 ] as const

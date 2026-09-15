@@ -5,7 +5,11 @@ import Link from 'next/link'
 
 function Logo() {
   return (
-    <Link href={'/'} className="hidden items-center space-x-2 sm:flex">
+    <Link
+      href="#main"
+      aria-label={NAME}
+      className="hidden min-h-11 items-center space-x-2 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black sm:flex"
+    >
       <div className="relative inline-block">
         <Image
           style={{
@@ -22,7 +26,7 @@ function Logo() {
       </div>
       <div className="flex flex-col text-sm leading-none">
         <span className="text-base font-normal">{NAME}</span>
-        <span className="font-mono text-xs text-[#828282]">{POSITION}</span>
+        <span className="font-mono text-[0.68rem] text-[#747474]">{POSITION}</span>
       </div>
     </Link>
   )

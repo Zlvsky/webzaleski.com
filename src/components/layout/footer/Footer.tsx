@@ -1,21 +1,14 @@
-import { NAME } from '@/utils/consts' // Assuming NAME is your name or site name
+import { EMAIL, GITHUB_URL, LINKEDIN_URL, NAME, TWITTER_URL } from '@/utils/consts'
 import {
   IconBrandGithub,
   IconBrandLinkedin,
   IconBrandX,
-  IconCopyright, // For CMD Supply icon
+  IconCopyright,
   IconMail,
   IconMapPin
 } from '@tabler/icons-react'
 import Link from 'next/link'
 import SmallWrap from '../containers/SmallWrap'
-
-// Define placeholder constants for URLs - replace with your actual constants or imports
-const EMAIL = 'krzysztof@czaleski.com'
-const TWITTER_URL = 'https://x.com/czaleskii'
-const GITHUB_URL = 'https://github.com/Zlvsky'
-const LINKEDIN_URL = 'https://linkedin.com/in/krzysztof-zaleski02'
-const SIGNATURE_IMAGE_URL = '/signature.svg' // Replace with your actual signature image path
 
 const socialLinks = [
   {
@@ -46,7 +39,6 @@ function Footer() {
   return (
     <footer className="flex w-full py-10">
       <SmallWrap>
-        {/* Signature Image */}
         <div className="mb-4 mr-6 flex items-center justify-center">
           <svg
             width="181"
@@ -64,30 +56,28 @@ function Footer() {
 
         <div className="flex w-full flex-row flex-wrap items-center justify-between text-xs text-[#828282]">
           <div className="order-1 flex items-center gap-1.5">
-            <IconMapPin size={14} stroke={1.5} />
-            <span className="font-mono">BIALYSTOK, POLAND</span>{' '}
-            {/* Replace with your actual location */}
+            <IconMapPin aria-hidden="true" size={14} stroke={1.5} />
+            <span className="font-mono">BIALYSTOK, POLAND</span>
           </div>
           <div className="order-3 mt-4 flex w-full flex-row items-center justify-center gap-5 sm:order-2 sm:mt-0 sm:w-auto">
             {socialLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                target={link.href.startsWith('mailto:') ? undefined : '_blank'}
+                rel={link.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
                 aria-label={link.label}
                 className="text-gray-500 transition-colors ease-in hover:text-black"
               >
-                <link.icon stroke={1.5} size={22} />
+                <link.icon aria-hidden="true" stroke={1.5} size={22} />
               </Link>
             ))}
           </div>
           <div className="order-2 flex items-center gap-1.5 sm:order-3">
-            <IconCopyright size={14} stroke={1.5} />{' '}
+            <IconCopyright aria-hidden="true" size={14} stroke={1.5} />{' '}
             <span className="font-mono">
               {year} {NAME}
             </span>
-            {/* Replace with actual weather data if dynamic */}
           </div>
         </div>
       </SmallWrap>

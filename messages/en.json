@@ -5,32 +5,41 @@
   },
   "nav": {
     "language": "Language",
+    "skipToContent": "Skip to content",
     "links": {
       "work": "Work",
-      "services": "Services",
-      "about": "About",
-      "faq": "FAQ"
+      "experience": "Experience",
+      "stack": "Stack",
+      "about": "About"
     },
-    "tryBeta": "Try Beta"
+    "downloadCv": "Download CV",
+    "cv": "CV"
   },
   "hero": {
-    "availableFor": "Available for",
-    "mainHeading": "React & WordPress Expert. Modern websites and web applications.",
-    "subheading": "I build reliable <span>websites and applications</span> that support the <span>growth of your business</span>.",
-    "sublist1": "Custom solutions meticulously aligned with your unique business goals.",
-    "sublist2": "Creating intuitive interfaces that are a joy to use for your customers and team.",
-    "sublist3": "Future-proof applications built with clean, robust React and modern best practices.",
-    "ctaPrimary": "Get Started",
-    "ctaSecondary": "Learn More"
+    "availability": "Open to React Native & full-stack opportunities",
+    "mainHeading": "React Native & Full-stack Developer.",
+    "subheading": "I build and ship production web and mobile products—from polished interfaces to APIs, infrastructure and deployment.",
+    "proof": "Currently building Realm of Dungeons, a production React Native game for iOS and Android with a Node.js backend and an active beta community.",
+    "downloadCv": "Download CV",
+    "viewWork": "View my work",
+    "location": "Białystok, Poland",
+    "workMode": "Remote / hybrid · Poland / EU",
+    "freelanceLink": "Looking for a developer for a project? Freelance enquiries →",
+    "freelanceLink": "Looking for a developer for a project? Freelance enquiries →"
   },
   "heroCards": {
-    "whoIWorkWith": {
-      "title": "Who I Work With",
+    "stackIWorkWith": {
+      "title": "Stack I Work With",
       "items": [
-        "Startups & Innovators",
-        "Established Businesses",
-        "Creative Agencies",
-        "Solo Entrepreneurs"
+        "TypeScript",
+        "React Native",
+        "Expo",
+        "React",
+        "Next.js",
+        "Node.js",
+        "PostgreSQL",
+        "Prisma",
+        "WordPress"
       ]
     },
     "whatIDo": {
@@ -60,28 +69,30 @@
     }
   },
   "experience": {
-    "myexperience": "My Experience",
+    "myexperience": "Experience",
+    "intro": "Production work, product ownership and independent delivery.",
+    "technologies": "Technologies and responsibilities at {company}",
     "present": "Present",
     "items": {
       "realmOfDungeons": {
-        "role": "Creator & React Native Developer",
-        "description": "A React Native mobile game in beta, with an active community and beta playtests running for over a year."
+        "role": "Founder · Product Owner · Full-stack & React Native Developer",
+        "description": "Building and operating a production mobile RPG independently—from product design and React Native development through APIs, database architecture, infrastructure, releases and community feedback."
       },
       "goodsoft": {
         "role": "React Developer",
-        "description": "Leading frontend development for startup web apps, with a focus on implementation and UI design."
+        "description": "Leading frontend development for production startup products. Responsible for architecture, feature delivery, reusable UI systems, API integration, performance and translating product requirements into polished interfaces."
       },
       "jokuh": {
         "role": "Full-stack Developer",
-        "description": "Worked with a worldwide team to develop a decentralized platform."
+        "description": "Worked in a distributed international team to develop a decentralized platform, contributing across the frontend and backend of the product."
       },
       "freelance": {
         "role": "Web Developer",
-        "description": "Ran a part-time web development business alongside my main role."
+        "description": "Ran a part-time web development business alongside my main role, owning client communication, implementation, delivery and ongoing support."
       },
       "seomi": {
         "role": "Web Developer Intern",
-        "description": "Supported web development projects as a Web Developer Intern."
+        "description": "Supported production web projects, building responsive interfaces and learning professional delivery practices within a development team."
       }
     }
   },
@@ -173,106 +184,165 @@
     }
   },
   "work": {
-    "featuredWork": "Featured Work",
+    "featuredWork": "Featured engineering work",
+    "intro": "Selected products that show how I think, build and take responsibility beyond a single layer of the stack.",
     "projectLogoAlt": "{projectName} logo",
     "visitProject": "Visit {projectName}",
+    "viewSource": "View {projectName} source code",
+    "featuredImageAlt": "Realm of Dungeons mobile game interface",
+    "featuredRole": "Founder · Product owner · Full-stack & React Native developer",
+    "featuredDescription": "A production mobile RPG for iOS and Android, built and operated independently—from product design and React Native frontend through APIs, database architecture, infrastructure, analytics and release management.",
+    "featuredFacts": [
+      {
+        "value": "1,600+",
+        "label": "Beta players"
+      },
+      {
+        "value": "iOS + Android",
+        "label": "Mobile platforms"
+      },
+      {
+        "value": "Full-stack",
+        "label": "Mobile to infrastructure"
+      },
+      {
+        "value": "2025—Present",
+        "label": "Continuous development"
+      }
+    ],
+    "stackLabel": "Technology stack",
+    "viewCaseStudy": "Explore the live beta",
+    "selectedWork": "Selected work",
+    "selectedCount": "4 projects",
     "projects": {
       "realm-of-dungeons": {
         "name": "Realm of Dungeons",
         "shortDescription": "Dark fantasy pixel art mobile idle RPG. UI-based retro progression inspired by classics like Gladiatus & S&F. Made in React Native with Expo.",
-        "state": "Ongoing beta & active development"
+        "state": "Ongoing beta & active development",
+        "role": "Creator & Product Developer"
       },
       "expbike": {
         "name": "ExpBike",
-        "shortDescription": "A gamified mobile app for tracking bike rides.",
-        "state": "Launching soon"
+        "shortDescription": "A gamified mobile product designed to make tracking bike rides motivating and rewarding.",
+        "state": "Launching soon",
+        "role": "Creator & Mobile Developer"
       },
       "visity": {
         "name": "Visity",
         "shortDescription": "SaaS application for creating simple landing pages in minutes targeted to small businesses.",
-        "state": "Failed"
+        "state": "Product experiment concluded",
+        "role": "Creator & Full-stack Developer"
       },
       "feedback-widget": {
         "name": "Feedback Widget",
         "shortDescription": "Feedback widget that can be embedded on websites to collect feedback and send console logs with page screenshots.",
-        "state": "Used in 10+ projects"
+        "state": "Used in 10+ projects",
+        "role": "Creator & Full-stack Developer"
       },
       "konva-moodboard": {
         "name": "Konva Moodboard",
         "shortDescription": "Web app to create and export canvas moodboards with custom images.",
-        "state": "28+ stars on GitHub"
+        "state": "28+ stars on GitHub",
+        "role": "Open-source Frontend Developer"
       },
       "one-place": {
         "name": "One-place",
         "shortDescription": "CRUD admin panel to manage business based on orders, that don't need online shop.",
-        "state": "44+ stars on GitHub"
+        "state": "44+ stars on GitHub",
+        "role": "Creator & Full-stack Developer"
       },
       "automation-bot": {
         "name": "Oferia.pl Automation bot",
         "shortDescription": "Custom-made bot that automates the insertion of offers on a IT freelancing portal",
-        "state": "Was active 24/7 between 2021-2023"
+        "state": "Was active 24/7 between 2021-2023",
+        "role": "Creator & Backend Developer"
       }
     }
   },
   "services": {
-    "mainHeading1": "Let's build success",
-    "mainHeading2": "My core services.",
-    "techStackCategories": {
-      "frontend": "Front-End",
-      "backend": "Back-End",
-      "websites": "Websites",
-      "other": "Other"
-    },
-    "serviceItems": {
-      "mvpApplications": "MVP Applications",
-      "expertReactFrontend": "Expert React Front-end Development",
-      "fullstackDevelopment": "Full-stack Development",
-      "reactNativeDevelopment": "React Native Development",
-      "landingPages": "Landing Pages",
-      "wordpressWebsites": "WordPress Websites",
-      "woocommerceSolutions": "WooCommerce Solutions",
-      "modernJamstack": "Modern Jamstack Websites (Next.js/Gatsby)",
-      "ongoingSupport": "Ongoing Website Maintenance & Support"
-    },
-    "techLabels": {
-      "typescript": "TypeScript",
-      "react": "React",
-      "reactNative": "React Native",
-      "nextjs": "Next.js",
-      "tailwindCss": "Tailwind CSS",
-      "framerMotion": "Framer Motion",
-      "radixUi": "Radix UI",
-      "nodejs": "Node.js",
-      "prisma": "Prisma",
-      "postgresql": "PostgreSQL",
-      "mongodb": "MongoDB",
-      "gatsby": "Gatsby",
-      "wordpress": "WordPress",
-      "html5": "HTML5",
-      "git": "git",
-      "docker": "Docker",
-      "cypress": "Cypress",
-      "figma": "Figma",
-      "firebase": "Firebase"
-    }
+    "heading": "Engineering, end to end.",
+    "intro": "I work comfortably across product, mobile, frontend and backend—while keeping interfaces polished, systems maintainable and releases practical.",
+    "capabilities": [
+      {
+        "area": "Mobile",
+        "technologies": ["React Native", "Expo", "EAS", "iOS", "Android"]
+      },
+      {
+        "area": "Frontend",
+        "technologies": ["React", "Next.js", "TypeScript", "Tailwind CSS"]
+      },
+      {
+        "area": "Backend",
+        "technologies": ["Node.js", "Express", "Prisma", "PostgreSQL"]
+      },
+      {
+        "area": "Infrastructure",
+        "technologies": ["Docker", "Nginx", "Cloudflare", "CI/CD"]
+      },
+      {
+        "area": "Product & quality",
+        "technologies": ["UI/UX", "Performance", "Analytics", "Sentry"]
+      },
+      {
+        "area": "Also experienced",
+        "technologies": ["WordPress", "WooCommerce", "Gatsby"]
+      }
+    ],
+    "teamHeading": "What I bring to a product team",
+    "strengths": [
+      {
+        "title": "Product-minded engineering",
+        "description": "I care about why a feature exists, not only how to implement it."
+      },
+      {
+        "title": "Frontend & mobile ownership",
+        "description": "I take features from requirements and design through architecture, implementation, testing and release."
+      },
+      {
+        "title": "Full-stack capability",
+        "description": "I can move beyond the interface when a feature requires API, database or infrastructure changes."
+      },
+      {
+        "title": "Attention to interface quality",
+        "description": "Responsive behavior, accessibility, performance and interaction details are part of the engineering work."
+      },
+      {
+        "title": "Independent execution",
+        "description": "I am used to owning products, investigating production issues and making decisions without tightly specified tasks."
+      }
+    ]
   },
   "about": {
-    "headingPart1": "My development philosophy",
-    "headingPart2": "Code that works, solutions that last.",
+    "heading": "I build across the boundary between product and engineering.",
     "name": "Krzysztof Zaleski",
-    "copyEmailPrompt": "Press <kbd>C</kbd> to copy my email",
-    "emailCopiedToast": "Email copied to clipboard",
-    "socials": {
-      "email": "Email",
-      "x": "X.com",
-      "github": "GitHub",
-      "linkedin": "LinkedIn"
-    },
+    "role": "React Native & Full-stack Developer",
+    "location": "Based in Białystok, Poland. Open to remote and selected hybrid roles.",
+    "profileAlt": "Portrait of Krzysztof Zaleski",
+    "linkedinCta": "View my LinkedIn profile",
     "paragraphs": [
-      "For me, successful development means creating digital tools that genuinely work for people and meet business needs. I combine <technicalExpertise>deep technical expertise</technicalExpertise> in modern frameworks like <technicalExpertise>React</technicalExpertise> with a practical commitment to understanding your specific goals and user requirements.",
-      "This dual focus results in applications that are not only <powerfulAndEfficient>powerful and efficient under the hood</powerfulAndEfficient> but also demonstrably effective in solving the challenges you face. I prioritize <scalableArchitecture>scalable architecture and clean code</scalableArchitecture> because these directly impact <scalableArchitecture>performance</scalableArchitecture> and <scalableArchitecture>long-term</scalableArchitecture> viability.",
-      "Ultimately, my aim is to build solutions that are <robustMaintainable>robust, maintainable</robustMaintainable>, and contribute meaningfully to achieving your objectives, ensuring your technology investment delivers <realWorldValue>real-world value</realWorldValue>."
+      "I'm a developer from Poland focused on building polished web and mobile products with React, React Native and TypeScript.",
+      "I enjoy turning ideas and designs into interfaces that feel good to use, while thinking carefully about architecture, performance and maintainability.",
+      "Outside my main role, I build Realm of Dungeons. Owning its mobile app, backend, infrastructure, releases, product direction and community feedback has made me comfortable taking features end to end."
     ]
+  },
+  "resume": {
+    "availability": "Open to new opportunities",
+    "heading": "Let's build something people value.",
+    "description": "I'm currently open to React Native and full-stack opportunities, particularly roles where I can contribute across product, mobile, frontend and backend engineering.",
+    "contact": "Contact me",
+    "downloadCv": "Download CV",
+    "documentLabel": "Résumé / CV",
+    "role": "React Native & Full-stack Developer",
+    "locationLabel": "Based in",
+    "location": "Białystok, Poland",
+    "focusLabel": "Focus",
+    "focus": "Mobile · Web · Backend",
+    "formatLabel": "Format",
+    "format": "PDF · English",
+    "updated": "Updated September 2026",
+    "freelanceHeading": "Available for selected freelance work",
+    "freelanceDescription": "I also take on selected React, React Native and full-stack projects.",
+    "freelanceCta": "Discuss a project"
   },
   "testimonials": {
     "headingPart1": "What clients say",

@@ -1,177 +1,83 @@
-'use client' // Add 'use client' directive
-
-import {
-  backendStack,
-  frontendStack,
-  otherStack,
-  servicesList,
-  websitesStack
-} from '@/data/services'
-import { motion, useInView } from 'framer-motion'
-import { useTranslations } from 'next-intl' // Import useTranslations
-import React, { useRef } from 'react'
+import { IconCheck } from '@tabler/icons-react'
+import { useTranslations } from 'next-intl'
 import SmallWrap from '../layout/containers/SmallWrap'
-import { BlurFade } from '../ui/BlurFade'
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/Tooltip'
 
-interface ServiceItemProps {
-  nameKey: string // Changed from name to nameKey
-  Icon: any
+interface CapabilityGroup {
+  area: string
+  technologies: string[]
 }
 
-interface TechIconProps {
-  Icon: any
-  labelKey: string // Changed from label to labelKey
-}
-
-const ServiceListItem: React.FC<ServiceItemProps> = ({ nameKey, Icon }) => {
-  const t = useTranslations('services.serviceItems') // Scope to serviceItems
-  return (
-    <div className="relative flex items-center gap-4">
-      <Icon width={40} height={40} />
-      <span className="text-base font-medium text-black sm:text-xl">{t(nameKey)}</span>
-    </div>
-  )
-}
-
-const TechStackIcon: React.FC<TechIconProps> = ({ Icon, labelKey }) => {
-  const t = useTranslations('services.techLabels') // Scope to techLabels
-  const translatedLabel = t(labelKey)
-  return (
-    <TooltipProvider>
-      <Tooltip delayDuration={0}>
-        <TooltipTrigger>
-          <div
-            aria-label={translatedLabel}
-            className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#dedede] bg-white p-3 shadow-service transition-shadow hover:shadow-md sm:h-12 sm:w-12"
-          >
-            <Icon stroke={1} height={24} width={24} />
-          </div>
-        </TooltipTrigger>
-        <TooltipContent>
-          <p>{translatedLabel}</p>
-        </TooltipContent>
-      </Tooltip>
-    </TooltipProvider>
-  )
-}
-
-const ServiceListWrap = ({
-  title,
-  items,
-  inViewResult
-}: {
+interface TeamStrength {
   title: string
-  items: {
-    Icon: any
-    labelKey: string
-  }[]
-  inViewResult: boolean
-}) => {
-  return (
-    <div className="flex flex-col gap-4">
-      <h4 className="font-mono text-base font-medium text-[#555]">{title}</h4>
-      <div className="flex flex-wrap gap-3">
-        {items.map((tech, index) => (
-          <motion.div
-            key={tech.labelKey}
-            initial="inactive"
-            variants={{
-              inactive: { opacity: 0, scale: 0.8, origin: 'center' },
-              active: { opacity: 1, scale: 1 }
-            }}
-            animate={inViewResult ? 'active' : 'inactive'}
-            transition={{ duration: 0.3, delay: 0.4 + index * 0.05 }}
-          >
-            <TechStackIcon
-              key={tech.labelKey}
-              Icon={tech.Icon}
-              labelKey={tech.labelKey}
-            />
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  )
+  description: string
 }
 
-const Services: React.FC = () => {
-  const t = useTranslations('services') // General services namespace
-  const tc = useTranslations('services.techStackCategories') // For category titles
-  const ref = useRef(null)
-  const inViewResult = useInView(ref, { once: true, margin: '-150px' })
+function Services() {
+  const t = useTranslations('services')
+  const capabilityGroups = t.raw('capabilities') as CapabilityGroup[]
+  const strengths = t.raw('strengths') as TeamStrength[]
 
   return (
-    <div className="w-full border-b border-gray-200 py-12 sm:py-24">
-      <SmallWrap id="services">
-        <div
-          className="grid grid-cols-1 items-start gap-16 md:grid-cols-2 md:gap-24"
-          ref={ref}
-        >
-          {/* Left Column */}
-          <div className="flex flex-col">
-            <h2 className="text-2xl font-medium leading-tight text-[#828282] md:text-5xl">
-              <span className="flex flex-row gap-2">
-                {t('mainHeading1')
-                  .split(' ')
-                  .map((word, index) => (
-                    <BlurFade
-                      delay={index * 0.05}
-                      inView={inViewResult}
-                      key={index + 'servicesH1'}
-                    >
-                      {word}
-                    </BlurFade>
-                  ))}
-              </span>
-              <span className="flex flex-row gap-2">
-                {t('mainHeading2')
-                  .split(' ')
-                  .map((word, index) => (
-                    <BlurFade
-                      className="text-[#050505]"
-                      delay={0.15 + index * 0.05}
-                      inView={inViewResult}
-                      key={index + 'servicesH2'}
-                    >
-                      {word}
-                    </BlurFade>
-                  ))}
-              </span>
+    <div className="w-full border-b border-gray-200 py-14 sm:py-24">
+      <SmallWrap id="stack">
+        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+          <div>
+            <h2 className="max-w-[13ch] text-3xl font-medium leading-tight tracking-[-0.03em] text-[#050505] sm:text-5xl">
+              {t('heading')}
             </h2>
-            <div className="mt-10 space-y-4">
-              <ServiceListWrap
-                title={tc('frontend')}
-                items={frontendStack}
-                inViewResult={inViewResult}
-              />
-              <ServiceListWrap
-                title={tc('backend')}
-                items={backendStack}
-                inViewResult={inViewResult}
-              />
-              <ServiceListWrap
-                title={tc('websites')}
-                items={websitesStack}
-                inViewResult={inViewResult}
-              />
-              <ServiceListWrap
-                title={tc('other')}
-                items={otherStack}
-                inViewResult={inViewResult}
-              />
-            </div>
+            <p className="mt-5 max-w-[52ch] text-base leading-relaxed text-gray54">
+              {t('intro')}
+            </p>
+
+            <dl className="mt-9 divide-y divide-[#e7e7e7] border-y border-[#e7e7e7]">
+              {capabilityGroups.map((group) => (
+                <div key={group.area} className="grid gap-3 py-4 sm:grid-cols-[8rem_1fr]">
+                  <dt className="text-sm font-medium text-[#202020]">{group.area}</dt>
+                  <dd>
+                    <ul className="flex flex-wrap gap-x-2 gap-y-1 text-sm leading-relaxed text-gray54">
+                      {group.technologies.map((technology, index) => (
+                        <li key={technology} className="inline-flex items-center gap-2">
+                          {technology}
+                          {index < group.technologies.length - 1 && (
+                            <span aria-hidden="true" className="text-[#c3c3c3]">
+                              ·
+                            </span>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </div>
 
-          {/* Right Column */}
-          <div className="flex flex-col space-y-6 pt-2 sm:space-y-10">
-            {servicesList.map((service) => (
-              <ServiceListItem
-                key={service.nameKey}
-                nameKey={service.nameKey}
-                Icon={service.Icon}
-              />
-            ))}
+          <div className="rounded-2xl border border-[#dedede] bg-[#f3f3f3] p-1.5 shadow-work">
+            <div className="h-full rounded-xl bg-white p-6 sm:p-8">
+              <h3 className="text-2xl font-medium tracking-[-0.025em] text-[#111]">
+                {t('teamHeading')}
+              </h3>
+              <div className="mt-7 divide-y divide-[#e9e9e9]">
+                {strengths.map((strength) => (
+                  <div
+                    key={strength.title}
+                    className="flex gap-4 py-5 first:pt-0 last:pb-0"
+                  >
+                    <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-black text-white">
+                      <IconCheck aria-hidden="true" size={14} stroke={2} />
+                    </span>
+                    <div>
+                      <h4 className="text-base font-medium text-[#191919]">
+                        {strength.title}
+                      </h4>
+                      <p className="mt-1 text-sm leading-relaxed text-gray54">
+                        {strength.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </SmallWrap>

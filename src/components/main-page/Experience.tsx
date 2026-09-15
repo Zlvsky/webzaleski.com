@@ -62,7 +62,14 @@ export default function Experience() {
     <div className="w-full border-b border-t border-gray-200 py-14 sm:py-20">
       <SmallWrap id="experience">
         <div className="grid gap-8 md:grid-cols-[11rem_minmax(0,1fr)] md:gap-12 lg:grid-cols-[12rem_minmax(0,1fr)]">
-          <h2 className="text-2xl font-medium text-[#050505]">{t('myexperience')}</h2>
+          <div>
+            <h2 className="text-2xl font-medium tracking-[-0.025em] text-[#050505]">
+              {t('myexperience')}
+            </h2>
+            <p className="mt-3 max-w-[22ch] text-sm leading-relaxed text-gray7B">
+              {t('intro')}
+            </p>
+          </div>
 
           <ol className="relative border-l border-gray-200">
             {experiences.map((experience) => {
@@ -102,6 +109,19 @@ export default function Experience() {
                   <p className="ml-14 mt-3 max-w-[65ch] text-sm leading-relaxed text-gray54">
                     {description}
                   </p>
+                  <ul
+                    className="ml-14 mt-3 flex flex-wrap gap-2"
+                    aria-label={t('technologies', { company: experience.companyName })}
+                  >
+                    {experience.skills.map((skill) => (
+                      <li
+                        key={skill}
+                        className="rounded-md bg-[#f3f3f3] px-2.5 py-1 font-mono text-[0.68rem] text-gray54"
+                      >
+                        {skill}
+                      </li>
+                    ))}
+                  </ul>
                 </li>
               )
             })}

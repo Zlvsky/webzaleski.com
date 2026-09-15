@@ -1,26 +1,17 @@
-import { getPostsPaths } from '@/lib/posts'
 import { HOST } from '@/utils/consts'
+import type { MetadataRoute } from 'next'
 
-export default async function sitemap() {
-  let blogs = getPostsPaths().map((post) => ({
-    url: `${HOST}/blog/${post.params.slug}`,
-    lastModified: new Date().toISOString().split('T')[0]
+export default function sitemap(): MetadataRoute.Sitemap {
+  return ['en', 'pl'].map((locale) => ({
+    url: `${HOST}/${locale}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: locale === 'en' ? 1 : 0.9,
+    alternates: {
+      languages: {
+        en: `${HOST}/en`,
+        pl: `${HOST}/pl`
+      }
+    }
   }))
-
-  let routes = [
-    '',
-    '/blog',
-    '/work/betterdevs',
-    '/work/visity',
-    '/work/feedback-widget',
-    '/work/realm-of-dungeons',
-    '/work/konva-moodboard',
-    '/work/one-place',
-    '/work/automation-bot'
-  ].map((route) => ({
-    url: `${HOST}${route}`,
-    lastModified: new Date().toISOString().split('T')[0]
-  }))
-
-  return [...routes, ...blogs]
 }
