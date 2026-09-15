@@ -24,9 +24,9 @@ function Logo() {
         />
         <div className="absolute -right-1 bottom-0.5 aspect-square h-2 w-2 rounded-full bg-[#16bf5e]"></div>
       </div>
-      <div className="flex flex-col text-sm leading-none">
+      <div className="hidden flex-col whitespace-nowrap text-sm leading-none lg:flex">
         <span className="text-base font-normal">{NAME}</span>
-        <span className="font-mono text-[0.68rem] text-[#747474]">{POSITION}</span>
+        <span className="font-mono text-[0.68rem] text-gray54">{POSITION}</span>
       </div>
     </Link>
   )
