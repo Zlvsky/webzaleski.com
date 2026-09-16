@@ -129,7 +129,7 @@ export default function CVButton({
 
   return (
     <div
-      className="relative"
+      className="relative order-4 sm:order-none"
       style={{ '--cta-width': `${size.width}px` } as CSSProperties}
     >
       <a
@@ -138,7 +138,7 @@ export default function CVButton({
         target="_blank"
         rel="noopener noreferrer"
         aria-label={label}
-        className="relative inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-black px-3 text-sm font-medium text-white shadow-darkbutton transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 motion-reduce:transform-none sm:px-4"
+        className="relative inline-flex h-11 w-11 items-center justify-center gap-2 rounded-xl bg-black p-0 text-sm font-medium text-white shadow-darkbutton transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 motion-reduce:transform-none sm:w-auto sm:px-4"
       >
         <span className="hidden sm:inline">{label}</span>
         <span className="sm:hidden">{compactLabel}</span>

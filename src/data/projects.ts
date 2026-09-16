@@ -1,3 +1,4 @@
+import expbikeLogo from '@/assets/images/expbike.png'
 import botlogo from '@/assets/images/work/logos/bot.png'
 import feedbacklogo from '@/assets/images/work/logos/feedback.png'
 import konvalogo from '@/assets/images/work/logos/konva.png'
@@ -25,7 +26,7 @@ export const projects = [
     shortDescription: 'A gamified mobile app for tracking bike rides.',
     year: '2026',
     image: '/img/works/work3.png', // Temporary placeholder
-    logo: feedbacklogo.src, // Temporary placeholder
+    logo: expbikeLogo.src,
     slug: 'expbike',
     state: 'Launching soon',
     stack: ['Mobile', 'TypeScript', 'Product development']

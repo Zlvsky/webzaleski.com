@@ -66,7 +66,7 @@ export default function Experience() {
             <h2 className="text-2xl font-medium tracking-[-0.025em] text-[#050505]">
               {t('myexperience')}
             </h2>
-            <dl className="mt-7 grid gap-6 sm:grid-cols-3 md:grid-cols-1">
+            <dl className="mt-7 grid gap-6 sm:grid-cols-2 md:grid-cols-1">
               <div className="flex flex-col">
                 <dt className="order-last mt-1 text-xs leading-relaxed text-gray54">
                   {t('summary.commercialDevelopment')}
@@ -85,10 +85,18 @@ export default function Experience() {
               </div>
               <div>
                 <dt className="text-xs leading-relaxed text-gray54">
-                  {t('summary.basedIn')}
+                  {t('summary.mainAreas')}
                 </dt>
                 <dd className="mt-1 text-sm font-medium leading-relaxed text-[#171717]">
-                  {t('summary.location')}
+                  {t('summary.areas')}
+                </dd>
+              </div>
+              <div>
+                <dt className="text-xs leading-relaxed text-gray54">
+                  {t('summary.workSetup')}
+                </dt>
+                <dd className="mt-1 text-sm font-medium leading-relaxed text-[#171717]">
+                  {t('summary.setup')}
                 </dd>
               </div>
             </dl>
@@ -96,6 +104,7 @@ export default function Experience() {
 
           <ol className="relative border-l border-gray-200">
             {experiences.map((experience) => {
+              const companyName = t(`items.${experience.id}.companyName`)
               const role = t(`items.${experience.id}.role`)
               const description = t(`items.${experience.id}.description`)
               const date = experience.isPresent
@@ -118,7 +127,7 @@ export default function Experience() {
 
                   <div className="flex min-w-0 flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-5">
                     <ExperienceIdentity
-                      companyName={experience.companyName}
+                      companyName={companyName}
                       companyUrl={experience.companyUrl}
                       icon={experience.icon}
                       isExternal={experience.isExternal}
@@ -134,7 +143,7 @@ export default function Experience() {
                   </p>
                   <ul
                     className="ml-14 mt-3 flex flex-wrap gap-2"
-                    aria-label={t('technologies', { company: experience.companyName })}
+                    aria-label={t('technologies', { company: companyName })}
                   >
                     {experience.skills.map((skill) => (
                       <li

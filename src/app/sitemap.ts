@@ -1,6 +1,8 @@
 import { HOST } from '@/utils/consts'
 import type { MetadataRoute } from 'next'
 
+export const dynamic = 'force-static'
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return ['en', 'pl'].map((locale) => ({
     url: `${HOST}/${locale}`,

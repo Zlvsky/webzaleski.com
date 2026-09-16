@@ -1,8 +1,7 @@
 import { projects } from '@/data/projects'
 import { cn } from '@/utils'
-import { GITHUB_URL, LINKEDIN_URL, RESUME_URL } from '@/utils/consts'
+import { GITHUB_URL, LINKEDIN_URL } from '@/utils/consts'
 import {
-  IconArrowDown,
   IconArrowUpRight,
   IconBrandFigma,
   IconBrandGithub,
@@ -12,11 +11,11 @@ import {
   IconBrandReact,
   IconBrandReactNative,
   IconBrandTypescript,
-  IconBrandWordpress,
-  IconMapPin
+  IconBrandWordpress
 } from '@tabler/icons-react'
 import { useTranslations } from 'next-intl'
 import SmallWrap from '../layout/containers/SmallWrap'
+import Contact from './old/Contact'
 import { PingDot } from './old/_components/PingDot'
 
 interface HeroCardProps {
@@ -64,6 +63,7 @@ function HeroCard({ theme, title, items }: HeroCardProps) {
 
 export default function Hero() {
   const t = useTranslations('hero')
+  const resume = useTranslations('resume')
   const tc = useTranslations('heroCards')
   const stackItems = tc.raw('stackIWorkWith.items') as readonly string[]
   const whatIDoItems = tc.raw('whatIDo.items') as readonly string[]
@@ -71,11 +71,11 @@ export default function Hero() {
 
   return (
     <SmallWrap id="main">
-      <div className="grid min-w-0 grid-cols-1 items-start gap-10 pb-16 pt-8 sm:pb-20 sm:pt-12 lg:grid-cols-2 lg:gap-12">
+      <div className="grid min-w-0 grid-cols-1 items-start gap-10 pb-16 pt-8 sm:pb-20 sm:pt-12 lg:grid-cols-2 lg:items-center lg:gap-12">
         <div className="flex min-w-0 flex-col">
           <div className="mb-6 flex w-fit items-center gap-2 rounded-full border border-[#e5e5e5] bg-white px-3 py-2 text-xs text-gray54 shadow-work2">
             <PingDot />
-            <span className="font-medium text-[#282828]">{t('availability')}</span>
+            <span className="font-medium text-[#282828]">{resume('availability')}</span>
           </div>
 
           <h1 className="text-3xl font-medium leading-tight tracking-tight text-[#050505] md:text-4xl">
@@ -89,23 +89,24 @@ export default function Hero() {
             {t('proof')}
           </p>
 
-          <div className="mt-7 flex flex-wrap items-center gap-3">
-            <a
-              href={RESUME_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-black px-4 text-sm font-medium text-white shadow-darkbutton transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 motion-reduce:transform-none"
-            >
-              {t('downloadCv')}
-              <IconArrowDown aria-hidden="true" size={17} stroke={1.8} />
-            </a>
+          <Contact showCV />
+
+          {/* <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-xs text-gray7B">
+            <span className="inline-flex items-center gap-1.5">
+              <IconMapPin aria-hidden="true" size={14} stroke={1.6} />
+              {t('location')}
+            </span>
+            <span>{t('workMode')}</span>
+          </div> */}
+
+          <div className="mt-5 flex flex-wrap items-center gap-3">
             <a
               href={featuredProject.live}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-[#dedede] bg-white px-4 text-sm font-medium text-[#161616] shadow-work2 transition-colors hover:bg-[#f6f6f6] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
             >
-              {featuredProject.name}
+              {t('viewRealm')}
               <IconArrowUpRight aria-hidden="true" size={17} stroke={1.8} />
             </a>
             <a
@@ -126,14 +127,6 @@ export default function Hero() {
             >
               <IconBrandLinkedin aria-hidden="true" size={21} stroke={1.6} />
             </a>
-          </div>
-
-          <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-xs text-gray7B">
-            <span className="inline-flex items-center gap-1.5">
-              <IconMapPin aria-hidden="true" size={14} stroke={1.6} />
-              {t('location')}
-            </span>
-            <span>{t('workMode')}</span>
           </div>
         </div>
 

@@ -5,7 +5,7 @@ function NavLinks() {
   const t = useTranslations('nav.links')
 
   return (
-    <ul className="header-links flex items-center gap-0.5 sm:gap-1">
+    <ul className="header-links hidden items-center gap-1 sm:flex">
       {routes.map((link) => (
         <li key={link.href}>
           <a

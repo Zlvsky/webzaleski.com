@@ -7,7 +7,7 @@ export const DEFAULT_DESCRIPTION =
   'React Native and full-stack developer from Poland building production mobile and web applications.'
 export const DEFAULT_IMAGE_URL = '/img/baner.png'
 
-export const EMAIL = 'krzysztof@czaleski.com'
+export const EMAIL = 'webzaleski@gmail.com'
 export const NAME = 'Krzysztof Zaleski'
 export const POSITION = 'React Native & full-stack'
 export const AUTHOR_DESC =

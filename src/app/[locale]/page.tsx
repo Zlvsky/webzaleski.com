@@ -9,8 +9,12 @@ import Hero from '@/components/main-page/Hero'
 import Resume from '@/components/main-page/Resume'
 import Work from '@/components/main-page/Work'
 import { EMAIL, GITHUB_URL, HOST, LINKEDIN_URL } from '@/utils/consts'
+import { setRequestLocale } from 'next-intl/server'
 
-export default function Home() {
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  setRequestLocale(locale)
+
   const personJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',

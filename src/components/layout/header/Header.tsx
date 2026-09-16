@@ -17,7 +17,7 @@ function Header() {
       </a>
       <div className="header-shell mx-auto w-full max-w-screen-lg px-4">
         <GlassNav>
-          <div className="header-identity flex min-w-0 items-center gap-1 sm:gap-3 lg:gap-6">
+          <div className="header-identity contents min-w-0 items-center gap-1 sm:flex sm:gap-3 lg:gap-6">
             <Logo />
             <NavLinks />
           </div>

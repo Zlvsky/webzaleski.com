@@ -14,7 +14,7 @@ export const experiences = [
     endYear: null,
     isPresent: true,
     isExternal: false,
-    skills: ['React Native', 'Expo', 'Node.js', 'PostgreSQL', 'Product']
+    skills: ['React Native', 'Expo', 'Node.js', 'PostgreSQL', 'Prisma']
   },
   {
     id: 'goodsoft',
@@ -25,7 +25,7 @@ export const experiences = [
     endYear: null,
     isPresent: true,
     isExternal: true,
-    skills: ['React', 'TypeScript', 'Next.js', 'REST APIs', 'UI architecture']
+    skills: ['React', 'TypeScript', 'Next.js', 'REST APIs', 'Frontend architecture']
   },
   {
     id: 'jokuh',
@@ -36,7 +36,7 @@ export const experiences = [
     endYear: null,
     isPresent: false,
     isExternal: true,
-    skills: ['Full-stack', 'React', 'Node.js', 'Distributed team']
+    skills: ['React', 'NextJs', 'TypeScript', 'FullStack', 'Motion']
   },
   {
     id: 'freelance',
@@ -47,7 +47,7 @@ export const experiences = [
     endYear: 2024,
     isPresent: false,
     isExternal: false,
-    skills: ['Web development', 'Client delivery', 'WordPress']
+    skills: ['WordPress', 'WooCommerce', 'TypeScript', 'Node.js', 'SEO', 'Analytics']
   },
   {
     id: 'seomi',

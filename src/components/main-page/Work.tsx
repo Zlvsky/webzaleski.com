@@ -1,3 +1,4 @@
+import rodDesktopImage from '@/assets/images/RoDScreen.png'
 import { projects } from '@/data/projects'
 import { IconArrowUpRight, IconBrandGithub } from '@tabler/icons-react'
 import { useTranslations } from 'next-intl'
@@ -17,18 +18,12 @@ function Work() {
   const selectedProjects = projects.filter((project) =>
     selectedProjectSlugs.includes(project.slug as (typeof selectedProjectSlugs)[number])
   )
-
   return (
     <div className="w-full border-y border-gray-200 py-14 sm:py-24">
       <SmallWrap id="work">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <h2 className="max-w-[12ch] text-3xl font-medium leading-tight tracking-[-0.03em] text-[#050505] sm:text-5xl">
-            {t('featuredWork')}
-          </h2>
-          <p className="max-w-md text-sm leading-relaxed text-gray54 sm:text-right">
-            {t('intro')}
-          </p>
-        </div>
+        <h2 className="max-w-[12ch] text-3xl font-medium leading-tight tracking-[-0.03em] text-[#050505] sm:text-5xl">
+          {t('featuredWork')}
+        </h2>
 
         <article className="mt-10 overflow-hidden rounded-2xl border border-[#dedede] bg-[#f1f1f1] p-1.5 shadow-work">
           <div className="grid overflow-hidden rounded-xl bg-white lg:grid-cols-[1.08fr_0.92fr]">
@@ -36,9 +31,16 @@ function Work() {
               <Image
                 src={featuredProject.image}
                 fill
-                sizes="(max-width: 1024px) 100vw, 55vw"
+                sizes="(max-width: 1023px) 100vw, 1px"
                 alt={t('featuredImageAlt')}
-                className="object-cover object-center"
+                className="object-cover object-center lg:hidden"
+              />
+              <Image
+                src={rodDesktopImage}
+                fill
+                sizes="(min-width: 1024px) 55vw, 1px"
+                alt={t('featuredImageAlt')}
+                className="hidden object-cover object-center lg:block"
               />
               <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/55 to-transparent" />
               <div className="absolute bottom-4 left-4 flex items-center gap-2 rounded-lg bg-black/80 px-3 py-2 text-xs text-white backdrop-blur-sm">

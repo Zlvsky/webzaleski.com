@@ -15,12 +15,12 @@ export const useCopyString = (text: string) => {
   }, [isCopied])
 
   const copy = () => {
-    if (isCopied) return
+    if (isCopied) return true
 
     if (!text) throw new Error('String is null')
-    copyToClipboard(text || '')
-
-    setCopied(true)
+    const copied = copyToClipboard(text)
+    setCopied(copied)
+    return copied
   }
 
   return { isCopied, setCopied, copy }

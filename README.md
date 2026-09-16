@@ -8,7 +8,7 @@
 
 ## Overview ✨
 
-Minimalistic dev portfolio with MDX based Blog, built in Next.js (**app router**). It's open source, so feel free to fork or contribute 🖤
+Minimalistic dev portfolio built with the Next.js **App Router** and exported as a fully static website. It's open source, so feel free to fork or contribute 🖤
 
 ## Tech used 🛠
 
@@ -21,7 +21,6 @@ Minimalistic dev portfolio with MDX based Blog, built in Next.js (**app router**
 | [Framer Motion](https://www.framer.com/motion/) | Motion library for React |
 | [TailwindCSS](https://tailwindcss.com/) | Utility-first CSS framework |
 | [next-themes](https://github.com/pacocoursey/next-themes) | Next.js theme detection & switcher |
-| [Vercel analytics](https://vercel.com/analytics) | Vercel page analytics tool |
 | [Husky](https://github.comtypicode/husky) | Git hooks |
 | [ESLint](https://eslint.org/) | TypeScript linting |
 | [Prettier](https://prettier.io/) | Code formatter |
@@ -31,8 +30,17 @@ Minimalistic dev portfolio with MDX based Blog, built in Next.js (**app router**
 ```bash
 git clone git@github.com:Zlvsky/czaleski.com.git
 cd czaleski.com
-npm install
-npm run dev
+pnpm install
+pnpm dev
+```
+
+## Deployment
+
+The production build is generated in `out/` and deployed as static assets to Cloudflare Workers—there is no server runtime.
+
+```bash
+pnpm preview
+pnpm deploy
 ```
 
 ## Live 👁‍🗨

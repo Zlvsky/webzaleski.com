@@ -14,18 +14,20 @@
     "downloadCv": "Download CV",
     "cv": "CV",
     "cvHint": "Let’s keep in touch",
-    "dismissCvHint": "Dismiss CV hint"
+    "dismissCvHint": "Dismiss CV hint",
+    "switchToPolish": "Switch to Polish",
+    "switchToEnglish": "Switch to English"
   },
   "hero": {
     "availability": "Open to React Native & full-stack opportunities",
     "mainHeading": "React Native & Full-stack Developer.",
-    "subheading": "I build and ship production web and mobile products—from polished interfaces to APIs, infrastructure and deployment.",
+    "subheading": "I build production web and mobile products, from polished interfaces to backend APIs and infrastructure.",
     "proof": "Currently building Realm of Dungeons, a production React Native game for iOS and Android with a Node.js backend and an active beta community.",
     "downloadCv": "Download CV",
     "location": "Białystok, Poland",
     "workMode": "Remote / hybrid · Poland / EU",
     "freelanceLink": "Looking for a developer for a project? Freelance enquiries →",
-    "freelanceLink": "Looking for a developer for a project? Freelance enquiries →"
+    "viewRealm": "Realm of Dungeons"
   },
   "heroCards": {
     "stackIWorkWith": {
@@ -39,7 +41,8 @@
         "Node.js",
         "PostgreSQL",
         "Prisma",
-        "WordPress"
+        "WordPress",
+        "Figma"
       ]
     },
     "whatIDo": {
@@ -65,39 +68,49 @@
     "prompt": {
       "emailDefault": "Send me an email",
       "emailHover": "Open in your mail app",
-      "copyHover": "Copy to clipboard"
+      "copyHover": "Copy to clipboard",
+      "copySuccess": "Email copied",
+      "copyError": "Couldn’t copy email. Use the mail button.",
+      "cvHover": "View CV"
     }
   },
   "experience": {
     "myexperience": "Experience",
     "summary": {
       "years": "5+ years",
-      "commercialDevelopment": "Commercial development",
+      "commercialDevelopment": "Professional experience",
       "currentFocus": "Current focus",
       "focus": "React Native / Full-stack",
-      "basedIn": "Based in",
-      "location": "Poland"
+      "mainAreas": "Main areas",
+      "areas": "Mobile · Frontend · Backend",
+      "workSetup": "Work setup",
+      "setup": "Remote / Hybrid · Poland / EU"
     },
     "technologies": "Technologies and responsibilities at {company}",
     "present": "Present",
     "items": {
       "realmOfDungeons": {
-        "role": "Founder · Product Owner · Full-stack & React Native Developer",
-        "description": "Building and operating a production mobile RPG independently—from product design and React Native development through APIs, database architecture, infrastructure, releases and community feedback."
+        "companyName": "Realm of Dungeons",
+        "role": "Founder · React Native & Full-stack Developer",
+        "description": "Building and operating Realm of Dungeons across iOS, Android and backend services. I develop the React Native app, Node.js API and database systems, manage releases and infrastructure, and iterate on the product with an active beta community."
       },
       "goodsoft": {
+        "companyName": "GoodSoft",
         "role": "React Developer",
-        "description": "Leading frontend development for production startup products. Responsible for architecture, feature delivery, reusable UI systems, API integration, performance and translating product requirements into polished interfaces."
+        "description": "Building and maintaining React applications for startup products. My work includes frontend architecture, reusable UI systems, API integrations, performance improvements and shipping new product features."
       },
       "jokuh": {
+        "companyName": "Jokuh",
         "role": "Full-stack Developer",
-        "description": "Worked in a distributed international team to develop a decentralized platform, contributing across the frontend and backend of the product."
+        "description": "Worked with an international team on a decentralized web platform, building features across the Next.js frontend and backend layers."
       },
       "freelance": {
+        "companyName": "Part-time freelance",
         "role": "Web Developer",
-        "description": "Ran a part-time web development business alongside my main role, owning client communication, implementation, delivery and ongoing support."
+        "description": "Built and delivered websites, e-commerce stores and web applications for small businesses. I handled projects directly with clients, from requirements and development to deployment and ongoing support."
       },
       "seomi": {
+        "companyName": "Seomi",
         "role": "Web Developer Intern",
         "description": "Supported production web projects, building responsive interfaces and learning professional delivery practices within a development team."
       }
@@ -191,14 +204,13 @@
     }
   },
   "work": {
-    "featuredWork": "Featured work",
-    "intro": "Selected products and engineering work across mobile, frontend and backend.",
+    "featuredWork": "Personal Projects",
     "projectLogoAlt": "{projectName} logo",
     "visitProject": "Visit {projectName}",
     "viewSource": "View {projectName} source code",
     "featuredImageAlt": "Realm of Dungeons mobile game interface",
-    "featuredRole": "Founder · Product owner · Full-stack & React Native developer",
-    "featuredDescription": "A production mobile RPG for iOS and Android, built and operated independently—from product design and React Native frontend through APIs, database architecture, infrastructure, analytics and release management.",
+    "featuredRole": "Founder · React Native & Full-stack Developer",
+    "featuredDescription": "A production mobile RPG for iOS and Android, built and operated independently from mobile frontend to backend and infrastructure.",
     "featuredFacts": [
       {
         "value": "1,600+",
@@ -273,6 +285,14 @@
     "location": "Based in Białystok, Poland. Open to remote and selected hybrid roles.",
     "profileAlt": "Portrait of Krzysztof Zaleski",
     "linkedinCta": "View my LinkedIn profile",
+    "copyEmailPrompt": "Press <kbd>C</kbd> to copy my email",
+    "emailCopiedToast": "Email copied to clipboard",
+    "socials": {
+      "email": "Email",
+      "x": "X.com",
+      "github": "GitHub",
+      "linkedin": "LinkedIn"
+    },
     "paragraphs": [
       "I'm a developer from Poland focused on building polished web and mobile products with React, React Native and TypeScript.",
       "I enjoy turning ideas and designs into interfaces that feel good to use, while thinking carefully about architecture, performance and maintainability.",
@@ -282,7 +302,7 @@
   "resume": {
     "availability": "Open to new opportunities",
     "heading": "Let's build something people value.",
-    "description": "I'm currently open to React Native and full-stack roles where I can contribute across product, mobile and backend engineering.",
+    "description": "I'm currently open to React Native, frontend and full-stack roles where I can contribute across product, mobile and backend engineering.",
     "contact": "Contact me",
     "downloadCv": "Download CV",
     "documentLabel": "Résumé / CV",
