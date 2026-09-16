@@ -7,17 +7,18 @@ import SmallWrap from '../layout/containers/SmallWrap'
 
 const selectedProjectSlugs = [
   'expbike',
+  'mockup-motion',
   'feedback-widget',
-  'konva-moodboard',
   'one-place'
 ] as const
 
 function Work() {
   const t = useTranslations('work')
   const featuredProject = projects[0]
-  const selectedProjects = projects.filter((project) =>
-    selectedProjectSlugs.includes(project.slug as (typeof selectedProjectSlugs)[number])
-  )
+  const selectedProjects = selectedProjectSlugs.flatMap((slug) => {
+    const project = projects.find((project) => project.slug === slug)
+    return project ? [project] : []
+  })
   return (
     <div className="w-full border-y border-gray-200 py-14 sm:py-24">
       <SmallWrap id="work">

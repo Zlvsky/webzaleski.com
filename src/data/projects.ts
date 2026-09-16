@@ -1,8 +1,8 @@
 import expbikeLogo from '@/assets/images/expbike.png'
 import botlogo from '@/assets/images/work/logos/bot.png'
 import feedbacklogo from '@/assets/images/work/logos/feedback.png'
-import konvalogo from '@/assets/images/work/logos/konva.png'
 import oneplacelogo from '@/assets/images/work/logos/oneplace.png'
+import playstoreLogo from '@/assets/images/work/logos/playstore.png'
 import rodlogo from '@/assets/images/work/logos/rod.png'
 import visitylogo from '@/assets/images/work/logos/visity.png'
 import rod from '@/assets/images/work/rod.png'
@@ -55,15 +55,16 @@ export const projects = [
     stack: ['React', 'TypeScript', 'Browser APIs']
   },
   {
-    name: 'Konva Moodboard',
-    shortDescription: `Web app to create and export canvas moodboards with custom images.`,
-    year: '2022',
+    name: 'MockupMotion',
+    shortDescription:
+      'Desktop tool for creating polished device mockup videos from screenshots and screen recordings.',
+    year: '2026',
     image: '/img/works/work5.png',
-    logo: konvalogo.src,
-    slug: 'konva-moodboard',
-    state: '28+ stars on GitHub',
-    stack: ['React', 'Konva', 'Canvas API'],
-    github: 'https://github.com/Zlvsky/React-Konva-moodboard'
+    logo: playstoreLogo.src,
+    slug: 'mockup-motion',
+    state: 'Live preview available',
+    stack: ['Electron', 'React', 'TypeScript'],
+    live: 'https://mockupmotion.pages.dev/'
   },
   {
     name: 'One-place',
@@ -72,7 +73,7 @@ export const projects = [
     image: '/img/works/work6.png',
     logo: oneplacelogo.src,
     slug: 'one-place',
-    state: '44+ stars on GitHub',
+    state: '50+ stars on GitHub',
     stack: ['React', 'Node.js', 'CRUD'],
     github: 'https://github.com/Zlvsky/one-place'
   },

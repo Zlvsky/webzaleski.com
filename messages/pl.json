@@ -258,16 +258,16 @@
         "state": "Używany w ponad 10 projektach",
         "role": "Twórca i Full-stack Developer"
       },
-      "konva-moodboard": {
-        "name": "Konva Moodboard",
-        "shortDescription": "Aplikacja internetowa do tworzenia i eksportowania moodboardów na płótnie z niestandardowymi obrazami.",
-        "state": "Ponad 28 gwiazdek na GitHub",
-        "role": "Open-source Frontend Developer"
+      "mockup-motion": {
+        "name": "MockupMotion",
+        "shortDescription": "Narzędzie desktopowe do tworzenia dopracowanych filmów z mockupami urządzeń na podstawie zrzutów i nagrań ekranu.",
+        "state": "Dostępny podgląd na żywo",
+        "role": "Twórca i Product Developer"
       },
       "one-place": {
         "name": "One-place",
         "shortDescription": "Panel administracyjny CRUD do zarządzania firmą opartą na zamówieniach, która nie potrzebuje sklepu internetowego.",
-        "state": "Ponad 44 gwiazdki na GitHub",
+        "state": "Ponad 50 gwiazdek na GitHub",
         "role": "Twórca i Full-stack Developer"
       },
       "automation-bot": {
