@@ -17,5 +17,5 @@ export const GITHUB_URL = 'https://github.com/Zlvsky'
 export const TWITTER_URL = 'https://x.com/czaleskii'
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/krzysztof-zaleski02'
 export const RESUME_URL =
-  'https://drive.google.com/file/d/16vH538erKi6kTfgIucXa-Kfw4FnMENVe/view?usp=sharing'
+  'https://drive.google.com/file/d/1jxEc_JW9KKR-wwBPnLrOZF6diX6SeJGp/view?usp=sharing'
 export const GUMROAD_URL = 'https://products.czaleski.com/'
