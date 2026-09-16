@@ -31,7 +31,9 @@ const metadataCopy = {
 } as const
 
 export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }))
+  return routing.locales
+    .filter((locale) => locale !== routing.defaultLocale)
+    .map((locale) => ({ locale }))
 }
 
 export async function generateMetadata({
@@ -42,7 +44,7 @@ export async function generateMetadata({
   const { locale } = await params
   const safeLocale = hasLocale(routing.locales, locale) ? locale : routing.defaultLocale
   const copy = metadataCopy[safeLocale]
-  const canonical = `${HOST}/${safeLocale}`
+  const canonical = safeLocale === routing.defaultLocale ? HOST : `${HOST}/${safeLocale}`
 
   return {
     metadataBase: new URL(HOST),
@@ -51,9 +53,9 @@ export async function generateMetadata({
     alternates: {
       canonical,
       languages: {
-        en: `${HOST}/en`,
+        en: HOST,
         pl: `${HOST}/pl`,
-        'x-default': `${HOST}/en`
+        'x-default': HOST
       }
     },
     openGraph: {

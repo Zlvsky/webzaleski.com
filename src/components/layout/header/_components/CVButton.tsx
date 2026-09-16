@@ -9,17 +9,11 @@ const SCROLL_COMPLETION_THRESHOLD = 0.9
 
 interface CVButtonProps {
   label: string
-  compactLabel: string
   hintText: string
   dismissLabel: string
 }
 
-export default function CVButton({
-  label,
-  compactLabel,
-  hintText,
-  dismissLabel
-}: CVButtonProps) {
+export default function CVButton({ label, hintText, dismissLabel }: CVButtonProps) {
   const progressRef = useRef<SVGPathElement>(null)
   const buttonRef = useRef<HTMLAnchorElement>(null)
   const hintRef = useRef<HTMLDivElement>(null)
@@ -138,16 +132,10 @@ export default function CVButton({
         target="_blank"
         rel="noopener noreferrer"
         aria-label={label}
-        className="relative inline-flex h-11 w-11 items-center justify-center gap-2 rounded-xl bg-black p-0 text-sm font-medium text-white shadow-darkbutton transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 motion-reduce:transform-none sm:w-auto sm:px-4"
+        className="relative inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-black px-3 text-sm font-medium text-white shadow-darkbutton transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 motion-reduce:transform-none sm:px-4"
       >
-        <span className="hidden sm:inline">{label}</span>
-        <span className="sm:hidden">{compactLabel}</span>
-        <IconArrowDown
-          aria-hidden="true"
-          size={16}
-          stroke={1.8}
-          className="hidden sm:block"
-        />
+        <span>{label}</span>
+        <IconArrowDown aria-hidden="true" size={16} stroke={1.8} />
         {size.width > 0 && (
           <svg
             className="cv-progress pointer-events-none absolute -inset-[3px] h-[calc(100%+6px)] w-[calc(100%+6px)] overflow-visible"

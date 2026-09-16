@@ -21,7 +21,6 @@ function CTA() {
       <LocaleSwitch />
       <CVButton
         label={t('downloadCv')}
-        compactLabel={t('cv')}
         hintText={t('cvHint')}
         dismissLabel={t('dismissCvHint')}
       />

@@ -1,7 +1,8 @@
 'use client'
 
-import { Link, usePathname, useRouter } from '@/i18n/navigation'
 import { useLocale, useTranslations } from 'next-intl'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import type { MouseEvent } from 'react'
 
 function PolishFlag() {
@@ -28,9 +29,9 @@ function EnglishFlag() {
 export default function LocaleSwitch() {
   const locale = useLocale()
   const t = useTranslations('nav')
-  const pathname = usePathname()
   const router = useRouter()
   const nextLocale = locale === 'en' ? 'pl' : 'en'
+  const nextPath = nextLocale === 'pl' ? '/pl' : '/'
   const label = nextLocale === 'pl' ? t('switchToPolish') : t('switchToEnglish')
 
   const preserveSection = (event: MouseEvent<HTMLAnchorElement>) => {
@@ -38,13 +39,12 @@ export default function LocaleSwitch() {
     if (!hash) return
 
     event.preventDefault()
-    router.replace(`${pathname}${hash}`, { locale: nextLocale })
+    router.replace(`${nextPath}${hash}`)
   }
 
   return (
     <Link
-      href={pathname}
-      locale={nextLocale}
+      href={nextPath}
       lang={nextLocale}
       aria-label={label}
       title={label}
